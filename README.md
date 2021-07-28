@@ -1,24 +1,30 @@
-# README
+## README
+#### 開発言語
+- Ruby 2.6.5
+- Rails 5.2.6
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#### 就業Termの技術
+- devise
+- お気に入り機能
 
-Things you may want to cover:
+#### カリキュラム外の技術
+- gem 'geocoder' 住所を緯度経度に変換
+- gem 'gmaps4rails' 緯度経度からgoogleMAPを表示
 
-* Ruby version
+#### 実行手順
+（未実装）
 
-* System dependencies
+#### カタログ設計
+[https://docs.google.com/spreadsheets/d/1BJqi-Fyw4CwpUQTP6jIA0IgOnmZ-ENGksapskTtDR6k/edit?usp=sharing](https://docs.google.com/spreadsheets/d/1BJqi-Fyw4CwpUQTP6jIA0IgOnmZ-ENGksapskTtDR6k/edit?usp=sharing)
 
-* Configuration
+#### テーブル定義書
+[https://docs.google.com/spreadsheets/d/1BJqi-Fyw4CwpUQTP6jIA0IgOnmZ-ENGksapskTtDR6k/edit?usp=sharing](https://docs.google.com/spreadsheets/d/1BJqi-Fyw4CwpUQTP6jIA0IgOnmZ-ENGksapskTtDR6k/edit?usp=sharing)
 
-* Database creation
+#### ワイヤーフレーム
+[https://cacoo.com/diagrams/R7yZ1r7o1VkmqkTx/02047](https://cacoo.com/diagrams/R7yZ1r7o1VkmqkTx/02047)
 
-* Database initialization
+#### ER図
+![ER1](./public/ER.png)
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+#### 画面遷移図
+![画面遷移図](./public/Screen_transition_diagram.png)
