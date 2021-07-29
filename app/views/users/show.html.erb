@@ -1,25 +1,12 @@
 <h2>user#show.html</h2>
 
 <%= link_to '評価履歴' , users_review_path %>
-<br><br>
+<br>
 <% if current_user.admin?%>
 <%= link_to '管理者画面へ移動' , rails_admin_path %>
 <% end %>
-
 <br>
 <br>
+<p>名前の変更</p>
+<%= link_to 'メールアドレス・パスワードの変更・アカウントの削除はこちら' , edit_user_registration_path %>
 <br>
-<h3>登録情報</h3>
-<p>ニックネーム</p>
-<input type="text" name="" value="">
-<br>
-<p>メールアドレス</p>
-<input type="text" name="" value="">
-<br>
-<p>パスワード</p>
-<input type="text" name="" value="">
-<br>
-<%= link_to '情報変更' , user_path(1) %>
-<br>
-<br>
-<%= link_to 'アカウント削除' , root_path %>
