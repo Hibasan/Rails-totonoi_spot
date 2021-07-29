@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  devise_for :users
+  if Rails.env.development?
+    mount LetterOpenerWeb::Engine, at: "/letter_opener"
+  end
+  
   root to: 'facilities#top'
   get '/about',to: 'facilities#about'
   get '/facilities/search',to: 'facilities#search'
