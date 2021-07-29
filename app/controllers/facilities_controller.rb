@@ -1,5 +1,7 @@
 class FacilitiesController < ApplicationController
 
+  
+
   def new
     @facility = Facility.new
   end
@@ -19,6 +21,21 @@ class FacilitiesController < ApplicationController
 
   def edit
     @facility = Facility.find(params[:id])
+  end
+
+  def update
+    @facility = Facility.find(params[:id])
+    if @facility.update(facility_params)
+      redirect_to facility_path(@facility.id),notice:"施設情報を編集しました"
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @facility = Facility.find(params[:id])
+    @facility.destroy
+    redirect_to root_path,notice:"施設情報を削除しました"
   end
 
   private
