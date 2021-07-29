@@ -8,11 +8,13 @@
 <%= link_to '詳細検索' , facilities_path %>
 <br>
 <br>
-<h3>最近評価された施設</h3>
-<%= link_to '施設１' , facility_path(1) %>
-<%= link_to '口コミ１' , review_path(1) %>
+<h3>最近更新された施設</h3>
+<% @facility.each do |facility| %>
+<%= link_to facility.name , facility_path(facility.id) %>
+<% end %>
 <br>
-<%= link_to '施設２' , facility_path(2) %>
+<h3>最近投稿された口コミ</h3>
+<%= link_to '口コミ１' , review_path(1) %>
 <%= link_to '口コミ２' , review_path(2) %>
 <p>もっと見る</p>
 <br>
