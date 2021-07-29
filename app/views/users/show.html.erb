@@ -2,11 +2,10 @@
 
 <%= link_to '評価履歴' , users_review_path %>
 <br><br>
-<%= link_to 'ユーザー一覧' , users_review_path %>
-<br>
-<%= link_to '施設一覧' , users_review_path %>
-<br>
-<%= link_to '評価一覧' , users_review_path %>
+<% if current_user.admin?%>
+<%= link_to '管理者画面へ移動' , users_review_path %>
+<% end %>
+
 <br>
 <br>
 <br>
