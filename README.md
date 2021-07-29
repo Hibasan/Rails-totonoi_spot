@@ -12,7 +12,10 @@
 - gem 'gmaps4rails' 緯度経度からgoogleMAPを表示
 
 #### 実行手順
-（未実装）
+$ git clone git@github.com:Hibasan/Rails-totonoi_spot.git
+$ cd Rails-totonoi_spot
+$ bundle install
+$ rails db:create db:migrate db:seed
 
 #### カタログ設計
 [https://docs.google.com/spreadsheets/d/1BJqi-Fyw4CwpUQTP6jIA0IgOnmZ-ENGksapskTtDR6k/edit?usp=sharing](https://docs.google.com/spreadsheets/d/1BJqi-Fyw4CwpUQTP6jIA0IgOnmZ-ENGksapskTtDR6k/edit?usp=sharing)
