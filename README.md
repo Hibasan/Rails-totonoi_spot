@@ -13,8 +13,11 @@
 
 #### 実行手順
 $ git clone git@github.com:Hibasan/Rails-totonoi_spot.git
+
 $ cd Rails-totonoi_spot
+
 $ bundle install
+
 $ rails db:create db:migrate db:seed
 
 #### カタログ設計
