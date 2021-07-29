@@ -9,6 +9,7 @@ class CreateFacilities < ActiveRecord::Migration[5.2]
       t.string :holiday
       t.string :fee
       t.string :payment
+      t.string :comment
       t.text :image
 
       t.timestamps

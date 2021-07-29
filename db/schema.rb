@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2021_07_29_193426) do
     t.string "holiday"
     t.string "fee"
     t.string "payment"
+    t.string "comment"
     t.text "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

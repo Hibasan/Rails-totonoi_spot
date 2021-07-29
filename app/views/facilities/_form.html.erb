@@ -1,34 +1,68 @@
-<p>県</p>
-<p>住所</p>
-<p>施設名</p>
-<p>ホームページ</p>
-<p>営業時間</p>
-<p>定休日</p>
-<p>利用料金</p>
-<p>支払い方法</p>
-<%= link_to '施設情報登録' , facility_path(1) %>
+<%= form_with model: @facility, url: facilities_path ,local: true do |form| %>
+
+<%= %>
+
+<div class="facility_field">
+  <%= form.label :name ,"施設名" %>
+  <%= form.text_field :name %>
+</div>
+<div class="facility_field">
+  <%= form.label :prefecture ,"県名" %>
+  <%= form.text_field :prefecture %>
+</div>
+<div class="facility_field">
+  <%= form.label :address ,"住所" %>
+  <%= form.text_area :address %>
+</div>
+<div class="facility_field">
+  <%= form.label :homepage ,"ホームページ" %>
+  <%= form.text_field :homepage %>
+</div>
+<div class="facility_field">
+  <%= form.label :business_hours ,"営業時間" %>
+  <%= form.text_area :business_hours %>
+</div>
+<div class="facility_field">
+  <%= form.label :holiday ,"定休日" %>
+  <%= form.text_area :holiday %>
+</div>
+<div class="facility_field">
+  <%= form.label :fee ,"利用料金" %>
+  <%= form.text_area :fee %>
+</div>
+<div class="facility_field">
+  <%= form.label :payment ,"支払い方法" %>
+  <%= form.text_area :payment %>
+</div>
+<div class="facility_field">
+  <%= form.label :comment ,"備考" %>
+  <%= form.text_area :comment %>
+</div>
+<%= form.submit "施設情報登録" %>
+<% end %>
 <br>
+<h2>以下は未実装</h2>
 <br>
 <p>室内</p>
 <p>風呂イス</p>
 <select name="example">
-<option value="0">0ヶ</option><option value="1">1ヶ</option><option value="2">2ヶ</option><option value="3">3ヶ</option>
+  <option value="0">0ヶ</option><option value="1">1ヶ</option><option value="2">2ヶ</option><option value="3">3ヶ</option>
 </select>
 <p>デッキチェア</p>
 <select name="example">
-<option value="0">0ヶ</option><option value="1">1ヶ</option><option value="2">2ヶ</option><option value="3">3ヶ</option>
+  <option value="0">0ヶ</option><option value="1">1ヶ</option><option value="2">2ヶ</option><option value="3">3ヶ</option>
 </select>
 <p>リクライニングチェア</p>
 <select name="example">
-<option value="0">0ヶ</option><option value="1">1ヶ</option><option value="2">2ヶ</option><option value="3">3ヶ</option>
+  <option value="0">0ヶ</option><option value="1">1ヶ</option><option value="2">2ヶ</option><option value="3">3ヶ</option>
 </select>
 <p>ベンチ系（背もたれあり）</p>
 <select name="example">
-<option value="0">0ヶ</option><option value="1">1ヶ</option><option value="2">2ヶ</option><option value="3">3ヶ</option>
+  <option value="0">0ヶ</option><option value="1">1ヶ</option><option value="2">2ヶ</option><option value="3">3ヶ</option>
 </select>
 <p>ベンチ系（背もたれなし）</p>
 <select name="example">
-<option value="0">0ヶ</option><option value="1">1ヶ</option><option value="2">2ヶ</option><option value="3">3ヶ</option>
+  <option value="0">0ヶ</option><option value="1">1ヶ</option><option value="2">2ヶ</option><option value="3">3ヶ</option>
 </select>
 <br>
 <br>

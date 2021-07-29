@@ -1,15 +1,31 @@
 <h2>facility#show.html</h2>
-<%= link_to '評価・コメント' , new_review_path %>
+<%= link_to '評価・コメントをする' , new_review_path %>
 <%= link_to 'お気に入り追加' , facilities_path %>
-<%= link_to '情報編集' , edit_facility_path(1) %>
+<%= link_to '情報編集' , edit_facility_path(@facility.id) %>
 <br>
-<p>県</p>
-<p>住所</p>
-<p>施設名</p>
-<p>ホームページ</p>
-<p>営業時間</p>
-<p>定休日</p>
-<p>利用料金</p>
-<p>支払い方法</p>
-<br>
+<table>
+<tr>
+  <th>施設名</th>
+  <th>県名</th>
+  <th>住所</th>
+  <th>ホームページ</th>
+  <th>営業時間</th>
+  <th>定休日</th>
+  <th>利用料金</th>
+  <th>支払い方法</th>
+  <th>備考</th>
+</tr>
+<tr>
+  <td><%=@facility.name%></td>
+  <td><%=@facility.prefecture%></td>
+  <td><%=@facility.address%></td>
+  <td><%=@facility.homepage%></td>
+  <td><%=@facility.business_hours%></td>
+  <td><%=@facility.holiday%></td>
+  <td><%=@facility.fee%></td>
+  <td><%=@facility.payment%></td>
+  <td><%=@facility.comment%></td>
+</tr>
+</table>
+
 <a href="javascript:history.back()">[戻る]</a>
