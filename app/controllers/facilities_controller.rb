@@ -2,7 +2,7 @@ class FacilitiesController < ApplicationController
 
   def search
     @facility = Facility.limit(3).order("updated_at DESC")
-
+    @review = Review.limit(3).order("updated_at DESC")
   end
 
   def new
