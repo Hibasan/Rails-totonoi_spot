@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sex: 1
+  dry: 1
+  light: 1
+  wide: 1
+  comment: MyString
+  user: one
+  facility: one
+
+two:
+  sex: 1
+  dry: 1
+  light: 1
+  wide: 1
+  comment: MyString
+  user: two
+  facility: two
