@@ -12,6 +12,11 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def show
+    @review = Review.find(params[:id])
+  end
+
+
   private
   def review_params
     params.require(:review).permit(:sex, :dry, :light, :wide, :comment,:user_id, :facility_id)

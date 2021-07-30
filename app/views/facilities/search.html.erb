@@ -9,13 +9,13 @@
 <br>
 <br>
 <h3>最近更新された施設</h3>
-<% @facility.each do |facility| %>
+<% @facilities.each do |facility| %>
 <%= link_to facility.name , facility_path(facility.id) %>
 <br>
 <% end %>
 <br>
 <h3>最近投稿された口コミ</h3>
-<% @review.each do |review| %>
+<% @reviews.each do |review| %>
 <%= link_to "#{review.user.name}さんの#{review.facility.name}への口コミ" , review_path(review.id) %>
 <br>
 <% end %>

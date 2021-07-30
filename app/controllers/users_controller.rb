@@ -5,4 +5,10 @@ class UsersController < ApplicationController
     @resource_name = :user
     @devise_mapping = Devise.mappings
   end
+
+
+  def review
+    @reviews = Review.where(user_id: current_user.id)
+  end
+
 end

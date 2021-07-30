@@ -1,1 +1,6 @@
 <h2>user#review.html</h2>
+<h2>自分の口コミ一覧</h2>
+<% @reviews.each do |review| %>
+<%= link_to "#{review.user.name}さんの#{review.facility.name}への口コミ" , review_path(review.id) %>
+<br>
+<% end %>
