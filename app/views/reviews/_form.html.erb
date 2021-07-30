@@ -1,17 +1,28 @@
-<h3>評価</h3>
-<p>乾燥</p>
-<select name="example">
-<option value="1">★1</option><option value="2">★2</option><option value="3">★3</option><option value="4">★4</option><option value="5">★5</option>
-</select>
-<p>照明</p><select name="example">
-<option value="1">★1</option><option value="2">★2</option><option value="3">★3</option><option value="4">★4</option><option value="5">★5</option>
-</select>
-<p>広さ</p>
-<select name="example">
-<option value="1">★1</option><option value="2">★2</option><option value="3">★3</option><option value="4">★4</option><option value="5">★5</option>
-</select>
-<p>コメント</p>
-<textarea name="name" rows="4" cols="40"></textarea>
+<%= form_with model: @review ,local: true do |form| %>
+<div class="review_field">
+  <%= form.label :sex ,"男性" %>
+  <%= form.radio_button :sex, :"男性" %>
+  <%= form.label :sex ,"女性" %>
+  <%= form.radio_button :sex, :"女性" %>
+</div>
+<div class="review_field">
+  <%= form.label :dry ,"湿度" %>
+  <%= form.select :dry,[["★1",1],["★2",2],["★3",3],["★4",4],["★5",5]] %>
+</div>
+<div class="review_field">
+  <%= form.label :light ,"明るさ" %>
+  <%= form.select :light,[["★1",1],["★2",2],["★3",3],["★4",4],["★5",5]] %>
+</div>
+<div class="review_field">
+  <%= form.label :wide ,"広さ" %>
+  <%= form.select :wide,[["★1",1],["★2",2],["★3",3],["★4",4],["★5",5]] %>
+</div>
+<div class="review_field">
+  <%= form.label :comment ,"コメント" %>
+  <%= form.text_area :comment %>
+</div>
+  <%= form.hidden_field :user_id,value: current_user.id %>
+  <%= form.hidden_field :facility_id,value: params[:facility_id].to_i %>
+<%= form.submit "投稿する" %>
+<% end %>
 <br>
-<br>
-<%= link_to '投稿する' , facility_path(1) %>

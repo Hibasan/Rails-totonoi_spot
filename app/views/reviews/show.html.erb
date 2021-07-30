@@ -1,7 +1,26 @@
 <h2>review#show.html</h2>
 <br>
-<br>
-<br>
+<table>
+<tr>
+  <th>施設名</th>
+  <th>ユーザー名</th>
+  <th>湿度</th>
+  <th>明るさ</th>
+  <th>広さ</th>
+  <th>コメント</th>
+  <th>作成日</th>
+</tr>
+<tr>
+  <td><%=@review.facility.name%></td>
+  <td><%=@review.user.name%></td>
+  <td><%=@review.dry%></td>
+  <td><%=@review.light%></td>
+  <td><%=@review.wide%></td>
+  <td><%=@review.comment%></td>
+  <td><%=@review.created_at%></td>
+
+</tr>
+</table>
 <br>
 <br>
 <a href="javascript:history.back()">[戻る]</a>
