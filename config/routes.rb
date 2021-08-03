@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get '/about',to: 'facilities#about'
   get '/facilities/search',to: 'facilities#search'
   get '/users/review',to: 'users#review'
+  get '/users/favorite_facilities',to: 'users#favorite_facilities'
   resources :users
   resources :reviews
   resources :facilities
