@@ -67,4 +67,47 @@
 </table>
 <% end %>
 
+
+<% @rest_areas.each do |rest| %>
+<h3>休憩エリア情報（室内）</h3>
+<table>
+<tr>
+  <th>性別</th>
+  <th>風呂イス</th>
+  <th>デッキチェア</th>
+  <th>リラックスチェア</th>
+  <th>ベンチ</th>
+  <th>背もたれなしベンチ</th>
+</tr>
+<tr>
+  <td><%= rest.sex %></td>
+  <td><%= rest.inside_bath_chair %></td>
+  <td><%= rest.inside_deck_chair %></td>
+  <td><%= rest.inside_relax_chair %></td>
+  <td><%= rest.inside_bench %></td>
+  <td><%= rest.inside_bench_non_backrest %></td>
+</tr>
+</table>
+
+<h3>休憩エリア情報（室外）</h3>
+<table>
+<tr>
+  <th>性別</th>
+  <th>風呂イス</th>
+  <th>デッキチェア</th>
+  <th>リラックスチェア</th>
+  <th>ベンチ</th>
+  <th>背もたれなしベンチ</th>
+</tr>
+<tr>
+  <td><%= rest.sex %></td>
+  <td><%= rest.outside_bath_chair %></td>
+  <td><%= rest.outside_deck_chair %></td>
+  <td><%= rest.outside_relax_chair %></td>
+  <td><%= rest.outside_bench %></td>
+  <td><%= rest.outside_bench_non_backrest %></td>
+</tr>
+</table>
+<% end %>
+
 <a href="javascript:history.back()">[戻る]</a>

@@ -9,6 +9,7 @@ class FacilitiesController < ApplicationController
     @facility = Facility.new
     @facility.saunas.build
     @facility.water_baths.build
+    @facility.rest_areas.build
   end
 
   def create
@@ -24,12 +25,14 @@ class FacilitiesController < ApplicationController
     @facility = Facility.find(params[:id])
     @saunas = @facility.saunas
     @water_baths = @facility.water_baths
+    @rest_areas = @facility.rest_areas
   end
 
   def edit
     @facility = Facility.find(params[:id])
     @facility.saunas.build
     @facility.water_baths.build
+    @facility.rest_areas.build
   end
 
   def update
@@ -53,8 +56,14 @@ class FacilitiesController < ApplicationController
                                      :homepage, :business_hours, :holiday,
                                      :fee, :payment, :comment,
                                      saunas_attributes: [
-                                       :id, :sex , :temperature, :intern, :comment],
+                                       :id, :sex, :temperature, :intern, :comment],
                                      water_baths_attributes: [
-                                      :id, :sex , :temperature, :intern, :comment])
+                                      :id, :sex, :temperature, :intern, :comment],
+                                    rest_areas_attributes: [
+                                      :id, :sex, :inside_bath_chair, :inside_deck_chair,
+                                      :inside_relax_chair, :inside_bench, :inside_bench_non_backrest,
+                                      :outside_bath_chair, :outside_deck_chair,
+                                      :outside_relax_chair, :outside_bench, :outside_bench_non_backrest,
+                                      :comment ])
   end
 end
