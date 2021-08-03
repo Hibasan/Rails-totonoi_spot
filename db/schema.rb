@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_03_045921) do
+ActiveRecord::Schema.define(version: 2021_08_03_053310) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,25 @@ ActiveRecord::Schema.define(version: 2021_08_03_045921) do
     t.index ["address"], name: "index_facilities_on_address"
     t.index ["name"], name: "index_facilities_on_name"
     t.index ["prefecture"], name: "index_facilities_on_prefecture"
+  end
+
+  create_table "rest_areas", force: :cascade do |t|
+    t.integer "sex"
+    t.integer "inside_bath_chair"
+    t.integer "inside_deck_chair"
+    t.integer "inside_relax_chair"
+    t.integer "inside_bench"
+    t.integer "inside_bench_non_backrest"
+    t.integer "outside_bath_chair"
+    t.integer "outside_deck_chair"
+    t.integer "outside_relax_chair"
+    t.integer "outside_bench"
+    t.integer "outside_bench_non_backrest"
+    t.string "comment"
+    t.bigint "facility_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["facility_id"], name: "index_rest_areas_on_facility_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -92,6 +111,7 @@ ActiveRecord::Schema.define(version: 2021_08_03_045921) do
     t.index ["facility_id"], name: "index_water_baths_on_facility_id"
   end
 
+  add_foreign_key "rest_areas", "facilities"
   add_foreign_key "reviews", "facilities"
   add_foreign_key "reviews", "users"
   add_foreign_key "saunas", "facilities"
