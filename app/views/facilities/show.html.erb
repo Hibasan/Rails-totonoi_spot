@@ -5,6 +5,7 @@
 <%= link_to '削除', facility_path(@facility.id),method: :delete ,data: { confirm: '削除します' } %>
 
 <br>
+<h2>施設情報</h2>
 <table>
 <tr>
   <th>施設名</th>
@@ -29,5 +30,23 @@
   <td><%=@facility.comment%></td>
 </tr>
 </table>
+
+<% @saunas.each do |sauna| %>
+<h3>サウナ情報</h3>
+<table>
+<tr>
+  <th>性別</th>
+  <th>温度</th>
+  <th>収容人数</th>
+  <th>コメント</th>
+</tr>
+<tr>
+  <td><%=sauna.sex%></td>
+  <td><%=sauna.temperature%></td>
+  <td><%=sauna.intern%></td>
+  <td><%=sauna.comment%></td>
+</tr>
+</table>
+<% end %>
 
 <a href="javascript:history.back()">[戻る]</a>

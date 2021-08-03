@@ -7,6 +7,7 @@ class FacilitiesController < ApplicationController
 
   def new
     @facility = Facility.new
+    @facility.saunas.build
   end
 
   def create
@@ -20,10 +21,12 @@ class FacilitiesController < ApplicationController
 
   def show
     @facility = Facility.find(params[:id])
+    @saunas = @facility.saunas
   end
 
   def edit
     @facility = Facility.find(params[:id])
+    @facility.saunas.build
   end
 
   def update
@@ -45,6 +48,9 @@ class FacilitiesController < ApplicationController
   def facility_params
     params.require(:facility).permit(:id, :name, :prefecture, :address,
                                      :homepage, :business_hours, :holiday,
-                                     :fee, :payment, :comment)
+                                     :fee, :payment, :comment,
+                                     saunas_attributes: [
+                                       :id, :sex , :temperature, :intern, :comment
+                                     ])
   end
 end
