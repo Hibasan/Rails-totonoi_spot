@@ -59,5 +59,27 @@
       <%= sauna.text_area :comment %>
     </div>
   <% end %>
+
+  <h2>水風呂情報</h2>
+  <%= form.fields_for :water_baths do |water| %>
+    <div class="water_field">
+      <%= water.label :sex ,"男性" %>
+      <%= water.radio_button :sex, :"男性" %>
+      <%= water.label :sex ,"女性" %>
+      <%= water.radio_button :sex, :"女性" %>
+    </div>
+    <div class="water_field">
+      <%= water.label :temperature ,"温度" %><br>
+      <%= water.number_field :temperature %>
+    </div>
+    <div class="water_field">
+      <%= water.label :intern ,"収容人数" %><br>
+      <%= water.number_field :intern %>
+    </div>
+    <div class="water_field">
+      <%= water.label :comment ,"コメント" %><br>
+      <%= water.text_area :comment %>
+    </div>
+  <% end %>
   <%= form.submit "施設情報登録" %>
 <% end %>
