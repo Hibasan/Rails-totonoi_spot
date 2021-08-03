@@ -11,4 +11,9 @@ class UsersController < ApplicationController
     @reviews = Review.where(user_id: current_user.id)
   end
 
+
+  def favorite_facilities
+    @favorites = FavoriteFacility.where(user_id: current_user.id)
+  end
+
 end

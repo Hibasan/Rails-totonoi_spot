@@ -1,5 +1,6 @@
 class Facility < ApplicationRecord
   has_many :reviews, dependent: :destroy
+  has_many :favorite_facilities, dependent: :destroy
   has_many :saunas, dependent: :destroy
   has_many :water_baths, dependent: :destroy
   has_many :rest_areas, dependent: :destroy
