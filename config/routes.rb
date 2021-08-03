@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :users
   resources :reviews
   resources :facilities
+  resources :favorite_facilities
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 end
 

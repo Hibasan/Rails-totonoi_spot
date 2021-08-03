@@ -26,6 +26,7 @@ class FacilitiesController < ApplicationController
     @saunas = @facility.saunas
     @water_baths = @facility.water_baths
     @rest_areas = @facility.rest_areas
+    @favorite = current_user.favorite_facilities.find_by(facility_id: @facility.id)
   end
 
   def edit
