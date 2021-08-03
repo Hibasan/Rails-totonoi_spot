@@ -1,0 +1,2 @@
+class FavoriteFacility < ApplicationRecord
+end

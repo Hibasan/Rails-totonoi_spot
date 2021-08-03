@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_03_053310) do
+ActiveRecord::Schema.define(version: 2021_08_03_063608) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,15 @@ ActiveRecord::Schema.define(version: 2021_08_03_053310) do
     t.index ["address"], name: "index_facilities_on_address"
     t.index ["name"], name: "index_facilities_on_name"
     t.index ["prefecture"], name: "index_facilities_on_prefecture"
+  end
+
+  create_table "favorite_facilities", force: :cascade do |t|
+    t.bigint "facility_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["facility_id"], name: "index_favorite_facilities_on_facility_id"
+    t.index ["user_id"], name: "index_favorite_facilities_on_user_id"
   end
 
   create_table "rest_areas", force: :cascade do |t|
@@ -111,6 +120,8 @@ ActiveRecord::Schema.define(version: 2021_08_03_053310) do
     t.index ["facility_id"], name: "index_water_baths_on_facility_id"
   end
 
+  add_foreign_key "favorite_facilities", "facilities"
+  add_foreign_key "favorite_facilities", "users"
   add_foreign_key "rest_areas", "facilities"
   add_foreign_key "reviews", "facilities"
   add_foreign_key "reviews", "users"
