@@ -41,10 +41,28 @@
   <th>コメント</th>
 </tr>
 <tr>
-  <td><%=sauna.sex%></td>
-  <td><%=sauna.temperature%></td>
-  <td><%=sauna.intern%></td>
-  <td><%=sauna.comment%></td>
+  <td><%= sauna.sex %></td>
+  <td><%= sauna.temperature %></td>
+  <td><%= sauna.intern %></td>
+  <td><%= sauna.comment %></td>
+</tr>
+</table>
+<% end %>
+
+<% @water_baths.each do |water| %>
+<h3>水風呂情報</h3>
+<table>
+<tr>
+  <th>性別</th>
+  <th>温度</th>
+  <th>収容人数</th>
+  <th>コメント</th>
+</tr>
+<tr>
+  <td><%= water.sex %></td>
+  <td><%= water.temperature %></td>
+  <td><%= water.intern %></td>
+  <td><%= water.comment %></td>
 </tr>
 </table>
 <% end %>

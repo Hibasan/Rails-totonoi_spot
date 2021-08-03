@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sex: 1
+  temperature: 1
+  intern: 1
+  comment: MyString
+
+two:
+  sex: 1
+  temperature: 1
+  intern: 1
+  comment: MyString

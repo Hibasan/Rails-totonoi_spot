@@ -8,6 +8,7 @@ class FacilitiesController < ApplicationController
   def new
     @facility = Facility.new
     @facility.saunas.build
+    @facility.water_baths.build
   end
 
   def create
@@ -22,11 +23,13 @@ class FacilitiesController < ApplicationController
   def show
     @facility = Facility.find(params[:id])
     @saunas = @facility.saunas
+    @water_baths = @facility.water_baths
   end
 
   def edit
     @facility = Facility.find(params[:id])
     @facility.saunas.build
+    @facility.water_baths.build
   end
 
   def update
@@ -50,7 +53,8 @@ class FacilitiesController < ApplicationController
                                      :homepage, :business_hours, :holiday,
                                      :fee, :payment, :comment,
                                      saunas_attributes: [
-                                       :id, :sex , :temperature, :intern, :comment
-                                     ])
+                                       :id, :sex , :temperature, :intern, :comment],
+                                     water_baths_attributes: [
+                                      :id, :sex , :temperature, :intern, :comment])
   end
 end
