@@ -52,6 +52,11 @@ li { list-style: none; }
   display: table-cell;
 }
 
+/* facilities#about.html */
+.about_content {
+  text-align: center;
+}
+
 
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
