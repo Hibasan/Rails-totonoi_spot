@@ -1,9 +1,79 @@
 <h2>facilities#index.html</h2>
 <br>
 <br>
-<%= link_to '施設１' , facility_path(1) %>
-<br>
-<%= link_to '施設２' , facility_path(2) %>
+
+<% @facilities.each do |facility| %>
+<div class="facility_index">
+  <%= link_to facility_path(facility.id) do %>
+  <div class="facility_index_top">
+  <%= facility.name %>
+  <%= facility.prefecture + facility.address %>
+  </div>
+  <div class="facility_index_left">
+    <span>写真<span>
+  </div>
+  <% end %>
+  <div class="facility_index_right">
+  <ul class="facility_index_view">
+    <li>室内：</li>
+    <li><%= "風呂イス#{facility.rest_areas.find_by(sex: "男性").inside_bath_chair}" %></li>
+    <li><%= "デッキチェア#{facility.rest_areas.find_by(sex: "男性").inside_deck_chair}" %></li>
+    <li><%= "リクライニングチェア#{facility.rest_areas.find_by(sex: "男性").inside_relax_chair}" %></li>
+    <li><%= "ベンチ#{facility.rest_areas.find_by(sex: "男性").inside_bench}" %></li>
+    <li><%= "ベンチ(背もたれなし)#{facility.rest_areas.find_by(sex: "男性").inside_bench_non_backrest}" %></li>
+  </ul>
+  <ul class="facility_index_view">
+    <li>室外：</li>
+    <li><%= "風呂イス#{facility.rest_areas.find_by(sex: "男性").outside_bath_chair}" %></li>
+    <li><%= "デッキチェア#{facility.rest_areas.find_by(sex: "男性").outside_deck_chair}" %></li>
+    <li><%= "リクライニングチェア#{facility.rest_areas.find_by(sex: "男性").outside_relax_chair}" %></li>
+    <li><%= "ベンチ#{facility.rest_areas.find_by(sex: "男性").outside_bench}" %></li>
+    <li><%= "ベンチ(背もたれなし)#{facility.rest_areas.find_by(sex: "男性").outside_bench_non_backrest}" %></li>
+  </ul>
+  <ul class="facility_index_view">
+    <li>サウナ：</li>
+    <% facility.saunas.where(sex: "男性").each do |sauna| %>
+    <li><%= "#{sauna.temperature}℃" %></li>
+    <% end %>
+  </ul>
+  <ul class="facility_index_view">
+    <li>水風呂：</li>
+    <% facility.water_baths.where(sex: "男性").each do |water| %>
+    <li><%= "#{water.temperature}℃" %></li>
+    <% end %>
+  </ul>
+
+  <ul class="facility_index_view">
+    <li>室内：</li>
+    <li><%= "風呂イス#{facility.rest_areas.find_by(sex: "男性").inside_bath_chair}" %></li>
+    <li><%= "デッキチェア#{facility.rest_areas.find_by(sex: "男性").inside_deck_chair}" %></li>
+    <li><%= "リクライニングチェア#{facility.rest_areas.find_by(sex: "男性").inside_relax_chair}" %></li>
+    <li><%= "ベンチ#{facility.rest_areas.find_by(sex: "男性").inside_bench}" %></li>
+    <li><%= "ベンチ(背もたれなし)#{facility.rest_areas.find_by(sex: "男性").inside_bench_non_backrest}" %></li>
+  </ul>
+  <ul class="facility_index_view">
+    <li>室外：</li>
+    <li><%= "風呂イス#{facility.rest_areas.find_by(sex: "男性").outside_bath_chair}" %></li>
+    <li><%= "デッキチェア#{facility.rest_areas.find_by(sex: "男性").outside_deck_chair}" %></li>
+    <li><%= "リクライニングチェア#{facility.rest_areas.find_by(sex: "男性").outside_relax_chair}" %></li>
+    <li><%= "ベンチ#{facility.rest_areas.find_by(sex: "男性").outside_bench}" %></li>
+    <li><%= "ベンチ(背もたれなし)#{facility.rest_areas.find_by(sex: "男性").outside_bench_non_backrest}" %></li>
+  </ul>
+  <ul class="facility_index_view">
+    <li>サウナ：</li>
+    <% facility.saunas.where(sex: "男性").each do |sauna| %>
+    <li><%= "#{sauna.temperature}℃" %></li>
+    <% end %>
+  </ul>
+  <ul class="facility_index_view">
+    <li>水風呂</li>
+    <% facility.water_baths.where(sex: "男性").each do |water| %>
+    <li><%= "#{water.temperature}℃" %></li>
+    <% end %>
+  </ul>
+  </div>
+</div>
+<% end %>
 <br>
 <br>
 <a href="javascript:history.back()">[戻る]</a>

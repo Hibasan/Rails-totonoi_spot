@@ -67,6 +67,24 @@ li { list-style: none; }
 }
 
 
+/* facilities#index.html */
+
+.facility_index_left{
+  background-color: #FFF;
+  height: 180px;
+  width: 180px;
+  float: left;
+}
+
+.facility_index_view{
+  display: flex;
+}
+
+.facility_index_view li{
+  padding: 0 3px;
+}
+
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
