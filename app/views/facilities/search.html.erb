@@ -1,7 +1,5 @@
-<h2>facilities#search.html</h2>
 <%= link_to '施設登録' , new_facility_path %>
 <br>
-
 <%= form_with url: facilities_path do |f| %>
   <div class="search_field">
     <%= f.label :address ,"キーワード" %>
@@ -29,31 +27,37 @@
   </div>
   <div class="search_field">
     <%= f.label :sex, '性別' %>
-    <%= f.label :sex ,"男性" %>
     <%= f.radio_button :sex, :"男性" %>
-    <%= f.label :sex ,"女性" %>
+    <%= f.label :sex ,"男性" %>
     <%= f.radio_button :sex, :"女性" %>
+    <%= f.label :sex ,"女性" %>
   </div>
   <%= f.submit "検索_未実装",name: :search%>
 <% end %>
-
-<br>
-<br>
+<h3>最近評価された施設</h3>
+<% @reviews.each do |review| %>
+  <div class="facility_review">
+  <%= link_to facility_path(review.facility.id) do %>
+    <%= review.facility.name %>
+    <%= review.facility.prefecture + review.facility.address %>
+  <% end %>
+  <br>
+  <%= link_to review_path(review.id) do %>
+    <%= "#{review.user.name}さんの評価："%>
+    <%= "★" * (review.dry + review.light + review.wide) %><br>
+    <%= "#{review.comment}" %>
+  <% end %>
+  </div>
+<% end %>
 <h3>最近更新された施設</h3>
 <% @facilities.each do |facility| %>
-<%= link_to facility.name , facility_path(facility.id) %>
-<br>
+  <%= link_to facility_path(facility.id) do %>
+    <%= facility.name %>
+    <%= facility.prefecture + facility.address %>
+  <% end %>
+  <br>
 <% end %>
 <br>
-<h3>最近投稿された口コミ</h3>
-<% @reviews.each do |review| %>
-<%= link_to "#{review.user.name}さんの#{review.facility.name}への口コミ" , review_path(review.id) %>
-<br>
-<% end %>
-<p>もっと見る</p>
-<br>
-<br>
-
 <h2>以下、未実装</h2>
 <h3>都道府県</h3>
 <%= link_to '北海道' , facilities_path %>
