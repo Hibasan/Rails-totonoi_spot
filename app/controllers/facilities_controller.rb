@@ -21,6 +21,10 @@ class FacilitiesController < ApplicationController
     end
   end
 
+  def index
+    @facilities = Facility.all
+  end
+
   def show
     @facility = Facility.find(params[:id])
     @saunas = @facility.saunas
