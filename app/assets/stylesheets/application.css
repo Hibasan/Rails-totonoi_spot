@@ -57,6 +57,15 @@ li { list-style: none; }
   text-align: center;
 }
 
+/* facilities#search.html */
+.facility_review{
+  margin: 5px;
+  padding: 5px;
+  width: 80%;
+  background-color: #FFF;
+  border-radius: 10px;
+}
+
 
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
