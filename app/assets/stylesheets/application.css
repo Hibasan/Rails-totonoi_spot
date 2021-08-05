@@ -69,15 +69,35 @@ li { list-style: none; }
 
 /* facilities#index.html */
 
+.facility_index{
+  height: 260px;
+}
+
+.facility_index h4{
+  margin: 0;
+}
+
+.facility_index_top{
+  align-items: flex-end;
+  display: flex;
+}
+
+.facility_index_top h2{
+  margin: 0 5px;
+}
+
 .facility_index_left{
   background-color: #FFF;
-  height: 180px;
-  width: 180px;
+  height: 200px;
+  width: 200px;
   float: left;
+  margin: 10px;
 }
 
 .facility_index_view{
+  padding-left: 20px;
   display: flex;
+  font-size: 0.9rem;
 }
 
 .facility_index_view li{
