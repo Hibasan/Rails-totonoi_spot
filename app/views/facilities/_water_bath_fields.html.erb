@@ -1,0 +1,21 @@
+<div class="nested_fields">
+  <h2>水風呂情報</h2>
+    <div class="water_field">
+      <%= f.label :sex ,"男性" %>
+      <%= f.radio_button :sex, :"男性" %>
+      <%= f.label :sex ,"女性" %>
+      <%= f.radio_button :sex, :"女性" %>
+    </div>
+    <div class="water_field">
+      <%= f.label :temperature ,"温度" %><br>
+      <%= f.number_field :temperature %>
+    </div>
+    <div class="water_field">
+      <%= f.label :intern ,"収容人数" %><br>
+      <%= f.number_field :intern %>
+    </div>
+    <div class="water_field">
+      <%= f.label :comment ,"コメント" %><br>
+      <%= f.text_area :comment %>
+    </div>
+</div>

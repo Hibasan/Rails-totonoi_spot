@@ -38,49 +38,29 @@
   </div>
   <%= form.submit "施設情報登録" %>
 
-  <h2>サウナ情報</h2>
-  <%= form.fields_for :saunas do |sauna| %>
-    <div class="sauna_field">
-      <%= sauna.label :sex ,"男性" %>
-      <%= sauna.radio_button :sex, :"男性" %>
-      <%= sauna.label :sex ,"女性" %>
-      <%= sauna.radio_button :sex, :"女性" %>
-    </div>
-    <div class="sauna_field">
-      <%= sauna.label :temperature ,"温度" %><br>
-      <%= sauna.number_field :temperature %>
-    </div>
-    <div class="sauna_field">
-      <%= sauna.label :intern ,"収容人数" %><br>
-      <%= sauna.number_field :intern %>
-    </div>
-    <div class="sauna_field">
-      <%= sauna.label :comment ,"コメント" %><br>
-      <%= sauna.text_area :comment %>
-    </div>
-  <% end %>
+  <div class="sauna">
+    <%= form.fields_for :saunas do |sauna| %>
+      <% render "sauna_fields",f: sauna %>
+    <% end %>
+  </div>
+  <div id="detail-association-insertion-point"></div>
+  <%= link_to_add_association 'サウナ追加', form, :saunas,
+    data: {
+      association_insertion_node: '#detail-association-insertion-point',
+      association_insertion_method: 'append' }
+   %>
 
-  <h2>水風呂情報</h2>
+<div class="water_bath">
   <%= form.fields_for :water_baths do |water| %>
-    <div class="water_field">
-      <%= water.label :sex ,"男性" %>
-      <%= water.radio_button :sex, :"男性" %>
-      <%= water.label :sex ,"女性" %>
-      <%= water.radio_button :sex, :"女性" %>
-    </div>
-    <div class="water_field">
-      <%= water.label :temperature ,"温度" %><br>
-      <%= water.number_field :temperature %>
-    </div>
-    <div class="water_field">
-      <%= water.label :intern ,"収容人数" %><br>
-      <%= water.number_field :intern %>
-    </div>
-    <div class="water_field">
-      <%= water.label :comment ,"コメント" %><br>
-      <%= water.text_area :comment %>
-    </div>
+    <% render "water_bath_fields",f: water %>
   <% end %>
+</div>
+<div id="detail-association-insertion-point"></div>
+<%= link_to_add_association '水風呂追加', form, :water_baths,
+  data: {
+    association_insertion_node: '#detail-association-insertion-point',
+    association_insertion_method: 'append' }
+ %>
 
   <h2>休憩エリア情報</h2>
   <%= form.fields_for :rest_areas do |rest| %>
