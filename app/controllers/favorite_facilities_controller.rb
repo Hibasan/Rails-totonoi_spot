@@ -1,4 +1,5 @@
 class FavoriteFacilitiesController < ApplicationController
+  
   def create
     favorite = current_user.favorite_facilities.create(facility_id: params[:facility_id])
     redirect_to facility_path(params[:facility_id]), notice: "さんのブログをお気に入り登録しました"
