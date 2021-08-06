@@ -1,15 +1,13 @@
-<h2>facility#show.html</h2>
-<%= link_to '評価・コメントをする' , new_review_path(facility_id: @facility.id) %>
-
-<% if @favorite.present? %>
-<%= link_to 'お気に入り解除' , favorite_facility_path(id: @favorite.id,facility_id: @facility.id), method: :delete %>
-<% else %>
-<%= link_to 'お気に入り追加' , favorite_facilities_path(facility_id: @facility.id), method: :post %>
+<% if user_signed_in? %>
+  <%= link_to '評価・コメントをする' , new_review_path(facility_id: @facility.id) %>
+  <% if @favorite.present? %>
+    <%= link_to 'お気に入り解除' , favorite_facility_path(id: @favorite.id,facility_id: @facility.id), method: :delete %>
+    <% else %>
+    <%= link_to 'お気に入り追加' , favorite_facilities_path(facility_id: @facility.id), method: :post %>
+  <% end %>
+  <%= link_to '情報編集' , edit_facility_path(@facility.id) %>
+  <%= link_to '削除', facility_path(@facility.id),method: :delete ,data: { confirm: '削除します' } %>
 <% end %>
-
-<%= link_to '情報編集' , edit_facility_path(@facility.id) %>
-<%= link_to '削除', facility_path(@facility.id),method: :delete ,data: { confirm: '削除します' } %>
-
 <br>
 <h2>施設情報</h2>
 <table>
