@@ -40,7 +40,7 @@ class FacilitiesController < ApplicationController
     @facility = Facility.find(params[:id])
     @facility.saunas.build
     @facility.water_baths.build
-    @facility.rest_areas.build
+    @facility.rest_areas.build if @facility.rest_areas[0].nil?
   end
 
   def update
