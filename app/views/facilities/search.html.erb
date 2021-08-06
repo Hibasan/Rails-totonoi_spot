@@ -1,4 +1,6 @@
-<%= link_to '施設登録' , new_facility_path %>
+<% if user_signed_in? %>
+  <%= link_to '施設登録' , new_facility_path %>
+<% end %>
 <br>
 <%= form_with url: facilities_path do |f| %>
   <div class="search_field">
