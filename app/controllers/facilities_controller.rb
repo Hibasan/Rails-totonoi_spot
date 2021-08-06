@@ -1,4 +1,5 @@
 class FacilitiesController < ApplicationController
+  before_action :authenticate_user!, except: [:top, :about, :search, :show, :index]
 
   def search
     @facilities = Facility.limit(3).order("updated_at DESC")

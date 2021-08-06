@@ -1,4 +1,6 @@
 class ReviewsController < ApplicationController
+  before_action :authenticate_user!, except: [:show]
+
   def new
     @review = Review.new
   end
@@ -15,7 +17,6 @@ class ReviewsController < ApplicationController
   def show
     @review = Review.find(params[:id])
   end
-
 
   private
   def review_params
