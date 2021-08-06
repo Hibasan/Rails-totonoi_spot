@@ -69,6 +69,53 @@ Facility.create!([
     fee: '2750円〜', payment: '現金', comment: ''}
   ])
 
+20.times do |n|
+  facility_id = n + 1
+  @id1 ||= n + 1
+  @id2 = @id1 + 1
+  temp_1 = rand(80..110)
+  intern_1 = rand(5..20)
+  temp_2 = rand(80..110)
+  intern_2 = rand(5..20)
+  Sauna.create!([
+  {id: @id1, facility_id: facility_id, sex: "男性", temperature: temp_1, intern: intern_1, comment: ""},
+  {id: @id2, facility_id: facility_id, sex: "女性", temperature: temp_2, intern: intern_2, comment: ""}
+  ])
+  temp_1 = rand(10..25)
+  intern_1 = rand(2..8)
+  temp_2 = rand(10..25)
+  intern_2 = rand(2..8)
+  WaterBath.create!([
+  {id: @id1, facility_id: facility_id, sex: "男性", temperature: temp_1, intern: intern_1, comment: ""},
+  {id: @id2, facility_id: facility_id, sex: "女性", temperature: temp_2, intern: intern_2, comment: ""}
+  ])
+  @id1 += 2
+end
+
+20.times do |n|
+  facility_id = n + 1
+  @id1 ||= n + 1
+  @id2 = @id1 + 1
+  @inside = []
+  @outside = []
+  @inside2 = []
+  @outside2 = []
+  5.times do
+    number = ["", "", "", "", "", 1, 2, 3, 4, 5]
+    @inside << number.shuffle[0]
+    @outside << number.shuffle[0]
+    @inside2 << number.shuffle[0]
+    @outside2 << number.shuffle[0]
+  end
+  RestArea.create!([
+  {id: @id1, facility_id: facility_id, sex: "男性", inside_bath_chair: @inside[0] , inside_deck_chair: @inside[1], inside_relax_chair: @inside[2], inside_bench: @inside[3],inside_bench_non_backrest: @inside[4],
+    outside_bath_chair: @outside[0], outside_deck_chair: @outside[1], outside_relax_chair: @outside[2], outside_bench: @outside[3],outside_bench_non_backrest: @outside[4]},
+  {id: @id2, facility_id: facility_id, sex: "女性", inside_bath_chair: @inside2[0] , inside_deck_chair: @inside2[1], inside_relax_chair: @inside2[2], inside_bench: @inside2[3],inside_bench_non_backrest: @inside2[4],
+    outside_bath_chair: @outside2[0], outside_deck_chair: @outside2[1], outside_relax_chair: @outside2[2], outside_bench: @outside2[3],outside_bench_non_backrest: @outside2[4]}
+  ])
+  @id1 += 2
+end
+
 Review.create!([
   { id: 1, user_id: 2, facility_id: 1, dry:3, light: 3, wide: 2, comment: ""  },
   { id: 2, user_id: 3, facility_id: 1, dry:4, light: 4, wide: 2, comment: "サウナイキタイ書かなきゃ……と寝落ちしたので朝書いてます。15時熱波に間に合うようチェックイン。パンダ小隊が。心臓をキュンと射撃されて靴箱へ。またひとつ井上さんの詩が、役目を終えゴートゥーヘブンした靴箱を葬送しておられました。ありがとう。"  },
