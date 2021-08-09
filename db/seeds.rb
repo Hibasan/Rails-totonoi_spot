@@ -102,17 +102,52 @@ end
 20.times do |n|
   facility_id = n + 1
   @number = []
-  20.times do
-    number = ["", "", "", "", "", "", "", 1, 2, 3]
-    @number << number.shuffle[0]
+  if 1 == rand(0..1)
+    5.times do
+      number = [nil, nil, nil, 1, 2, 3]
+      @number << number.shuffle[0]
+    end
+    Chair.create!(facility_id: facility_id, sex_id: 1, rest_area_id: 1, bath: @number[0] , deck: @number[1], relax: @number[2], bench: @number[3],bench_non_backrest: @number[4])
   end
-  Chair.create!([
-  {facility_id: facility_id, sex_id: 1, rest_area_id: 1, bath: @number[0] , deck: @number[1], relax: @number[2], bench: @number[3],bench_non_backrest: @number[4]},
-  {facility_id: facility_id, sex_id: 1, rest_area_id: 2, bath: @number[5] , deck: @number[6], relax: @number[7], bench: @number[8],bench_non_backrest: @number[9]},
-  {facility_id: facility_id, sex_id: 2, rest_area_id: 1, bath: @number[10] , deck: @number[11], relax: @number[12], bench: @number[13],bench_non_backrest: @number[14]},
-  {facility_id: facility_id, sex_id: 2, rest_area_id: 2, bath: @number[15] , deck: @number[16], relax: @number[17], bench: @number[18],bench_non_backrest: @number[19]}
-  ])
 end
+
+20.times do |n|
+  facility_id = n + 1
+  @number = []
+  if 1 == rand(0..1)
+    5.times do
+      number = [nil, nil, nil, 1, 2, 3]
+      @number << number.shuffle[0]
+    end
+    Chair.create!(facility_id: facility_id, sex_id: 1, rest_area_id: 2, bath: @number[0] , deck: @number[1], relax: @number[2], bench: @number[3],bench_non_backrest: @number[4])
+  end
+end
+
+20.times do |n|
+  facility_id = n + 1
+  @number = []
+  if 1 == rand(0..1)
+    5.times do
+      number = [nil, nil, nil, 1, 2, 3]
+      @number << number.shuffle[0]
+    end
+    Chair.create!(facility_id: facility_id, sex_id: 2, rest_area_id: 1, bath: @number[0] , deck: @number[1], relax: @number[2], bench: @number[3],bench_non_backrest: @number[4])
+  end
+end
+
+20.times do |n|
+  facility_id = n + 1
+  @number = []
+  if 1 == rand(0..1)
+    5.times do
+      number = [nil, nil, nil, 1, 2, 3]
+      @number << number.shuffle[0]
+    end
+    Chair.create!(facility_id: facility_id, sex_id: 2, rest_area_id: 2, bath: @number[0] , deck: @number[1], relax: @number[2], bench: @number[3],bench_non_backrest: @number[4])
+  end
+end
+
+
 
 Review.create!([
   {user_id: 2, facility_id: 1, dry:3, light: 3, wide: 2, comment: ""  },
