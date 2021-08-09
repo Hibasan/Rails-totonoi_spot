@@ -6,6 +6,16 @@ User.create!([
   {name: 'あるふぁロイ',    email: 'test05@email.com',    password: 'password',    password_confirmation: 'password',    confirmed_at: Time.now,    admin: false  }
   ])
 
+Sex.create!([
+  {id: 1, sex: "男性"},
+  {id: 2, sex: "女性"}
+  ])
+
+RestArea.create!([
+  {id: 1, area: "室内"},
+  {id: 2, area: "室外"}
+  ])
+
 Facility.create!([
   {name: 'お風呂の国', prefecture: '神奈川県', address: '横浜市鶴見区下末吉２丁目２５−２３',
     homepage: 'http://www.ofuronokuni.co.jp/', business_hours: '11時00分〜24時00分', holiday: '',
@@ -69,46 +79,46 @@ Facility.create!([
     fee: '2750円〜', payment: '現金', comment: ''}
   ])
 
-20.times do |n|
-  facility_id = n + 1
-  temp_1 = rand(80..110)
-  intern_1 = rand(5..20)
-  temp_2 = rand(80..110)
-  intern_2 = rand(5..20)
-  Sauna.create!([
-  {facility_id: facility_id, sex: "男性", temperature: temp_1, intern: intern_1, comment: ""},
-  {facility_id: facility_id, sex: "女性", temperature: temp_2, intern: intern_2, comment: ""}
-  ])
-  temp_1 = rand(10..25)
-  intern_1 = rand(2..8)
-  temp_2 = rand(10..25)
-  intern_2 = rand(2..8)
-  WaterBath.create!([
-  {facility_id: facility_id, sex: "男性", temperature: temp_1, intern: intern_1, comment: ""},
-  {facility_id: facility_id, sex: "女性", temperature: temp_2, intern: intern_2, comment: ""}
-  ])
-end
-
-20.times do |n|
-  facility_id = n + 1
-  @inside = []
-  @outside = []
-  @inside2 = []
-  @outside2 = []
-  5.times do
-    number = ["", "", "", "", "", 1, 2, 3, 4, 5]
-    @inside << number.shuffle[0]
-    @outside << number.shuffle[0]
-    @inside2 << number.shuffle[0]
-    @outside2 << number.shuffle[0]
-  end
-  RestArea.create!([
-  {facility_id: facility_id, sex: "男性", inside_bath_chair: @inside[0] , inside_deck_chair: @inside[1], inside_relax_chair: @inside[2], inside_bench: @inside[3],inside_bench_non_backrest: @inside[4],
-    outside_bath_chair: @outside[0], outside_deck_chair: @outside[1], outside_relax_chair: @outside[2], outside_bench: @outside[3],outside_bench_non_backrest: @outside[4]},
-  {facility_id: facility_id, sex: "女性", inside_bath_chair: @inside2[0] , inside_deck_chair: @inside2[1], inside_relax_chair: @inside2[2], inside_bench: @inside2[3],inside_bench_non_backrest: @inside2[4],
-    outside_bath_chair: @outside2[0], outside_deck_chair: @outside2[1], outside_relax_chair: @outside2[2], outside_bench: @outside2[3],outside_bench_non_backrest: @outside2[4]}
-  ])
-end
+# 20.times do |n|
+#   facility_id = n + 1
+#   temp_1 = rand(80..110)
+#   intern_1 = rand(5..20)
+#   temp_2 = rand(80..110)
+#   intern_2 = rand(5..20)
+#   Sauna.create!([
+#   {facility_id: facility_id, sex: "男性", temperature: temp_1, intern: intern_1, comment: ""},
+#   {facility_id: facility_id, sex: "女性", temperature: temp_2, intern: intern_2, comment: ""}
+#   ])
+#   temp_1 = rand(10..25)
+#   intern_1 = rand(2..8)
+#   temp_2 = rand(10..25)
+#   intern_2 = rand(2..8)
+#   WaterBath.create!([
+#   {facility_id: facility_id, sex: "男性", temperature: temp_1, intern: intern_1, comment: ""},
+#   {facility_id: facility_id, sex: "女性", temperature: temp_2, intern: intern_2, comment: ""}
+#   ])
+# end
+#
+# 20.times do |n|
+#   facility_id = n + 1
+#   @inside = []
+#   @outside = []
+#   @inside2 = []
+#   @outside2 = []
+#   5.times do
+#     number = ["", "", "", "", "", 1, 2, 3, 4, 5]
+#     @inside << number.shuffle[0]
+#     @outside << number.shuffle[0]
+#     @inside2 << number.shuffle[0]
+#     @outside2 << number.shuffle[0]
+#   end
+#   RestArea.create!([
+#   {facility_id: facility_id, sex: "男性", inside_bath_chair: @inside[0] , inside_deck_chair: @inside[1], inside_relax_chair: @inside[2], inside_bench: @inside[3],inside_bench_non_backrest: @inside[4],
+#     outside_bath_chair: @outside[0], outside_deck_chair: @outside[1], outside_relax_chair: @outside[2], outside_bench: @outside[3],outside_bench_non_backrest: @outside[4]},
+#   {facility_id: facility_id, sex: "女性", inside_bath_chair: @inside2[0] , inside_deck_chair: @inside2[1], inside_relax_chair: @inside2[2], inside_bench: @inside2[3],inside_bench_non_backrest: @inside2[4],
+#     outside_bath_chair: @outside2[0], outside_deck_chair: @outside2[1], outside_relax_chair: @outside2[2], outside_bench: @outside2[3],outside_bench_non_backrest: @outside2[4]}
+#   ])
+# end
 
 Review.create!([
   {user_id: 2, facility_id: 1, dry:3, light: 3, wide: 2, comment: ""  },
