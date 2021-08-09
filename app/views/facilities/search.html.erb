@@ -2,42 +2,16 @@
   <%= link_to '施設登録' , new_facility_path %>
 <% end %>
 <br>
-<%= form_with url: facilities_path do |f| %>
+<%= search_form_for @search, url: facilities_path do |f| %>
   <div class="search_field">
-    <%= f.label :address ,"キーワード" %>
-    <%= f.text_field :address ,placeholder:"かるまる、池袋、東京"%>
+  <%= f.label :name_or_prefecture_or_address ,"キーワード" %>
+  <%= f.search_field :name_or_prefecture_or_address_cont ,placeholder:"東京"%>
   </div>
-  <div class="search_field">
-    <%= f.label :rest_area, '設備' %>
-    <%= f.check_box :bath_chair %>
-    <%= f.label :bath_chair, '風呂イス' %>
-    <%= f.check_box :deck_chair %>
-    <%= f.label :deck_chair, 'デッキチェア' %>
-    <%= f.check_box :relax_chair %>
-    <%= f.label :relax_chair, 'リラックスチェア' %>
-    <%= f.check_box :bench %>
-    <%= f.label :bench, 'ベンチ（背もたれあり）' %>
-    <%= f.check_box :bench_non_backrest %>
-    <%= f.label :bench_non_backrest, 'ベンチ（背もたれなし）' %>
-  </div>
-  <div class="search_field">
-    <%= f.label :rest_area, '環境' %>
-    <%= f.check_box :indoor %>
-    <%= f.label :indoor, '室内' %>
-    <%= f.check_box :outdoor %>
-    <%= f.label :outdoor, '室外' %>
-  </div>
-  <div class="search_field">
-    <%= f.label :sex, '性別' %>
-    <%= f.radio_button :sex, :"男性" %>
-    <%= f.label :sex ,"男性" %>
-    <%= f.radio_button :sex, :"女性" %>
-    <%= f.label :sex ,"女性" %>
-  </div>
-  <%= f.submit "検索_未実装",name: :search%>
+  <%= f.submit "search",name: :search,value: "search"%>
 <% end %>
+
 <h3>最近評価された施設</h3>
-<% @reviews.each do |review| %>
+<% @new_reviews.each do |review| %>
   <div class="facility_review">
   <%= link_to facility_path(review.facility.id) do %>
     <%= review.facility.name %>
@@ -52,7 +26,7 @@
   </div>
 <% end %>
 <h3>最近更新された施設</h3>
-<% @facilities.each do |facility| %>
+<% @new_facilities.each do |facility| %>
   <%= link_to facility_path(facility.id) do %>
     <%= facility.name %>
     <%= facility.prefecture + facility.address %>

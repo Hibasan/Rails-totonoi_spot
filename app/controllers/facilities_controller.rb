@@ -2,8 +2,10 @@ class FacilitiesController < ApplicationController
   before_action :authenticate_user!, except: [:top, :about, :search, :show, :index]
 
   def search
-    @facilities = Facility.limit(3).order("updated_at DESC")
-    @reviews = Review.limit(3).order("updated_at DESC")
+    @new_facilities = Facility.limit(3).order("updated_at DESC")
+    @new_reviews = Review.limit(3).order("updated_at DESC")
+    @search = Facility.ransack(params[:q])
+    @facilities = @search.result(distinct: true)
   end
 
   def new
@@ -24,7 +26,13 @@ class FacilitiesController < ApplicationController
   end
 
   def index
-    @facilities = Facility.all
+    case params[:search]
+    when "search"
+      @search = Facility.ransack(params[:q])
+      @facilities = @search.result(distinct: true)
+    else
+      @facilities = Facility.all
+    end
   end
 
   def show
