@@ -64,15 +64,15 @@ class FacilitiesController < ApplicationController
 
   private
   def facility_params
-    params.require(:facility).permit(:name, :prefecture, :address,
+    params.require(:facility).permit(:id, :name, :prefecture, :address,
                                      :homepage, :business_hours, :holiday,
                                      :fee, :payment, :comment,
                                      saunas_attributes: [
-                                       :sex_id, :temperature, :intern, :comment],
+                                       :id, :sex_id, :temperature, :intern, :comment],
                                      water_baths_attributes: [
-                                       :sex_id, :temperature, :intern, :comment],
+                                       :id, :sex_id, :temperature, :intern, :comment],
                                     chairs_attributes: [
-                                      :sex_id, :rest_area_id, :comment,
+                                      :id, :sex_id, :rest_area_id, :comment,
                                       :bath, :deck, :relax, :bench, :bench_non_backrest ])
   end
 end
