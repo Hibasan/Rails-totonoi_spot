@@ -1,4 +1,4 @@
 class RestArea < ApplicationRecord
-  belongs_to :facility
-  enum sex: { "無性別": 0, "男性": 1, "女性": 2 }
+  has_many :chairs
+  enum area: { "室内": 1, "室外": 2 }
 end
