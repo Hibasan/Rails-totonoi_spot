@@ -10,10 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_03_063608) do
+ActiveRecord::Schema.define(version: 2021_08_09_094118) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "chairs", force: :cascade do |t|
+    t.integer "bath"
+    t.integer "deck"
+    t.integer "relax"
+    t.integer "bench"
+    t.integer "bench_non_backrest"
+    t.string "comment"
+    t.bigint "facility_id"
+    t.bigint "sex_id"
+    t.bigint "rest_area_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["facility_id"], name: "index_chairs_on_facility_id"
+    t.index ["rest_area_id"], name: "index_chairs_on_rest_area_id"
+    t.index ["sex_id"], name: "index_chairs_on_sex_id"
+  end
 
   create_table "facilities", force: :cascade do |t|
     t.string "name", null: false
@@ -43,22 +60,9 @@ ActiveRecord::Schema.define(version: 2021_08_03_063608) do
   end
 
   create_table "rest_areas", force: :cascade do |t|
-    t.integer "sex"
-    t.integer "inside_bath_chair"
-    t.integer "inside_deck_chair"
-    t.integer "inside_relax_chair"
-    t.integer "inside_bench"
-    t.integer "inside_bench_non_backrest"
-    t.integer "outside_bath_chair"
-    t.integer "outside_deck_chair"
-    t.integer "outside_relax_chair"
-    t.integer "outside_bench"
-    t.integer "outside_bench_non_backrest"
-    t.string "comment"
-    t.bigint "facility_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["facility_id"], name: "index_rest_areas_on_facility_id"
+    t.integer "area"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -76,14 +80,21 @@ ActiveRecord::Schema.define(version: 2021_08_03_063608) do
   end
 
   create_table "saunas", force: :cascade do |t|
-    t.integer "sex"
     t.integer "temperature"
     t.integer "intern"
     t.string "comment"
     t.bigint "facility_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "sex_id"
     t.index ["facility_id"], name: "index_saunas_on_facility_id"
+    t.index ["sex_id"], name: "index_saunas_on_sex_id"
+  end
+
+  create_table "sexes", force: :cascade do |t|
+    t.integer "sex"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -110,21 +121,26 @@ ActiveRecord::Schema.define(version: 2021_08_03_063608) do
   end
 
   create_table "water_baths", force: :cascade do |t|
-    t.integer "sex"
     t.integer "temperature"
     t.integer "intern"
     t.string "comment"
     t.bigint "facility_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "sex_id"
     t.index ["facility_id"], name: "index_water_baths_on_facility_id"
+    t.index ["sex_id"], name: "index_water_baths_on_sex_id"
   end
 
+  add_foreign_key "chairs", "facilities"
+  add_foreign_key "chairs", "rest_areas"
+  add_foreign_key "chairs", "sexes"
   add_foreign_key "favorite_facilities", "facilities"
   add_foreign_key "favorite_facilities", "users"
-  add_foreign_key "rest_areas", "facilities"
   add_foreign_key "reviews", "facilities"
   add_foreign_key "reviews", "users"
   add_foreign_key "saunas", "facilities"
+  add_foreign_key "saunas", "sexes"
   add_foreign_key "water_baths", "facilities"
+  add_foreign_key "water_baths", "sexes"
 end
