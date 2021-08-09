@@ -10,7 +10,8 @@ class FacilitiesController < ApplicationController
     @facility = Facility.new
     @facility.saunas.build
     @facility.water_baths.build
-    @facility.rest_areas.build
+    @facility.chairs.build
+    @facility.chairs.build
   end
 
   def create
@@ -30,7 +31,7 @@ class FacilitiesController < ApplicationController
     @facility = Facility.find(params[:id])
     @saunas = @facility.saunas
     @water_baths = @facility.water_baths
-    @rest_areas = @facility.rest_areas
+    @chairs = @facility.chairs
     if user_signed_in?
       @favorite = current_user.favorite_facilities.find_by(facility_id: @facility.id)
     end
@@ -40,7 +41,10 @@ class FacilitiesController < ApplicationController
     @facility = Facility.find(params[:id])
     @facility.saunas.build
     @facility.water_baths.build
-    @facility.rest_areas.build if @facility.rest_areas[0].nil?
+    if @facility.chairs[0].nil?
+      @facility.chairs.build
+      @facility.chairs.build
+    end
   end
 
   def update
@@ -60,18 +64,15 @@ class FacilitiesController < ApplicationController
 
   private
   def facility_params
-    params.require(:facility).permit(:id, :name, :prefecture, :address,
+    params.require(:facility).permit(:name, :prefecture, :address,
                                      :homepage, :business_hours, :holiday,
                                      :fee, :payment, :comment,
                                      saunas_attributes: [
-                                       :id, :sex, :temperature, :intern, :comment],
+                                       :sex_id, :temperature, :intern, :comment],
                                      water_baths_attributes: [
-                                      :id, :sex, :temperature, :intern, :comment],
-                                    rest_areas_attributes: [
-                                      :id, :sex, :inside_bath_chair, :inside_deck_chair,
-                                      :inside_relax_chair, :inside_bench, :inside_bench_non_backrest,
-                                      :outside_bath_chair, :outside_deck_chair,
-                                      :outside_relax_chair, :outside_bench, :outside_bench_non_backrest,
-                                      :comment ])
+                                       :sex_id, :temperature, :intern, :comment],
+                                    chairs_attributes: [
+                                      :sex_id, :rest_area_id, :comment,
+                                      :bath, :deck, :relax, :bench, :bench_non_backrest ])
   end
 end

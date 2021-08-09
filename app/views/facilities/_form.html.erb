@@ -63,58 +63,43 @@
  %>
 
   <h2>休憩エリア情報</h2>
-  <%= form.fields_for :rest_areas do |rest| %>
-    <div class="rest_field">
-      <%= rest.label :sex ,"男性" %>
-      <%= rest.radio_button :sex, :"男性" %>
-      <%= rest.label :sex ,"女性" %>
-      <%= rest.radio_button :sex, :"女性" %>
-    </div>
+  <%= form.fields_for :chairs do |chair| %>
     <h3>室内</h3>
     <div class="rest_field">
-      <%= rest.label :inside_bath_chair ,"風呂イス" %><br>
-      <%= rest.number_field :inside_bath_chair %>
+      <%= chair.label :sex_id ,"男性" %>
+      <%= chair.radio_button :sex_id, 1 %>
+      <%= chair.label :sex_id ,"女性" %>
+      <%= chair.radio_button :sex_id, 2 %>
     </div>
     <div class="rest_field">
-      <%= rest.label :inside_deck_chair ,"デッキチェア" %><br>
-      <%= rest.number_field :inside_deck_chair %>
+      <%= chair.label :rest_area_id ,"室内" %>
+      <%= chair.radio_button :rest_area_id, 1 %>
+      <%= chair.label :rest_area_id ,"室外" %>
+      <%= chair.radio_button :rest_area_id, 2 %>
     </div>
     <div class="rest_field">
-      <%= rest.label :inside_relax_chair ,"リラックスチェア" %><br>
-      <%= rest.number_field :inside_relax_chair %>
+      <%= chair.label :bath ,"風呂イス" %><br>
+      <%= chair.number_field :bath %>
     </div>
     <div class="rest_field">
-      <%= rest.label :inside_bench ,"ベンチ" %><br>
-      <%= rest.number_field :inside_bench %>
+      <%= chair.label :deck ,"デッキチェア" %><br>
+      <%= chair.number_field :deck %>
     </div>
     <div class="rest_field">
-      <%= rest.label :inside_bench_non_backrest ,"背もたれなしベンチ" %><br>
-      <%= rest.number_field :inside_bench_non_backrest %>
-    </div>
-    <h3>室外</h3>
-    <div class="rest_field">
-      <%= rest.label :outside_bath_chair ,"風呂イス" %><br>
-      <%= rest.number_field :outside_bath_chair %>
+      <%= chair.label :relax ,"リラックスチェア" %><br>
+      <%= chair.number_field :relax %>
     </div>
     <div class="rest_field">
-      <%= rest.label :outside_deck_chair ,"デッキチェア" %><br>
-      <%= rest.number_field :outside_deck_chair %>
+      <%= chair.label :bench ,"ベンチ" %><br>
+      <%= chair.number_field :bench %>
     </div>
     <div class="rest_field">
-      <%= rest.label :outside_relax_chair ,"リラックスチェア" %><br>
-      <%= rest.number_field :outside_relax_chair %>
+      <%= chair.label :bench_non_backrest ,"背もたれなしベンチ" %><br>
+      <%= chair.number_field :bench_non_backrest %>
     </div>
     <div class="rest_field">
-      <%= rest.label :outside_bench ,"ベンチ" %><br>
-      <%= rest.number_field :outside_bench %>
-    </div>
-    <div class="rest_field">
-      <%= rest.label :outside_bench_non_backrest ,"背もたれなしベンチ" %><br>
-      <%= rest.number_field :outside_bench_non_backrest %>
-    </div>
-    <div class="rest_field">
-      <%= rest.label :comment ,"コメント" %><br>
-      <%= rest.text_area :comment %>
+      <%= chair.label :comment ,"コメント" %><br>
+      <%= chair.text_area :comment %>
     </div>
   <% end %>
 

@@ -35,7 +35,7 @@
 </tr>
 </table>
 
-<% @saunas.each do |sauna| %>
+
 <h3>サウナ情報</h3>
 <table>
 <tr>
@@ -44,16 +44,18 @@
   <th>収容人数</th>
   <th>コメント</th>
 </tr>
+<% @saunas.each do |sauna| %>
 <tr>
-  <td><%= sauna.sex %></td>
+  <td><%= sauna.sex.sex %></td>
   <td><%= sauna.temperature %></td>
   <td><%= sauna.intern %></td>
   <td><%= sauna.comment %></td>
 </tr>
-</table>
 <% end %>
+</table>
 
-<% @water_baths.each do |water| %>
+
+
 <h3>水風呂情報</h3>
 <table>
 <tr>
@@ -62,56 +64,44 @@
   <th>収容人数</th>
   <th>コメント</th>
 </tr>
+<% @water_baths.each do |water| %>
 <tr>
-  <td><%= water.sex %></td>
+  <td><%= water.sex_id %></td>
   <td><%= water.temperature %></td>
   <td><%= water.intern %></td>
   <td><%= water.comment %></td>
 </tr>
-</table>
 <% end %>
+</table>
 
 
-<% @rest_areas.each do |rest| %>
-<h3>休憩エリア情報（室内）</h3>
+
+
+<h3>休憩エリア情報</h3>
 <table>
 <tr>
   <th>性別</th>
+  <th>場所</th>
   <th>風呂イス</th>
   <th>デッキチェア</th>
   <th>リラックスチェア</th>
   <th>ベンチ</th>
   <th>背もたれなしベンチ</th>
+  <th>コメント</th>
 </tr>
+<% @chairs.each do |chair| %>
 <tr>
-  <td><%= rest.sex %></td>
-  <td><%= rest.inside_bath_chair %></td>
-  <td><%= rest.inside_deck_chair %></td>
-  <td><%= rest.inside_relax_chair %></td>
-  <td><%= rest.inside_bench %></td>
-  <td><%= rest.inside_bench_non_backrest %></td>
+  <td><%= chair.sex.sex %></td>
+  <td><%= chair.rest_area.area %></td>
+  <td><%= chair.bath %></td>
+  <td><%= chair.deck %></td>
+  <td><%= chair.relax %></td>
+  <td><%= chair.bench %></td>
+  <td><%= chair.bench_non_backrest %></td>
+  <td><%= chair.comment %></td>
 </tr>
+<% end %>
 </table>
 
-<h3>休憩エリア情報（室外）</h3>
-<table>
-<tr>
-  <th>性別</th>
-  <th>風呂イス</th>
-  <th>デッキチェア</th>
-  <th>リラックスチェア</th>
-  <th>ベンチ</th>
-  <th>背もたれなしベンチ</th>
-</tr>
-<tr>
-  <td><%= rest.sex %></td>
-  <td><%= rest.outside_bath_chair %></td>
-  <td><%= rest.outside_deck_chair %></td>
-  <td><%= rest.outside_relax_chair %></td>
-  <td><%= rest.outside_bench %></td>
-  <td><%= rest.outside_bench_non_backrest %></td>
-</tr>
-</table>
-<% end %>
 
 <a href="javascript:history.back()">[戻る]</a>
