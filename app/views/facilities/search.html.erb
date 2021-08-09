@@ -65,61 +65,60 @@
   <br>
 <% end %>
 <br>
-<%= link_to "もっと見る" , facilities_path %>
+<%= link_to "全ての施設を見る" , facilities_path %>
 <br>
-<h2>以下、未実装</h2>
 <h3>都道府県</h3>
-<%= link_to '北海道' , facilities_path %>
+<%= link_to '北海道', controller: "facilities", action: "index", q: { prefecture_cont: '北海道' } %>
 <br>
-<%= link_to '青森' , facilities_path %>
-<%= link_to '岩手' , facilities_path %>
-<%= link_to '宮城' , facilities_path %>
-<%= link_to '秋田' , facilities_path %>
-<%= link_to '山形' , facilities_path %>
-<%= link_to '福島' , facilities_path %>
+<%= link_to '青森', controller: "facilities", action: "index", q: { prefecture_cont: '青森' } %>
+<%= link_to '岩手', controller: "facilities", action: "index", q: { prefecture_cont: '岩手' } %>
+<%= link_to '宮城', controller: "facilities", action: "index", q: { prefecture_cont: '宮城' } %>
+<%= link_to '秋田', controller: "facilities", action: "index", q: { prefecture_cont: '秋田' } %>
+<%= link_to '山形', controller: "facilities", action: "index", q: { prefecture_cont: '山形' } %>
+<%= link_to '福島', controller: "facilities", action: "index", q: { prefecture_cont: '福島' } %>
 <br>
-<%= link_to '茨城' , facilities_path %>
-<%= link_to '栃木' , facilities_path %>
-<%= link_to '群馬' , facilities_path %>
-<%= link_to '埼玉' , facilities_path %>
-<%= link_to '千葉' , facilities_path %>
-<%= link_to '東京' , facilities_path %>
-<%= link_to '神奈川' , facilities_path %>
+<%= link_to '茨城', controller: "facilities", action: "index", q: { prefecture_cont: '茨城' } %>
+<%= link_to '栃木', controller: "facilities", action: "index", q: { prefecture_cont: '栃木' } %>
+<%= link_to '群馬', controller: "facilities", action: "index", q: { prefecture_cont: '群馬' } %>
+<%= link_to '埼玉', controller: "facilities", action: "index", q: { prefecture_cont: '埼玉' } %>
+<%= link_to '千葉', controller: "facilities", action: "index", q: { prefecture_cont: '千葉' } %>
+<%= link_to '東京', controller: "facilities", action: "index", q: { prefecture_cont: '東京' } %>
+<%= link_to '神奈川', controller: "facilities", action: "index", q: { prefecture_cont: '神奈川' } %>
 <br>
-<%= link_to '新潟' , facilities_path %>
-<%= link_to '富山' , facilities_path %>
-<%= link_to '石川' , facilities_path %>
-<%= link_to '福井' , facilities_path %>
-<%= link_to '山梨' , facilities_path %>
-<%= link_to '長野' , facilities_path %>
+<%= link_to '新潟', controller: "facilities", action: "index", q: { prefecture_cont: '新潟' } %>
+<%= link_to '富山', controller: "facilities", action: "index", q: { prefecture_cont: '富山' } %>
+<%= link_to '石川', controller: "facilities", action: "index", q: { prefecture_cont: '石川' } %>
+<%= link_to '福井', controller: "facilities", action: "index", q: { prefecture_cont: '福井' } %>
+<%= link_to '山梨', controller: "facilities", action: "index", q: { prefecture_cont: '山梨' } %>
+<%= link_to '長野', controller: "facilities", action: "index", q: { prefecture_cont: '長野' } %>
 <br>
-<%= link_to '岐阜' , facilities_path %>
-<%= link_to '静岡' , facilities_path %>
-<%= link_to '愛知' , facilities_path %>
-<%= link_to '三重' , facilities_path %>
+<%= link_to '岐阜', controller: "facilities", action: "index", q: { prefecture_cont: '岐阜' } %>
+<%= link_to '静岡', controller: "facilities", action: "index", q: { prefecture_cont: '静岡' } %>
+<%= link_to '愛知', controller: "facilities", action: "index", q: { prefecture_cont: '愛知' } %>
+<%= link_to '三重', controller: "facilities", action: "index", q: { prefecture_cont: '三重' } %>
 <br>
-<%= link_to '滋賀' , facilities_path %>
-<%= link_to '京都' , facilities_path %>
-<%= link_to '大阪' , facilities_path %>
-<%= link_to '兵庫' , facilities_path %>
-<%= link_to '奈良' , facilities_path %>
-<%= link_to '和歌山' , facilities_path %>
+<%= link_to '滋賀', controller: "facilities", action: "index", q: { prefecture_cont: '滋賀' } %>
+<%= link_to '京都', controller: "facilities", action: "index", q: { prefecture_cont: '京都' } %>
+<%= link_to '大阪', controller: "facilities", action: "index", q: { prefecture_cont: '大阪' } %>
+<%= link_to '兵庫', controller: "facilities", action: "index", q: { prefecture_cont: '兵庫' } %>
+<%= link_to '奈良', controller: "facilities", action: "index", q: { prefecture_cont: '奈良' } %>
+<%= link_to '和歌山', controller: "facilities", action: "index", q: { prefecture_cont: '和歌山' } %>
 <br>
-<%= link_to '鳥取' , facilities_path %>
-<%= link_to '島根' , facilities_path %>
-<%= link_to '岡山' , facilities_path %>
-<%= link_to '広島' , facilities_path %>
-<%= link_to '山口' , facilities_path %>
-<%= link_to '徳島' , facilities_path %>
-<%= link_to '香川' , facilities_path %>
-<%= link_to '愛媛' , facilities_path %>
-<%= link_to '高知' , facilities_path %>
+<%= link_to '鳥取', controller: "facilities", action: "index", q: { prefecture_cont: '鳥取' } %>
+<%= link_to '島根', controller: "facilities", action: "index", q: { prefecture_cont: '島根' } %>
+<%= link_to '岡山', controller: "facilities", action: "index", q: { prefecture_cont: '岡山' } %>
+<%= link_to '広島', controller: "facilities", action: "index", q: { prefecture_cont: '広島' } %>
+<%= link_to '山口', controller: "facilities", action: "index", q: { prefecture_cont: '山口' } %>
+<%= link_to '徳島', controller: "facilities", action: "index", q: { prefecture_cont: '徳島' } %>
+<%= link_to '香川', controller: "facilities", action: "index", q: { prefecture_cont: '香川' } %>
+<%= link_to '愛媛', controller: "facilities", action: "index", q: { prefecture_cont: '愛媛' } %>
+<%= link_to '高知', controller: "facilities", action: "index", q: { prefecture_cont: '高知' } %>
 <br>
-<%= link_to '福岡' , facilities_path %>
-<%= link_to '佐賀' , facilities_path %>
-<%= link_to '長崎' , facilities_path %>
-<%= link_to '熊本' , facilities_path %>
-<%= link_to '大分' , facilities_path %>
-<%= link_to '宮崎' , facilities_path %>
-<%= link_to '鹿児島' , facilities_path %>
-<%= link_to '沖縄' , facilities_path %>
+<%= link_to '福岡', controller: "facilities", action: "index", q: { prefecture_cont: '福岡' } %>
+<%= link_to '佐賀', controller: "facilities", action: "index", q: { prefecture_cont: '佐賀' } %>
+<%= link_to '長崎', controller: "facilities", action: "index", q: { prefecture_cont: '長崎' } %>
+<%= link_to '熊本', controller: "facilities", action: "index", q: { prefecture_cont: '熊本' } %>
+<%= link_to '大分', controller: "facilities", action: "index", q: { prefecture_cont: '大分' } %>
+<%= link_to '宮崎', controller: "facilities", action: "index", q: { prefecture_cont: '宮崎' } %>
+<%= link_to '鹿児島', controller: "facilities", action: "index", q: { prefecture_cont: '鹿児島' } %>
+<%= link_to '沖縄', controller: "facilities", action: "index", q: { prefecture_cont: '沖縄' } %>

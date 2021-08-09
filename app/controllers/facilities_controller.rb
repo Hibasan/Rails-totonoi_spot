@@ -26,13 +26,8 @@ class FacilitiesController < ApplicationController
   end
 
   def index
-    case params[:search]
-    when "search"
       @search = Facility.ransack(params[:q])
       @facilities = @search.result(distinct: true)
-    else
-      @facilities = Facility.all
-    end
   end
 
   def show
