@@ -60,13 +60,13 @@
   </ul>
   <ul class="facility_index_view">
     <li>サウナ：</li>
-    <% facility.saunas.where(sex: "女性").each do |sauna| %>
+    <% facility.saunas.where(sex_id: 2).each do |sauna| %>
     <li><%= "#{sauna&.temperature}℃" %></li>
     <% end %>
   </ul>
   <ul class="facility_index_view">
     <li>水風呂：</li>
-    <% facility.water_baths.where(sex: "女性").each do |water| %>
+    <% facility.water_baths.where(sex_id: 2).each do |water| %>
     <li><%= "#{water&.temperature}℃" %></li>
     <% end %>
   </ul>
