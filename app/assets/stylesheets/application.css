@@ -104,6 +104,30 @@ li { list-style: none; }
   padding: 0 3px;
 }
 
+/* facility#show.html */
+.facility_show{
+  height: 450px;
+}
+
+
+.facility_show_top{
+  align-items: flex-end;
+  display: flex;
+}
+
+.facility_show_top h2{
+  margin: 0 5px;
+}
+
+.facility_show_left{
+  background-color: #FFF;
+  height: 400px;
+  width: 400px;
+  float: left;
+  margin: 10px;
+}
+
+
 
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files

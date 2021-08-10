@@ -8,6 +8,28 @@
   <%= link_to '情報編集' , edit_facility_path(@facility.id) %>
   <%= link_to '削除', facility_path(@facility.id),method: :delete ,data: { confirm: '削除します' } %>
 <% end %>
+<div class="facility_show">
+  <div class="facility_show_top">
+    <h2><%= @facility.name %></h2>
+    <%= @facility.prefecture + @facility.address %>
+  </div>
+  <div class="facility_show_left">
+    <span>写真<span>
+  </div>
+  <h4>男湯</h4>
+  <%= image_tag 'bath_chair.jpg', size: '100x100'%>
+  <%= image_tag 'deck_chair', size: '100x100'%>
+  <%= image_tag 'relax_chair', size: '100x100'%>
+  <%= image_tag 'bench_non_rest.jpg', size: '100x100'%>
+  <%= image_tag 'bench.jpg', size: '100x100'%>
+  <h4>女湯</h4>
+  <%= image_tag 'bath_chair.jpg', size: '100x100'%>
+  <%= image_tag 'deck_chair', size: '100x100'%>
+  <%= image_tag 'relax_chair', size: '100x100'%>
+  <%= image_tag 'bench_non_rest.jpg', size: '100x100'%>
+  <%= image_tag 'bench.jpg', size: '100x100'%>
+</div>
+
 <br>
 <h2>施設情報</h2>
 <table>
@@ -66,7 +88,7 @@
 </tr>
 <% @water_baths.each do |water| %>
 <tr>
-  <td><%= water.sex_id %></td>
+  <td><%= water.sex.sex %></td>
   <td><%= water.temperature %></td>
   <td><%= water.intern %></td>
   <td><%= water.comment %></td>
