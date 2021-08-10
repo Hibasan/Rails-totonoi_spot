@@ -19,67 +19,61 @@ RestArea.create!([
 Facility.create!([
   {name: 'お風呂の国', prefecture: '神奈川県', address: '横浜市鶴見区下末吉２丁目２５−２３',
     homepage: 'http://www.ofuronokuni.co.jp/', business_hours: '11時00分〜24時00分', holiday: '',
-    fee: '750円', payment: '現金', comment: ''},
+    fee: '750円', payment: '現金', comment: '', latitude: 35.5230474, longitude: 139.6757775	},
   {name: 'ヌーランドさがみ湯', prefecture: '東京都', address: '大田区仲六郷２丁目７−５',
     homepage: 'http://www.nu-land.com/', business_hours: '11時00分〜23時00分', holiday: '',
-    fee: '1250円', payment: '現金', comment: ''},
+    fee: '1250円', payment: '現金', comment: '', latitude: 35.5522775, longitude: 139.7145965},
   {name: 'RAKU SPA 鶴見', prefecture: '神奈川県', address: '横浜市鶴見区元宮２丁目１−３９',
     homepage: 'http://rakuspa.com/tsurumi/', business_hours: '10時00分〜20時00分', holiday: '',
-    fee: '1480円', payment: '現金', comment: ''},
+    fee: '1480円', payment: '現金', comment: '', latitude: 35.522685, longitude: 139.6776173},
   {name: 'ヨコヤマ・ユーランド鶴見', prefecture: '神奈川県', address: '横浜市鶴見区下末吉２丁目２１',
     homepage: 'http://www.yu-land.com/', business_hours: '10時00分〜20時00分', holiday: '',
-    fee: '1900円', payment: '現金', comment: ''},
+    fee: '1900円', payment: '現金', comment: '', latitude: 35.522482, longitude: 139.6737507},
   {name: '川崎ビッグ', prefecture: '神奈川県', address: '川崎市川崎区小川町１５−１１',
     homepage: 'http://www.kawasaki-big.com/', business_hours: '24時間営業', holiday: '水曜日',
-    fee: '1100円〜', payment: '現金', comment: ''},
+    fee: '1100円〜', payment: '現金', comment: '', latitude: 35.5276883, longitude: 139.6996803},
   {name: '天然温泉 平和島', prefecture: '東京都', address: '大田区平和島１丁目１−１',
     homepage: 'http://www.heiwajima-onsen.jp/', business_hours: '10時00分〜20時00分', holiday: '',
-    fee: '2000円〜', payment: '現金', comment: ''},
+    fee: '2000円〜', payment: '現金', comment: '', latitude: 35.5857587, longitude: 139.7394821},
   {name: 'スパリゾートプレジデント', prefecture: '東京都', address: '台東区上野３丁目２８−６',
     homepage: 'https://sparesortpresident.com/', business_hours: '24時間営業', holiday: '水曜日',
-    fee: '1200円〜', payment: '現金', comment: ''},
+    fee: '1200円〜', payment: '現金', comment: '', latitude: 35.7076278, longitude: 139.7738538},
   {name: 'サウナ&カプセルホテル北欧', prefecture: '東京都', address: '台東区上野７丁目２−１６',
-    homepage: 'https://www.saunahokuou.com/?utm_source=google&utm_medium=map', business_hours: '24時間営業', holiday: '水曜日',
-    fee: '1400円〜', payment: '現金', comment: ''},
+    homepage: 'https://www.saunahokuou.com/', business_hours: '24時間営業', holiday: '水曜日',
+    fee: '1400円〜', payment: '現金', comment: '', latitude: 35.7130508, longitude: 139.7779326},
   {name: 'オアシスサウナ アスティル', prefecture: '東京都', address: '港区新橋３丁目１２−３',
     homepage: 'http://www.oasissauna.jp/', business_hours: '12時00分〜10時00分', holiday: '水曜日',
-    fee: '1480円〜', payment: '現金', comment: ''},
+    fee: '1480円〜', payment: '現金', comment: '', latitude: 35.6660281, longitude: 139.7563303},
   {name: 'かるまる 池袋店（サウナ&ホテル）', prefecture: '東京都', address: '豊島区池袋２丁目７−７',
-    homepage: 'https://karumaru.jp/ikebukuro/?utm_source=google&utm_medium=maps', business_hours: '11時00分〜10時00分', holiday: '水曜日',
-    fee: '2980円〜', payment: '現金', comment: ''},
+    homepage: 'https://karumaru.jp/', business_hours: '11時00分〜10時00分', holiday: '水曜日',
+    fee: '2980円〜', payment: '現金', comment: '', latitude: 35.7325042, longitude: 139.7083275},
   {name: '朝日湯源泉 ゆいる', prefecture: '神奈川県', address: '川崎市川崎区鋼管通３丁目１−２',
     homepage: 'http://asahiyu1010.com/', business_hours: '10時00分〜23時00分', holiday: '水曜日',
-    fee: '1540円〜', payment: '現金', comment: ''},
-  {name: '朝日湯源泉 ゆいる', prefecture: '神奈川県', address: '川崎市川崎区鋼管通３丁目１−２',
-    homepage: 'http://asahiyu1010.com/', business_hours: '10時00分〜23時00分', holiday: '水曜日',
-    fee: '1540円〜', payment: '現金', comment: ''},
+    fee: '1540円〜', payment: '現金', comment: '', latitude: 35.5150774, longitude: 139.7144888},
   {name: '宮前平源泉 湯けむりの庄', prefecture: '神奈川県', address: '川崎市宮前区宮前平２丁目１３−３',
     homepage: 'https://www.yukemurinosato.com/miyamaedaira/', business_hours: '10時00分〜20時00分', holiday: '水曜日',
-    fee: '1320円〜', payment: '現金', comment: ''},
-  {name: '宮前平源泉 湯けむりの庄', prefecture: '神奈川県', address: '川崎市宮前区宮前平２丁目１３−３',
-    homepage: 'https://www.yukemurinosato.com/miyamaedaira/', business_hours: '10時00分〜20時00分', holiday: '水曜日',
-    fee: '1320円〜', payment: '現金', comment: ''},
+    fee: '1320円〜', payment: '現金', comment: '', latitude: 35.5862878, longitude: 139.5819833},
   {name: 'スパ・リブール ヨコハマ', prefecture: '神奈川県', address: '横浜市鶴見区獅子ケ谷２丁目３９−１８',
     homepage: 'https://www.libur.co.jp/', business_hours: '10時00分〜8時00分', holiday: '水曜日',
-    fee: '1520円〜', payment: '現金', comment: ''},
+    fee: '1520円〜', payment: '現金', comment: '', latitude: 35.5244287, longitude: 139.6490954},
   {name: '綱島源泉湯けむりの庄', prefecture: '神奈川県', address: '横浜市港北区樽町３丁目７−６１',
-    homepage: 'http://yukemurinosato.com/tsunashima?utm_source=google&utm_medium=gmb', business_hours: '9時00分〜20時00分', holiday: '水曜日',
-    fee: '1320円〜', payment: '現金', comment: ''},
+    homepage: 'http://yukemurinosato.com/tsunashima/', business_hours: '9時00分〜20時00分', holiday: '水曜日',
+    fee: '1320円〜', payment: '現金', comment: '', latitude: 35.5306709, longitude: 139.6452491},
   {name: 'おふろの王様 大井町店', prefecture: '東京都', address: '品川区大井１丁目５０−５',
     homepage: 'http://www.ousama2603.com/shop/ooimachi/', business_hours: '9時30分〜20時00分', holiday: '水曜日',
-    fee: '1380円〜', payment: '現金', comment: ''},
+    fee: '1380円〜', payment: '現金', comment: '', latitude: 35.6052646, longitude: 139.7340679},
   {name: 'みうら湯', prefecture: '神奈川県', address: '横浜市南区中里１丁目２５−１',
     homepage: 'http://www.miurayu.com/', business_hours: '10時00分〜20時00分', holiday: '水曜日',
-    fee: '820円〜', payment: '現金', comment: ''},
+    fee: '820円〜', payment: '現金', comment: '', latitude: 35.4202525, longitude: 139.597711},
   {name: '萩の湯', prefecture: '東京都', address: '台東区根岸２丁目１３−１３',
     homepage: 'http://haginoyu.jp/', business_hours: '6時00分〜9時00分,11時00分〜1時00分', holiday: '水曜日',
-    fee: '480円〜', payment: '現金', comment: ''},
+    fee: '480円〜', payment: '現金', comment: '', latitude: 35.72425980000001, longitude: 139.7777261},
   {name: '両国湯屋 江戸遊', prefecture: '東京都', address: '墨田区亀沢１丁目５−８',
     homepage: 'https://www.edoyu.com/ryougoku/', business_hours: '10時00分〜20時00分', holiday: '水曜日',
-    fee: '2750円〜', payment: '現金', comment: ''}
+    fee: '2750円〜', payment: '現金', comment: '' , latitude: 35.6966435, longitude: 139.798462}
   ])
 
-20.times do |n|
+Facility.count.times do |n|
   facility_id = n + 1
   temp_1 = rand(80..110)
   intern_1 = rand(5..20)
@@ -99,7 +93,7 @@ Facility.create!([
   ])
 end
 
-20.times do |n|
+Facility.count.times do |n|
   facility_id = n + 1
   @number = []
   if 1 == rand(0..1)
@@ -111,7 +105,7 @@ end
   end
 end
 
-20.times do |n|
+Facility.count.times do |n|
   facility_id = n + 1
   @number = []
   if 1 == rand(0..1)
@@ -123,7 +117,7 @@ end
   end
 end
 
-20.times do |n|
+Facility.count.times do |n|
   facility_id = n + 1
   @number = []
   if 1 == rand(0..1)
@@ -135,7 +129,7 @@ end
   end
 end
 
-20.times do |n|
+Facility.count.times do |n|
   facility_id = n + 1
   @number = []
   if 1 == rand(0..1)
