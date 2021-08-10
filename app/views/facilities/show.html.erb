@@ -13,9 +13,26 @@
     <h2><%= @facility.name %></h2>
     <%= @facility.prefecture + @facility.address %>
   </div>
+
   <div class="facility_show_left">
-    <span>写真<span>
+    <div id="map" style='width: 600px; height: 400px;'></div>
   </div>
+
+  <script>
+    handler = Gmaps.build('Google');
+    handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+      markers = handler.addMarkers([
+      {
+        "lat": <%= @facility.latitude %>,
+        "lng": <%= @facility.longitude %>,
+      }
+      ]);
+      handler.bounds.extendWith(markers);
+      handler.fitMapToBounds();
+      handler.getMap().setZoom(15);
+    });
+  </script>
+
   <h4>男湯</h4>
   <%= image_tag 'bath_chair.jpg', size: '100x100'%>
   <%= image_tag 'deck_chair', size: '100x100'%>
