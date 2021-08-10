@@ -13,6 +13,7 @@ gem 'cocoon'
 
 gem 'ransack'
 
+gem "dotenv-rails"
 gem "geocoder"
 gem "gmaps4rails"
 
