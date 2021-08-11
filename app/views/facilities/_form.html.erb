@@ -39,96 +39,42 @@
   <%= form.submit "施設情報登録" %>
 
 
-
+  <h2>サウナ情報</h2>
   <div class="sauna">
     <%= form.fields_for :saunas do |sauna| %>
       <% render "sauna_fields",f: sauna %>
     <% end %>
   </div>
-  <div id="detail-association-insertion-point"></div>
+  <div id="detail-association-insertion-point_sauna"></div>
   <%= link_to_add_association 'サウナ追加', form, :saunas,
     data: {
-      association_insertion_node: '#detail-association-insertion-point',
-      association_insertion_method: 'append' } %>
+      association_insertion_node: '#detail-association-insertion-point_sauna',
+      association_insertion_method: 'after' } %>
 
-   <div class="wrapper">
-     <ul class="tab">
-       <li><a href="#male">男性</a></li>
-       <li><a href="#female">女性</a></li>
-     </ul>
-     <div id="male" class="area">
-       <ul>
-         <li>温度</li>
-         <li>収容人数</li>
-         <li>コメント</li>
-       </ul>
-     </div>
-     <div id="female" class="area">
-       <ul>
-         <li>温度</li>
-         <li>収容人数</li>
-         <li>コメント</li>
-       </ul>
-     </div>
-   </div>
-
+<h2>水風呂情報</h2>
 <div class="water_bath">
   <%= form.fields_for :water_baths do |water| %>
     <% render "water_bath_fields",f: water %>
   <% end %>
 </div>
-<div id="detail-association-insertion-point"></div>
+<div id="detail-association-insertion-point_water"></div>
 <%= link_to_add_association '水風呂追加', form, :water_baths,
   data: {
-    association_insertion_node: '#detail-association-insertion-point',
-    association_insertion_method: 'append' }
- %>
+    association_insertion_node: '#detail-association-insertion-point_water',
+    association_insertion_method: 'after' } %>
 
-  <h2>休憩エリア情報</h2>
-  <%= form.fields_for :chairs do |chair| %>
-    <h3>室内</h3>
-    <div class="rest_field">
-      <%= chair.label :sex_id ,"男性" %>
-      <%= chair.radio_button :sex_id, 1 %>
-      <%= chair.label :sex_id ,"女性" %>
-      <%= chair.radio_button :sex_id, 2 %>
-    </div>
-    <div class="rest_field">
-      <%= chair.label :rest_area_id ,"室内" %>
-      <%= chair.radio_button :rest_area_id, 1 %>
-      <%= chair.label :rest_area_id ,"室外" %>
-      <%= chair.radio_button :rest_area_id, 2 %>
-    </div>
-    <div class="rest_field">
-      <%= chair.label :bath ,"風呂イス" %><br>
-      <%= chair.number_field :bath %>
-    </div>
-    <div class="rest_field">
-      <%= chair.label :deck ,"デッキチェア" %><br>
-      <%= chair.number_field :deck %>
-    </div>
-    <div class="rest_field">
-      <%= chair.label :relax ,"リラックスチェア" %><br>
-      <%= chair.number_field :relax %>
-    </div>
-    <div class="rest_field">
-      <%= chair.label :bench ,"ベンチ" %><br>
-      <%= chair.number_field :bench %>
-    </div>
-    <div class="rest_field">
-      <%= chair.label :bench_non_backrest ,"背もたれなしベンチ" %><br>
-      <%= chair.number_field :bench_non_backrest %>
-    </div>
-    <div class="rest_field">
-      <%= chair.label :comment ,"コメント" %><br>
-      <%= chair.text_area :comment %>
-    </div>
-  <% end %>
+ <h2>水風呂情報</h2>
+ <div class="chair">
+   <%= form.fields_for :chairs do |chair| %>
+     <% render "chair_fields",f: chair %>
+   <% end %>
+ </div>
+ <div id="detail-association-insertion-point_chair"></div>
+ <%= link_to_add_association '設備追加', form, :chairs,
+   data: {
+     association_insertion_node: '#detail-association-insertion-point_chair',
+     association_insertion_method: 'after' } %>
+
 
   <%= form.submit "施設情報登録" %>
 <% end %>
-
-
-
-<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-<script src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/5-4-1/js/5-4-1.js"></script>

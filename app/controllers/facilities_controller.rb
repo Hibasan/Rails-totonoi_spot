@@ -10,10 +10,7 @@ class FacilitiesController < ApplicationController
 
   def new
     @facility = Facility.new
-    @facility.saunas.build
-    @facility.water_baths.build
-    @facility.chairs.build
-    @facility.chairs.build
+
   end
 
   def create
@@ -42,12 +39,6 @@ class FacilitiesController < ApplicationController
 
   def edit
     @facility = Facility.find(params[:id])
-    @facility.saunas.build
-    @facility.water_baths.build
-    if @facility.chairs[0].nil?
-      @facility.chairs.build
-      @facility.chairs.build
-    end
   end
 
   def update
