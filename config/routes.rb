@@ -4,10 +4,8 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   devise_for :users
-  devise_scope :user do
-    post 'users/guest_sign_in', to: 'users#guest_session'
-    post 'users/guest_sign_in', to: 'users#admin_guest_session'
-  end
+  post 'users/guest_sign_in', to: 'users#guest_sign_in'
+  post 'users/admin_guest_sign_in', to: 'users#admin_guest_sign_in'
 
   get '/about',to: 'facilities#about'
   get '/facilities/search',to: 'facilities#search'
