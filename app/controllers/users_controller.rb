@@ -14,4 +14,15 @@ class UsersController < ApplicationController
   def favorite_facilities
     @favorites = FavoriteFacility.where(user_id: current_user.id)
   end
+
+  def guest_session
+    user = User.guest
+    sign_in user
+  end
+
+  def admin_guest_session
+    user = User.admin_guest
+    sign_in user
+  end
+
 end

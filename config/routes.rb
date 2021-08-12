@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
+  root to: 'facilities#top'
+  mount LetterOpenerWeb::Engine, at: "/letter_opener"
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   devise_for :users
-  mount LetterOpenerWeb::Engine, at: "/letter_opener"
+  devise_scope :user do
+    post 'users/guest_sign_in', to: 'users#guest_session'
+    post 'users/guest_sign_in', to: 'users#admin_guest_session'
+  end
 
-
-  root to: 'facilities#top'
   get '/about',to: 'facilities#about'
   get '/facilities/search',to: 'facilities#search'
   get '/users/review',to: 'users#review'
@@ -13,7 +17,7 @@ Rails.application.routes.draw do
   resources :reviews
   resources :facilities
   resources :favorite_facilities
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+
 end
 
 
