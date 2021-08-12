@@ -8,11 +8,11 @@ class UsersController < ApplicationController
   end
 
   def review
-    @reviews = Review.where(user_id: current_user.id)
+    @reviews = Review.includes(:user,:facility).where(user_id: current_user.id)
   end
 
   def favorite_facilities
-    @favorites = FavoriteFacility.where(user_id: current_user.id)
+    @favorites = FavoriteFacility.includes(:facility).where(user_id: current_user.id)
   end
 
   def guest_sign_in
