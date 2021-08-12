@@ -3,7 +3,7 @@ class FacilitiesController < ApplicationController
 
   def search
     @new_facilities = Facility.limit(3).order("updated_at DESC")
-    @new_reviews = Review.limit(3).order("updated_at DESC")
+    @new_reviews = Review.includes(:user,:facility).limit(3).order("updated_at DESC")
     @search = Facility.ransack(params[:q])
     @facilities = @search.result(distinct: true)
   end
@@ -29,8 +29,8 @@ class FacilitiesController < ApplicationController
 
   def show
     @facility = Facility.find(params[:id])
-    @saunas = @facility.saunas
-    @water_baths = @facility.water_baths
+    @saunas = @facility.saunas.includes(:sex)
+    @water_baths = @facility.water_baths.includes(:sex)
     @chairs = @facility.chairs
     if user_signed_in?
       @favorite = current_user.favorite_facilities.find_by(facility_id: @facility.id)
