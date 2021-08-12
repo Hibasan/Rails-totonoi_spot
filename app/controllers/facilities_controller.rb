@@ -23,6 +23,27 @@ class FacilitiesController < ApplicationController
   end
 
   def index
+    sex = params[:q][:chairs_sex_id]&.to_i
+    area = params[:q][:chairs_rest_area_id]&.to_i
+    bath = params[:q][:chairs_bath]&.to_i
+    deck = params[:q][:chairs_deck]&.to_i
+    relax = params[:q][:chairs_relax]&.to_i
+    bench = params[:q][:chairs_bench]&.to_i
+    bench_non_backrest = params[:q][:chairs_bench_non_backrest]&.to_i
+    if sex != 0 && area != 0
+      puts "性別・場所を選択"
+      @chairs = Chair.where(sex_id: sex, rest_area_id: area, bath: bath,deck: deck,relax: relax,bench: bench ,bench_non_backrest: bench_non_backrest)
+    elsif sex == 0 && area == 0
+      puts "選択してない"
+      @chairs = Chair.where(bath: bath,deck: deck,relax: relax,bench: bench ,bench_non_backrest: bench_non_backrest)
+    elsif sex != 0
+      puts "性別を選択"
+      @chairs = Chair.where(sex_id: sex, bath: bath,deck: deck,relax: relax,bench: bench ,bench_non_backrest: bench_non_backrest)
+    else
+      puts "場所を選択"
+      @chairs = Chair.where(rest_area_id: area, bath: bath,deck: deck,relax: relax,bench: bench ,bench_non_backrest: bench_non_backrest)
+    end
+binding.irb
       @search = Facility.ransack(params[:q])
       @facilities = @search.result(distinct: true)
   end
