@@ -31,7 +31,7 @@ class FacilitiesController < ApplicationController
     @facility = Facility.find(params[:id])
     @saunas = @facility.saunas.includes(:sex)
     @water_baths = @facility.water_baths.includes(:sex)
-    @chairs = @facility.chairs
+    @chairs = @facility.chairs.includes(:sex,:rest_area)
     if user_signed_in?
       @favorite = current_user.favorite_facilities.find_by(facility_id: @facility.id)
     end
