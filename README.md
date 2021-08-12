@@ -8,11 +8,9 @@
 - お気に入り機能
 
 #### カリキュラム外の技術
-- gem 'dotenv-rails' 環境変数の管理用
 - gem 'geocoder' 住所を緯度経度に変換
 - gem 'gmaps4rails' 緯度経度からgoogleMAPを表示
-- gem 'cocoon' 動的な入力フォームの追加
-- gem 'ransack' 検索機能
+
 
 #### 実行手順
 $ git clone git@github.com:Hibasan/Rails-totonoi_spot.git
