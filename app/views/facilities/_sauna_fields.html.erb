@@ -1,21 +1,23 @@
-<div class="nested_fields">
-<h2>サウナ情報</h2>
+<div class="nested-fields">
   <div class="sauna_field">
-    <%= f.label :sex ,"男性" %>
     <%= f.radio_button :sex_id, 1 %>
-    <%= f.label :sex ,"女性" %>
+    <%= f.label :sex ,"男性" %>
     <%= f.radio_button :sex_id, 2 %>
+    <%= f.label :sex ,"女性　" %>
   </div>
   <div class="sauna_field">
-    <%= f.label :temperature ,"温度" %><br>
+    <%= f.label :temperature ,"温度" %>
     <%= f.number_field :temperature %>
   </div>
   <div class="sauna_field">
-    <%= f.label :intern ,"収容人数" %><br>
+    <%= f.label :intern ,"収容人数" %>
     <%= f.number_field :intern %>
   </div>
   <div class="sauna_field">
-    <%= f.label :comment ,"コメント" %><br>
+    <%= f.label :comment ,"コメント" %>
     <%= f.text_area :comment %>
+  </div>
+  <div class="nested_fields">
+    <%= link_to_remove_association "削除", f %>
   </div>
 </div>
