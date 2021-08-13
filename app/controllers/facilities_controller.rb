@@ -4,8 +4,8 @@ class FacilitiesController < ApplicationController
   def search
     @new_facilities = Facility.limit(3).order("updated_at DESC")
     @new_reviews = Review.includes(:user,:facility).limit(3).order("updated_at DESC")
-    @search = Facility.ransack(params[:q])
-    @facilities = @search.result(distinct: true)
+    @chair = Chair.ransack(params[:q])
+    @chairs = @chair.result(distinct: true)
   end
 
   def new
@@ -23,8 +23,12 @@ class FacilitiesController < ApplicationController
   end
 
   def index
-      @search = Facility.ransack(params[:q])
-      @facilities = @search.result(distinct: true)
+    name = params[:q][:facility_name]
+    @facilities = Facility.where("(name LIKE ?) OR (prefecture LIKE ?) OR (address LIKE ?)","%#{name}%","%#{name}%","%#{name}%")
+    @chair = Chair.ransack(params[:q])
+    @chairs = @chair.result(distinct: true)
+    chairs_facility_ids = @chairs.pluck(:facility_id)
+    @facilities = @facilities.where(id: chairs_facility_ids)
   end
 
   def show
