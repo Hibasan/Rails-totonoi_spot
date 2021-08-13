@@ -25,15 +25,10 @@ class FacilitiesController < ApplicationController
   def index
     name = params[:q][:facility_name]
     @facilities = Facility.where("(name LIKE ?) OR (prefecture LIKE ?) OR (address LIKE ?)","%#{name}%","%#{name}%","%#{name}%")
-    puts "★★★★"
-    puts @facilities.size
-    puts "★★★★"
     @chair = Chair.ransack(params[:q])
     @chairs = @chair.result(distinct: true)
-puts "★★★★"
-puts @chairs
-puts "★★★★"
-
+    chairs_facility_ids = @chairs.pluck(:facility_id)
+    @facilities = @facilities.where(id: chairs_facility_ids)
   end
 
   def show
