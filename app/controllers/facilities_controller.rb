@@ -23,13 +23,15 @@ class FacilitiesController < ApplicationController
   end
 
   def index
-
-    @facilities = Facility.all
-
+    name = params[:q][:facility_name]
+    @facilities = Facility.where("(name= ?) OR (prefecture= ?) OR (address= ?)",name,name,name)
+    puts "★★★★"
+    puts @facilities.size
+    puts "★★★★"
     @chair = Chair.ransack(params[:q])
     @chairs = @chair.result(distinct: true)
 puts "★★★★"
-puts @chairs.size
+puts @chairs
 puts "★★★★"
 
   end
