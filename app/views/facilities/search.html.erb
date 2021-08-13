@@ -2,40 +2,40 @@
   <%= link_to '施設登録' , new_facility_path %>
 <% end %>
 <br>
-<%= search_form_for @search, url: facilities_path do |f| %>
+<%= search_form_for @chair, url: facilities_path do |f| %>
   <div class="search_field">
-    <%= f.label :name_or_prefecture_or_address ,"キーワード" %>
-    <%= f.search_field :name_or_prefecture_or_address_cont ,placeholder:"東京"%>
+    <%= f.label :facility_name_or_prefecture_or_address ,"キーワード" %>
+    <%= f.search_field :facility_name ,placeholder:"東京"%>
   </div>
   <div class="search_field">
     <%= f.label :chair, '設備' %>
-    <%= f.check_box :chairs_bath, include_hidden: nil %>
+    <%= f.check_box :bath_not_in, include_hidden: false %>
     <%= f.label :bath, '風呂イス' %>
-    <%= f.check_box :chairs_deck, include_hidden: nil %>
+    <%= f.check_box :deck_not_in, include_hidden: false %>
     <%= f.label :deck, 'デッキチェア' %>
-    <%= f.check_box :chairs_relax, include_hidden: nil %>
+    <%= f.check_box :relax_not_in, include_hidden: false %>
     <%= f.label :relax, 'リクライニングチェア' %>
-    <%= f.check_box :chairs_bench, include_hidden: nil %>
+    <%= f.check_box :bench_not_in, include_hidden: false %>
     <%= f.label :bench, 'ベンチ（背もたれあり）' %>
-    <%= f.check_box :chairs_bench_non_backrest, include_hidden: nil %>
+    <%= f.check_box :bench_non_backrest_not_in, include_hidden: false %>
     <%= f.label :bench_non_backrest, 'ベンチ（背もたれなし）' %>
   </div>
   <div class="search_field">
     <%= f.label :chair, '性別' %>
-    <%= f.radio_button :chairs_sex_id, 0, {:checked => true} %>
+    <%= f.radio_button :sex_id_eq, '', {:checked => true} %>
     <%= f.label :chairs_sex_id, 'なし' %>
-    <%= f.radio_button :chairs_sex_id, 1 %>
+    <%= f.radio_button :sex_id_eq, 1 %>
     <%= f.label :chairs_sex_id, '男性' %>
-    <%= f.radio_button :chairs_sex_id, 2 %>
+    <%= f.radio_button :sex_id_eq, 2 %>
     <%= f.label :chairs_sex_id, '女性' %>
   </div>
   <div class="search_field">
     <%= f.label :chair, '場所' %>
-    <%= f.radio_button :chairs_rest_area_id, 0, {:checked => true} %>
+    <%= f.radio_button :rest_area_id_eq, '', {:checked => true} %>
     <%= f.label :chairs_rest_area_id, 'なし' %>
-    <%= f.radio_button :chairs_rest_area_id, 1 %>
+    <%= f.radio_button :rest_area_id_eq, 1 %>
     <%= f.label :chairs_rest_area_id, '室内' %>
-    <%= f.radio_button :chairs_rest_area_id, 2 %>
+    <%= f.radio_button :rest_area_id_eq, 2 %>
     <%= f.label :chairs_rest_area_id, '室外' %>
   </div>
   <%= f.submit "search",name: :search,value: "search"%>
