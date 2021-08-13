@@ -24,7 +24,7 @@ class FacilitiesController < ApplicationController
 
   def index
     name = params[:q][:facility_name]
-    @facilities = Facility.where("(name= ?) OR (prefecture= ?) OR (address= ?)",name,name,name)
+    @facilities = Facility.where("(name LIKE ?) OR (prefecture LIKE ?) OR (address LIKE ?)","%#{name}%","%#{name}%","%#{name}%")
     puts "★★★★"
     puts @facilities.size
     puts "★★★★"
