@@ -23,12 +23,17 @@ class FacilitiesController < ApplicationController
   end
 
   def index
-    name = params[:q][:facility_name]
-    @facilities = Facility.where("(name LIKE ?) OR (prefecture LIKE ?) OR (address LIKE ?)","%#{name}%","%#{name}%","%#{name}%")
-    @chair = Chair.ransack(params[:q])
-    @chairs = @chair.result(distinct: true)
-    chairs_facility_ids = @chairs.pluck(:facility_id)
-    @facilities = @facilities.where(id: chairs_facility_ids)
+    if params[:search] == "search"
+      name = params[:q][:facility_name]
+      @facilities = Facility.where("(name LIKE ?) OR (prefecture LIKE ?) OR (address LIKE ?)","%#{name}%","%#{name}%","%#{name}%")
+      @chair = Chair.ransack(params[:q])
+      @chairs = @chair.result(distinct: true)
+      chairs_facility_ids = @chairs.pluck(:facility_id)
+      @facilities = @facilities.where(id: chairs_facility_ids)
+    else
+      @facilities = Facility.all
+    end
+
   end
 
   def show
