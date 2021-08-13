@@ -22,7 +22,10 @@
   <%= form.text_area :comment %>
 </div>
   <%= form.hidden_field :user_id,value: current_user.id %>
-  <%= form.hidden_field :facility_id,value: params[:facility_id].to_i %>
+  <%= form.hidden_field :facility_id,value: @review.facility_id %>
 <%= form.submit "投稿する" %>
 <% end %>
 <br>
+<% @review.errors.full_messages.each do |msg| %>
+  <li><%= msg %></li>
+<% end %>

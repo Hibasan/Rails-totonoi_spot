@@ -3,6 +3,7 @@ class ReviewsController < ApplicationController
 
   def new
     @review = Review.new
+    @review.facility_id = params[:facility_id].to_i
   end
 
   def create

@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  validates :name, presence: true
   has_many :reviews, dependent: :destroy
   has_many :favorite_facilities, dependent: :destroy
   # Include default devise modules. Others available are:
