@@ -1,0 +1,57 @@
+ja:
+  activerecord:
+    models:
+      user: ユーザー
+      chair: 休憩イス
+      facility: 施設
+      favorite_facility: お気に入り施設
+      rest_area: 休憩場所
+      review: レビュー
+      sauna: サウナ
+      sex: 性別
+      water_bath: 水風呂
+    attributes:
+      user:
+        title: タイトル
+        name: 名前
+        email: メールアドレス
+        current_password: 現在のパスワード
+        password: パスワード
+        password_confirmation: 確認用パスワード
+        remember_me: ログインを記憶
+      chair:
+        bath: 風呂イス
+        deck: デッキチェア
+        relax: リクライニングチェア
+        bench: ベンチ
+        bench_non_backrest: ベンチ()背もたれなし)
+        comment: コメント
+      facility:
+        name: 名前
+        prefecture: 県名
+        address: 住所
+        homepage: ホームページ
+        business_hours: 営業時間
+        holiday: 定休日
+        fee: 料金
+        payment: 支払い
+        comment: コメント
+        image: 画像
+      rest_area:
+        area: 休憩場所
+      review:
+        sex: 性別
+        dry: 湿度
+        light: 明るさ
+        wide: 広さ
+        comment: コメント
+      water_bath:
+        temperature: 温度
+        intern: 収容人数
+        comment: コメント
+      sauna:
+        temperature: 温度
+        intern: 収容人数
+        comment: コメント
+      sex:
+        sex: 性別
