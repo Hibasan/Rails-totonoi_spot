@@ -2,7 +2,7 @@
 <%= form_with model: @facility ,local: true do |form| %>
   <div class="facility_field">
     <%= form.label :name ,"施設名" %>
-    <%= form.text_field :name ,placeholder:"ファンタジーサウナ＆スパおふろの国"%>
+    <%= form.text_field :name ,placeholder:"例）ファンタジーサウナ＆スパおふろの国"%>
   </div>
   <div class="facility_field">
     <%= form.label :prefecture ,"県名" %>
@@ -17,7 +17,7 @@
   </div>
   <div class="facility_field">
     <%= form.label :address ,"住所" %>
-    <%= form.text_area :address ,placeholder:"横浜市鶴見区下末吉２丁目２５−２３"%>
+    <%= form.text_area :address ,placeholder:"例）横浜市鶴見区下末吉２丁目２５−２３"%>
   </div>
   <div class="facility_field">
     <%= form.label :homepage ,"ホームページ" %>
@@ -26,7 +26,7 @@
   <div class="facility_field">
     <%= form.label :business_hours ,"営業時間" %>
     <%= form.text_area :business_hours,
-    placeholder:"月曜日:11時00分～0時00分
+    placeholder:"例）月曜日:11時00分～0時00分
 火曜日:11時00分～0時00分
 水曜日:11時00分～0時00分
 木曜日:8時00分～0時00分
@@ -40,19 +40,22 @@
   </div>
   <div class="facility_field">
     <%= form.label :fee ,"利用料金" %>
-    <%= form.text_area :fee ,placeholder:"平日:750円
+    <%= form.text_area :fee ,placeholder:"例）平日:750円
 土日祝日:900円"%>
   </div>
   <div class="facility_field">
     <%= form.label :payment ,"支払い方法" %>
-    <%= form.text_area :payment ,placeholder:"現金"%>
+    <%= form.text_area :payment ,placeholder:"例）現金"%>
   </div>
   <div class="facility_field">
     <%= form.label :comment ,"備考" %>
-    <%= form.text_area :comment ,placeholder:"入浴まで100円ロッカー２個あり（返却あり）"%>
+    <%= form.text_area :comment ,placeholder:"例）入浴まで100円ロッカー２個あり（返却あり）"%>
   </div>
   <%= form.submit "施設情報登録" %>
 
+  <% @facility.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
 
   <h2>サウナ情報</h2>
   <div class="sauna">
