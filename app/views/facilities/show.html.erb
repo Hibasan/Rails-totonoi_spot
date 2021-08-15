@@ -33,16 +33,48 @@
   <div class="label5">サウナ</div>
   <div class="label6">水風呂</div>
   <div class="male_inside">
-    男うち
+    <% @male_in_chairs.each do |chair| %>
+    <tr>
+      <td><%= chair&.bath && "風呂イス#{chair.bath}" %></td>
+      <td><%= chair&.deck && "デッキチェア#{chair.deck}" %></td>
+      <td><%= chair&.relax && "リクライニング#{chair.relax}" %></td>
+      <td><%= chair&.bench && "ベンチ#{chair.bench}" %></td>
+      <td><%= chair&.bench_non_backrest && "ベンチ(背もたれなし)#{chair.bench_non_backrest}" %></td>
+    </tr>
+    <% end %>
   </div>
   <div class="male_outside">
-    男そと
+    <% @male_out_chairs.each do |chair| %>
+    <tr>
+      <td><%= chair&.bath && "風呂イス#{chair.bath}" %></td>
+      <td><%= chair&.deck && "デッキチェア#{chair.deck}" %></td>
+      <td><%= chair&.relax && "リクライニング#{chair.relax}" %></td>
+      <td><%= chair&.bench && "ベンチ#{chair.bench}" %></td>
+      <td><%= chair&.bench_non_backrest && "ベンチ(背もたれなし)#{chair.bench_non_backrest}" %></td>
+    </tr>
+    <% end %>
   </div>
   <div class="female_inside">
-    女うち
+    <% @female_in_chairs.each do |chair| %>
+    <tr>
+      <td><%= chair&.bath && "風呂イス#{chair.bath}" %></td>
+      <td><%= chair&.deck && "デッキチェア#{chair.deck}" %></td>
+      <td><%= chair&.relax && "リクライニング#{chair.relax}" %></td>
+      <td><%= chair&.bench && "ベンチ#{chair.bench}" %></td>
+      <td><%= chair&.bench_non_backrest && "ベンチ(背もたれなし)#{chair.bench_non_backrest}" %></td>
+    </tr>
+    <% end %>
   </div>
   <div class="female_outside">
-    女そと
+    <% @female_out_chairs.each do |chair| %>
+    <tr>
+      <td><%= chair&.bath && "風呂イス#{chair.bath}" %></td>
+      <td><%= chair&.deck && "デッキチェア#{chair.deck}" %></td>
+      <td><%= chair&.relax && "リクライニング#{chair.relax}" %></td>
+      <td><%= chair&.bench && "ベンチ#{chair.bench}" %></td>
+      <td><%= chair&.bench_non_backrest && "ベンチ(背もたれなし)#{chair.bench_non_backrest}" %></td>
+    </tr>
+    <% end %>
   </div>
   <div class="male_sauna">
     <% @male_saunas.each do |sauna| %>
@@ -120,32 +152,4 @@
     });
   </script>
 </div>
-
-
-<h3>休憩エリア情報</h3>
-<table>
-<tr>
-  <th>性別</th>
-  <th>場所</th>
-  <th>風呂イス</th>
-  <th>デッキチェア</th>
-  <th>リラックスチェア</th>
-  <th>ベンチ</th>
-  <th>背もたれなしベンチ</th>
-  <th>コメント</th>
-</tr>
-<% @chairs.each do |chair| %>
-<tr>
-  <td><%= chair.sex.sex %></td>
-  <td><%= chair.rest_area.area %></td>
-  <td><%= chair.bath %></td>
-  <td><%= chair.deck %></td>
-  <td><%= chair.relax %></td>
-  <td><%= chair.bench %></td>
-  <td><%= chair.bench_non_backrest %></td>
-  <td><%= chair.comment %></td>
-</tr>
-<% end %>
-</table>
-
 <a href="javascript:history.back()">[戻る]</a>

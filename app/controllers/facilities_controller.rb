@@ -42,7 +42,10 @@ class FacilitiesController < ApplicationController
     @female_saunas = @facility.saunas.where(sex_id: 2)
     @male_water_baths = @facility.water_baths.where(sex_id: 1)
     @female_water_baths = @facility.water_baths.where(sex_id: 2)
-    @chairs = @facility.chairs.includes(:sex,:rest_area)
+    @male_in_chairs = @facility.chairs.where(sex_id: 1,rest_area_id: 1)
+    @male_out_chairs = @facility.chairs.where(sex_id: 1,rest_area_id: 2)
+    @female_in_chairs = @facility.chairs.where(sex_id: 2,rest_area_id: 1)
+    @female_out_chairs = @facility.chairs.where(sex_id: 2,rest_area_id: 2)
     if user_signed_in?
       @favorite = current_user.favorite_facilities.find_by(facility_id: @facility.id)
     end
