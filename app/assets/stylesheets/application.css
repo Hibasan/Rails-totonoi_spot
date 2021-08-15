@@ -49,6 +49,11 @@ li { list-style: none; }
   display: table-cell;
 }
 
+.wrapper{
+  max-width: 1230px;
+  margin: 0 auto;
+  border: solid;
+}
 /* facilities#about.html */
 .about_content {
   text-align: center;
