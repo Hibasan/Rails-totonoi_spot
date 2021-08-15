@@ -26,22 +26,12 @@
 </div>
 <h2>施設情報</h2>
 <div class="facility_show_2nd">
-  <div class="label1">
-    男湯
-  </div>
-  <div class="label2">
-    女湯
-  </div>
-  <div class="label3">
-    室内
-  </div>
-  <div class="label4">
-    外気浴
-  </div>
-  <div class="label5">
-    サウナ
-    水風呂
-  </div>
+  <div class="label1">男湯</div>
+  <div class="label2">女湯</div>
+  <div class="label3">室内</div>
+  <div class="label4">外気浴</div>
+  <div class="label5">サウナ</div>
+  <div class="label6">水風呂</div>
   <div class="male_inside">
     男うち
   </div>
@@ -55,10 +45,40 @@
     女そと
   </div>
   <div class="male_sauna">
-    男サウナ
+    <% @male_saunas.each do |sauna| %>
+    <tr>
+      <td><%= sauna.temperature %>℃</td>
+      <td><%= sauna.intern %>人</td>
+      <td><%= sauna.comment %></td>
+    </tr>
+    <% end %>
   </div>
   <div class="female_sauna">
-    女サウナ
+    <% @female_saunas.each do |sauna| %>
+    <tr>
+      <td><%= sauna.temperature %>℃</td>
+      <td><%= sauna.intern %>人</td>
+      <td><%= sauna.comment %></td>
+    </tr>
+    <% end %>
+  </div>
+  <div class="male_water">
+    <% @male_water_baths.each do |water| %>
+    <tr>
+      <td><%= water.temperature %>℃</td>
+      <td><%= water.intern %>人</td>
+      <td><%= water.comment %></td>
+    </tr>
+    <% end %>
+  </div>
+  <div class="female_water">
+    <% @female_water_baths.each do |water| %>
+    <tr>
+      <td><%= water.temperature %>℃</td>
+      <td><%= water.intern %>人</td>
+      <td><%= water.comment %></td>
+    </tr>
+    <% end %>
   </div>
 </div>
 
@@ -101,41 +121,6 @@
   </script>
 </div>
 
-<h3>サウナ情報</h3>
-<table>
-<tr>
-  <th>性別</th>
-  <th>温度</th>
-  <th>収容人数</th>
-  <th>コメント</th>
-</tr>
-<% @saunas.each do |sauna| %>
-<tr>
-  <td><%= sauna.sex.sex %></td>
-  <td><%= sauna.temperature %></td>
-  <td><%= sauna.intern %></td>
-  <td><%= sauna.comment %></td>
-</tr>
-<% end %>
-</table>
-
-<h3>水風呂情報</h3>
-<table>
-<tr>
-  <th>性別</th>
-  <th>温度</th>
-  <th>収容人数</th>
-  <th>コメント</th>
-</tr>
-<% @water_baths.each do |water| %>
-<tr>
-  <td><%= water.sex.sex %></td>
-  <td><%= water.temperature %></td>
-  <td><%= water.intern %></td>
-  <td><%= water.comment %></td>
-</tr>
-<% end %>
-</table>
 
 <h3>休憩エリア情報</h3>
 <table>

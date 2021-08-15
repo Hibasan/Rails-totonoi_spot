@@ -137,13 +137,14 @@ li { list-style: none; }
   margin: 10px;
   border: solid;
   display: grid;
-  grid-template-rows: 40px 160px 160px 120px;
+  grid-template-rows: 40px 160px 160px 1fr 1fr;
   grid-template-columns: 100px 1fr 1fr;
   grid-template-areas:
   "nil  label1  label2"
   "label3  male_inside  female_inside"
   "label4  male_outside  female_outside"
-  "label5  male_sauna  female_sauna";
+  "label5  male_sauna  female_sauna"
+  "label6  male_water  female_water";
 }
 .facility_show_2nd .label1{
   border: solid;
@@ -165,6 +166,10 @@ li { list-style: none; }
   border: solid;
   grid-area: label5;
 }
+.facility_show_2nd .label6{
+  border: solid;
+  grid-area: label6;
+}
 .facility_show_2nd .male_inside{
   border: solid;
   grid-area: male_inside;
@@ -177,6 +182,10 @@ li { list-style: none; }
   border: solid;
   grid-area: male_sauna;
 }
+.facility_show_2nd .male_water{
+  border: solid;
+  grid-area: male_water;
+}
 .facility_show_2nd .female_inside{
   border: solid;
   grid-area: female_inside;
@@ -188,6 +197,10 @@ li { list-style: none; }
 .facility_show_2nd .female_sauna{
   border: solid;
   grid-area: female_sauna;
+}
+.facility_show_2nd .female_water{
+  border: solid;
+  grid-area: female_water;
 }
 
 .facility_show_3rd{
