@@ -38,6 +38,7 @@ class FacilitiesController < ApplicationController
 
   def show
     @facility = Facility.find(params[:id])
+    @reviews = @facility.reviews.where(facility_id: params[:id]).includes([:user])
     @male_saunas = @facility.saunas.where(sex_id: 1)
     @female_saunas = @facility.saunas.where(sex_id: 2)
     @male_water_baths = @facility.water_baths.where(sex_id: 1)

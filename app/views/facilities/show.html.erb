@@ -24,7 +24,8 @@
     コメント
   </div>
 </div>
-<h2>施設情報</h2>
+
+<h2>設備</h2>
 <div class="facility_show_2nd">
   <div class="label1">男湯</div>
   <div class="label2">女湯</div>
@@ -152,4 +153,26 @@
     });
   </script>
 </div>
+
+<h2>ユーザーのコメント</h2>
+<% @reviews.each do |review| %>
+  <div class="facility_show_4th">
+    <div class="name">
+      <%= review.user.name %>
+    </div>
+    <div class="review">
+        <%= review.dry %>
+        <%= review.light %>
+        <%= review.wide %>
+    </div>
+    <div class="created_at">
+      作成日
+      <%= review.created_at %>
+    </div>
+    <div class="comment">
+      <%= review.comment %>
+    </div>
+  </div>
+<% end %>
+
 <a href="javascript:history.back()">[戻る]</a>

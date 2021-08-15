@@ -220,6 +220,35 @@ li { list-style: none; }
   grid-area: map;
 }
 
+
+.facility_show_4th{
+  margin: 10px;
+  border: solid;
+  display: grid;
+  grid-template-rows: 60px 1fr;
+  grid-template-columns: 280px 1fr 200px;
+  grid-template-areas:
+  "name  review  created_at"
+  "comment  comment  comment";
+}
+.facility_show_4th .name{
+  border: solid;
+  grid-area: name;
+}
+.facility_show_4th .review{
+  border: solid;
+  grid-area: review;
+}
+.facility_show_4th .created_at{
+  border: solid;
+  grid-area: created_at;
+}
+.facility_show_4th .comment{
+  border: solid;
+  grid-area: comment;
+}
+
+
 /* facility#new.html */
 .nested-fields{
   display: flex;
