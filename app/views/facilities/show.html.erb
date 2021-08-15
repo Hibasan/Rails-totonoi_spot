@@ -19,6 +19,40 @@
   <div class="address">
     <%= @facility.prefecture + @facility.address %>
   </div>
+  <div class="image">
+    写真用
+  </div>
+  <div class="comment">
+    コメント
+  </div>
+</div>
+
+<div class="facility_show_3rd">
+
+<div class="address">
+  <h2>店舗情報</h2>
+</div>
+<div class="facility">
+  <ul>
+    <li>施設名</li>
+    <li>　<%= @facility.name %></li>
+    <li>住所</li>
+    <li>　<%= @facility.prefecture + @facility.address %></li>
+    <li>ホームページ</li>
+    <li>　<%= @facility.homepage %></li>
+    <li>営業時間</li>
+    <li>　<%= @facility.business_hours %></li>
+    <li>定休日</li>
+    <li>　<%= @facility.holiday %></li>
+    <li>利用料金</li>
+    <li>　<%= @facility.fee %></li>
+    <li>支払い方法</li>
+    <li>　<%= @facility.payment %></li>
+    <li>更新日</li>
+    <li>　<%= @facility.updated_at %></li>
+  </ul>
+
+</div>
   <div id="map" style='width: 560px; height: 400px;'></div>
   <script>
     handler = Gmaps.build('Google');
@@ -35,7 +69,6 @@
     });
   </script>
 </div>
-
 
 
 

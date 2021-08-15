@@ -109,14 +109,14 @@ li { list-style: none; }
   border: solid;
 }
 .facility_show_1st{
-  margin: 0 10px;
+  margin: 10px;
   border: solid;
   display: grid;
-  grid-template-rows: 80px 400px;
-  grid-template-columns: 300px 300px 1fr 200px;
+  grid-template-rows: 80px 200px;
+  grid-template-columns: 200px 200px 1fr 200px;
   grid-template-areas:
-  "name  address  address  button"
-  "map  map  map  button";
+  "name  name  address  button"
+  "image  comment  comment  button";
 }
 .facility_show_1st .name{
   border: solid;
@@ -130,11 +130,40 @@ li { list-style: none; }
   border: solid;
   grid-area: button;
 }
-.facility_show_1st #map{
+.facility_show_1st .image{
+  border: solid;
+  grid-area: image;
+}
+.facility_show_1st .comment{
+  border: solid;
+  grid-area: comment;
+}
+
+
+
+
+.facility_show_3rd{
+  margin: 10px;
+  border: solid;
+  display: grid;
+  grid-template-rows: 80px 1fr;
+  grid-template-columns: 560px 1fr;
+  grid-template-areas:
+  "address  facility"
+  "map  facility";
+}
+.facility_show_3rd .address{
+  border: solid;
+  grid-area: address;
+}
+.facility_show_3rd .facility{
+  border: solid;
+  grid-area: facility;
+}
+.facility_show_3rd #map{
   border: solid;
   grid-area: map;
 }
-
 
 /* facility#new.html */
 .nested-fields{
