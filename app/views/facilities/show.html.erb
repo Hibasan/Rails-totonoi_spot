@@ -1,23 +1,25 @@
-<% if user_signed_in? %>
-  <%= link_to '評価・コメントをする' , new_review_path(facility_id: @facility.id) %>
-
-  <span id="favorite-btn-<%= @facility.id %>">
-    <%= render partial: 'favorite_facilities/favorite', locals: {facility: @facility} %>
-  </span>
-
-  <%= link_to '情報編集' , edit_facility_path(@facility.id) %>
-  <%= link_to '削除', facility_path(@facility.id),method: :delete ,data: { confirm: '削除します' } %>
-<% end %>
-<div class="facility_show">
-  <div class="facility_show_top">
+<div class="grid">
+</div>
+<div class="facility_show_1st">
+  <div class="name">
     <h2><%= @facility.name %></h2>
+  </div>
+  <div class="button">
+  <% if user_signed_in? %>
+    <ul>
+      <li><%= link_to '評価・コメントをする' , new_review_path(facility_id: @facility.id) %></li>
+      <li id="favorite-btn-<%= @facility.id %>">
+        <%= render partial: 'favorite_facilities/favorite', locals: {facility: @facility} %>
+      </li>
+      <li><%= link_to '情報編集' , edit_facility_path(@facility.id) %></li>
+      <li><%= link_to '削除', facility_path(@facility.id),method: :delete ,data: { confirm: '削除します' } %></li>
+    </ul>
+  <% end %>
+  </div>
+  <div class="address">
     <%= @facility.prefecture + @facility.address %>
   </div>
-
-  <div class="facility_show_left">
-    <div id="map" style='width: 600px; height: 400px;'></div>
-  </div>
-
+  <div id="map" style='width: 560px; height: 400px;'></div>
   <script>
     handler = Gmaps.build('Google');
     handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
@@ -32,6 +34,10 @@
       handler.getMap().setZoom(15);
     });
   </script>
+</div>
+
+
+
 
 <br>
 <h2>施設情報</h2>
@@ -60,7 +66,6 @@
 </tr>
 </table>
 
-
 <h3>サウナ情報</h3>
 <table>
 <tr>
@@ -79,8 +84,6 @@
 <% end %>
 </table>
 
-
-
 <h3>水風呂情報</h3>
 <table>
 <tr>
@@ -98,9 +101,6 @@
 </tr>
 <% end %>
 </table>
-
-
-
 
 <h3>休憩エリア情報</h3>
 <table>

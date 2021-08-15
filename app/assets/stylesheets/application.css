@@ -7,7 +7,6 @@ body {
   padding-bottom: 30px;
   box-sizing: border-box;
 }
-
 ul { margin: 0; padding: 0; }
 li { list-style: none; }
 
@@ -39,9 +38,7 @@ li { list-style: none; }
   left: 0;
   bottom: 0;
   display: table;
-
 }
-
 .footer p {
   margin: 0;
   padding: 0;
@@ -105,26 +102,37 @@ li { list-style: none; }
 }
 
 /* facility#show.html */
-.facility_show{
-  height: 450px;
-}
-
-
-.facility_show_top{
-  align-items: flex-end;
-  display: flex;
-}
-
-.facility_show_top h2{
-  margin: 0 5px;
-}
-
-.facility_show_left{
-  background-color: #FFF;
-  height: 400px;
-  width: 600px;
-  float: left;
+.grid{
   margin: 10px;
+  height: 80px;
+  width: 80px;
+  border: solid;
+}
+.facility_show_1st{
+  margin: 0 10px;
+  border: solid;
+  display: grid;
+  grid-template-rows: 80px 400px;
+  grid-template-columns: 300px 300px 1fr 200px;
+  grid-template-areas:
+  "name  address  address  button"
+  "map  map  map  button";
+}
+.facility_show_1st .name{
+  border: solid;
+  grid-area: name;
+}
+.facility_show_1st .address{
+  border: solid;
+  grid-area: address;
+}
+.facility_show_1st .button{
+  border: solid;
+  grid-area: button;
+}
+.facility_show_1st #map{
+  border: solid;
+  grid-area: map;
 }
 
 
