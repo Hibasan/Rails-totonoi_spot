@@ -102,18 +102,12 @@ li { list-style: none; }
 }
 
 /* facility#show.html */
-.grid{
-  margin: 10px;
-  height: 80px;
-  width: 80px;
-  border: solid;
-}
 .facility_show_1st{
   margin: 10px;
   border: solid;
   display: grid;
   grid-template-rows: 80px 200px;
-  grid-template-columns: 200px 200px 1fr 200px;
+  grid-template-columns: 280px 120px 1fr 200px;
   grid-template-areas:
   "name  name  address  button"
   "image  comment  comment  button";
@@ -139,22 +133,70 @@ li { list-style: none; }
   grid-area: comment;
 }
 
-
-
+.facility_show_2nd{
+  margin: 10px;
+  border: solid;
+  display: grid;
+  grid-template-rows: 40px 160px 160px 120px;
+  grid-template-columns: 100px 1fr 1fr;
+  grid-template-areas:
+  "nil  label1  label2"
+  "label3  male_inside  female_inside"
+  "label4  male_outside  female_outside"
+  "label5  male_sauna  female_sauna";
+}
+.facility_show_2nd .label1{
+  border: solid;
+  grid-area: label1;
+}
+.facility_show_2nd .label2{
+  border: solid;
+  grid-area: label2;
+}
+.facility_show_2nd .label3{
+  border: solid;
+  grid-area: label3;
+}
+.facility_show_2nd .label4{
+  border: solid;
+  grid-area: label4;
+}
+.facility_show_2nd .label5{
+  border: solid;
+  grid-area: label5;
+}
+.facility_show_2nd .male_inside{
+  border: solid;
+  grid-area: male_inside;
+}
+.facility_show_2nd .male_outside{
+  border: solid;
+  grid-area: male_outside;
+}
+.facility_show_2nd .male_sauna{
+  border: solid;
+  grid-area: male_sauna;
+}
+.facility_show_2nd .female_inside{
+  border: solid;
+  grid-area: female_inside;
+}
+.facility_show_2nd .female_outside{
+  border: solid;
+  grid-area: female_outside;
+}
+.facility_show_2nd .female_sauna{
+  border: solid;
+  grid-area: female_sauna;
+}
 
 .facility_show_3rd{
   margin: 10px;
   border: solid;
   display: grid;
-  grid-template-rows: 80px 1fr;
   grid-template-columns: 560px 1fr;
   grid-template-areas:
-  "address  facility"
   "map  facility";
-}
-.facility_show_3rd .address{
-  border: solid;
-  grid-area: address;
 }
 .facility_show_3rd .facility{
   border: solid;

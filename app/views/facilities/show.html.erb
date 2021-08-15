@@ -1,5 +1,3 @@
-<div class="grid">
-</div>
 <div class="facility_show_1st">
   <div class="name">
     <h2><%= @facility.name %></h2>
@@ -26,33 +24,66 @@
     コメント
   </div>
 </div>
+<h2>施設情報</h2>
+<div class="facility_show_2nd">
+  <div class="label1">
+    男湯
+  </div>
+  <div class="label2">
+    女湯
+  </div>
+  <div class="label3">
+    室内
+  </div>
+  <div class="label4">
+    外気浴
+  </div>
+  <div class="label5">
+    サウナ
+    水風呂
+  </div>
+  <div class="male_inside">
+    男うち
+  </div>
+  <div class="male_outside">
+    男そと
+  </div>
+  <div class="female_inside">
+    女うち
+  </div>
+  <div class="female_outside">
+    女そと
+  </div>
+  <div class="male_sauna">
+    男サウナ
+  </div>
+  <div class="female_sauna">
+    女サウナ
+  </div>
+</div>
 
+<h2>店舗情報</h2>
 <div class="facility_show_3rd">
-
-<div class="address">
-  <h2>店舗情報</h2>
-</div>
-<div class="facility">
-  <ul>
-    <li>施設名</li>
-    <li>　<%= @facility.name %></li>
-    <li>住所</li>
-    <li>　<%= @facility.prefecture + @facility.address %></li>
-    <li>ホームページ</li>
-    <li>　<%= @facility.homepage %></li>
-    <li>営業時間</li>
-    <li>　<%= @facility.business_hours %></li>
-    <li>定休日</li>
-    <li>　<%= @facility.holiday %></li>
-    <li>利用料金</li>
-    <li>　<%= @facility.fee %></li>
-    <li>支払い方法</li>
-    <li>　<%= @facility.payment %></li>
-    <li>更新日</li>
-    <li>　<%= @facility.updated_at %></li>
-  </ul>
-
-</div>
+  <div class="facility">
+    <ul>
+      <li>施設名</li>
+      <li>　<%= @facility.name %></li>
+      <li>住所</li>
+      <li>　<%= @facility.prefecture + @facility.address %></li>
+      <li>ホームページ</li>
+      <li>　<%= @facility.homepage %></li>
+      <li>営業時間</li>
+      <li>　<%= @facility.business_hours %></li>
+      <li>定休日</li>
+      <li>　<%= @facility.holiday %></li>
+      <li>利用料金</li>
+      <li>　<%= @facility.fee %></li>
+      <li>支払い方法</li>
+      <li>　<%= @facility.payment %></li>
+      <li>更新日</li>
+      <li>　<%= @facility.updated_at %></li>
+    </ul>
+  </div>
   <div id="map" style='width: 560px; height: 400px;'></div>
   <script>
     handler = Gmaps.build('Google');
@@ -69,35 +100,6 @@
     });
   </script>
 </div>
-
-
-
-<br>
-<h2>施設情報</h2>
-<table>
-<tr>
-  <th>施設名</th>
-  <th>県名</th>
-  <th>住所</th>
-  <th>ホームページ</th>
-  <th>営業時間</th>
-  <th>定休日</th>
-  <th>利用料金</th>
-  <th>支払い方法</th>
-  <th>備考</th>
-</tr>
-<tr>
-  <td><%=@facility.name%></td>
-  <td><%=@facility.prefecture%></td>
-  <td><%=@facility.address%></td>
-  <td><%=@facility.homepage%></td>
-  <td><%=@facility.business_hours%></td>
-  <td><%=@facility.holiday%></td>
-  <td><%=@facility.fee%></td>
-  <td><%=@facility.payment%></td>
-  <td><%=@facility.comment%></td>
-</tr>
-</table>
 
 <h3>サウナ情報</h3>
 <table>
