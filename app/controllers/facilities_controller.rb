@@ -38,9 +38,15 @@ class FacilitiesController < ApplicationController
 
   def show
     @facility = Facility.find(params[:id])
-    @saunas = @facility.saunas.includes(:sex)
-    @water_baths = @facility.water_baths.includes(:sex)
-    @chairs = @facility.chairs.includes(:sex,:rest_area)
+    @reviews = @facility.reviews.where(facility_id: params[:id]).includes([:user])
+    @male_saunas = @facility.saunas.where(sex_id: 1)
+    @female_saunas = @facility.saunas.where(sex_id: 2)
+    @male_water_baths = @facility.water_baths.where(sex_id: 1)
+    @female_water_baths = @facility.water_baths.where(sex_id: 2)
+    @male_in_chairs = @facility.chairs.where(sex_id: 1,rest_area_id: 1)
+    @male_out_chairs = @facility.chairs.where(sex_id: 1,rest_area_id: 2)
+    @female_in_chairs = @facility.chairs.where(sex_id: 2,rest_area_id: 1)
+    @female_out_chairs = @facility.chairs.where(sex_id: 2,rest_area_id: 2)
     if user_signed_in?
       @favorite = current_user.favorite_facilities.find_by(facility_id: @facility.id)
     end
