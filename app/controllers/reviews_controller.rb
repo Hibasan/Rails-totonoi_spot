@@ -9,7 +9,7 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
     if @review.save
-      redirect_to root_path,notice:"施設情報を登録しました"
+      redirect_to facility_path(@review.facility_id),notice:"#{@review.facility.name}に評価投稿をしました"
     else
       render :new
     end
