@@ -1,39 +1,44 @@
 <div class="nested-fields">
-  <div class="rest_field">
+  <div class="row">
+  <div class="col-md-4">
     <%= f.radio_button :sex_id, 1 %>
     <%= f.label :sex ,"男性" %>
     <%= f.radio_button :sex_id, 2 %>
     <%= f.label :sex ,"女性　" %>
   </div>
-  <div class="rest_field">
+  <div class="col-md-4">
     <%= f.radio_button :rest_area_id, 1 %>
     <%= f.label :rest_area_id ,"室内" %>
     <%= f.radio_button :rest_area_id, 2 %>
     <%= f.label :rest_area_id ,"室外　" %>
   </div>
-  <div class="rest_field">
+  </div>
+  <div class="row">
+  <div class="col-md-2">
     <%= f.label :bath ,"風呂イス" %><br>
-    <%= f.number_field :bath %>
+    <%= f.number_field :bath,class:"form-control" %>
   </div>
-  <div class="rest_field">
-    <%= f.label :deck ,"デッキチェア" %><br>
-    <%= f.number_field :deck %>
+  <div class="col-md-2">
+    <%= f.label :deck ,"デッキ" %><br>
+    <%= f.number_field :deck,class:"form-control" %>
   </div>
-  <div class="rest_field">
-    <%= f.label :relax ,"リラックスチェア" %><br>
-    <%= f.number_field :relax %>
+  <div class="col-md-3">
+    <%= f.label :relax ,"リラックス" %><br>
+    <%= f.number_field :relax,class:"form-control" %>
   </div>
-  <div class="rest_field">
+  <div class="col-md-2">
     <%= f.label :bench ,"ベンチ" %><br>
-    <%= f.number_field :bench %>
+    <%= f.number_field :bench,class:"form-control" %>
   </div>
-  <div class="rest_field">
-    <%= f.label :bench_non_backrest ,"背もたれなしベンチ" %><br>
-    <%= f.number_field :bench_non_backrest %>
+  <div class="col-md-3">
+    <%= f.label :bench_non_backrest ,"ベンチ(背なし)" %><br>
+    <%= f.number_field :bench_non_backrest,class:"form-control" %>
   </div>
-  <div class="rest_field">
+    </div>
+  <div class="col-md-6">
     <%= f.label :comment ,"コメント" %><br>
-    <%= f.text_area :comment %>
+    <%= f.text_area :comment,class:"form-control" %>
   </div>
-  <%= link_to_remove_association "削除", f %>
+
+  <%= link_to_remove_association "入力欄削除", f %>
 </div>
