@@ -10,7 +10,9 @@ class FacilitiesController < ApplicationController
 
   def new
     @facility = Facility.new
-
+    @facility.saunas.build
+    @facility.water_baths.build
+    @facility.chairs.build
   end
 
   def create
