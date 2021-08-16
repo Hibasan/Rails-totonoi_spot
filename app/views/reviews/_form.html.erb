@@ -1,31 +1,61 @@
-<%= form_with model: @review ,local: true do |form| %>
-<div class="review_field">
-  <%= form.label :sex ,"男性" %>
-  <%= form.radio_button :sex, :"男性" %>
-  <%= form.label :sex ,"女性" %>
-  <%= form.radio_button :sex, :"女性" %>
-</div>
-<div class="review_field">
-  <%= form.label :dry ,"湿度" %>
-  <%= form.select :dry,[["★1",1],["★2",2],["★3",3],["★4",4],["★5",5]] %>
-</div>
-<div class="review_field">
-  <%= form.label :light ,"明るさ" %>
-  <%= form.select :light,[["★1",1],["★2",2],["★3",3],["★4",4],["★5",5]] %>
-</div>
-<div class="review_field">
-  <%= form.label :wide ,"広さ" %>
-  <%= form.select :wide,[["★1",1],["★2",2],["★3",3],["★4",4],["★5",5]] %>
-</div>
-<div class="review_field">
-  <%= form.label :comment ,"コメント" %>
-  <%= form.text_area :comment %>
-</div>
+<div class="review_container">
+  <h3><%= @review.facility.name %> への評価</h3>
+  <%= @review.facility.image %>
+  <%= form_with model: @review ,local: true do |form| %>
+
+  <div class="row">
+    <div class="review_field col-auto">
+      <%= form.label :sex ,"男性" %>
+      <%= form.radio_button :sex, :"男性" %>
+    </div>
+    <div class="review_field col-auto">
+      <%= form.label :sex ,"女性" %>
+      <%= form.radio_button :sex, :"女性" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="review_field col-2">
+      <%= form.label :dry ,"湿度" %>
+    </div>
+    <div class="review_field col-6">
+      <%= form.select :dry,[["★1",1],["★2",2],["★3",3],["★4",4],["★5",5]] %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="review_field col-2">
+      <%= form.label :light ,"明るさ" %>
+    </div>
+    <div class="review_field col-6">
+      <%= form.select :light,[["★1",1],["★2",2],["★3",3],["★4",4],["★5",5]] %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="review_field col-2">
+      <%= form.label :wide ,"広さ" %>
+    </div>
+    <div class="review_field col-6">
+      <%= form.select :wide,[["★1",1],["★2",2],["★3",3],["★4",4],["★5",5]] %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="review_field col-2">
+      <%= form.label :comment ,"コメント" %>
+    </div>
+    <div class="review_field col-6">
+      <%= form.text_area :comment %>
+    </div>
+  </div>
+
   <%= form.hidden_field :user_id,value: current_user.id %>
   <%= form.hidden_field :facility_id,value: @review.facility_id %>
-<%= form.submit "投稿する" %>
-<% end %>
-<br>
-<% @review.errors.full_messages.each do |msg| %>
-  <li><%= msg %></li>
-<% end %>
+  <%= form.submit "投稿する" %>
+  <% end %>
+  <br>
+  <% @review.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+</div>
