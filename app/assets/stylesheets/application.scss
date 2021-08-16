@@ -261,10 +261,74 @@ width: 768px;
 margin: 0 auto;
 }
 
-
 .review_container{
   width: 768px;
   margin: 0 auto;
+}
+
+/* user.session.html */
+.session_container {
+  width: 360px;
+  height: 320px;
+  margin: 20px auto;
+  border: 2px #FFF solid;
+  border-radius: 6px;
+}
+
+.session_content {
+  margin: 20px;
+}
+
+.session_email input[type="email"], .session_password input[type="password"] {
+  border-style: none;
+  box-sizing: border-box;
+  width: 100%;
+  height: 32px;
+  border: 1px solid #000;
+  border-radius: 3px;
+}
+
+.session_password{
+  margin-top: 20px;
+}
+
+.session_left {
+  float: left;
+}
+.session_right {
+  float: right;
+}
+
+.session_login {
+  margin-top: 32px;
+}
+
+.session_login input[type="submit"] {
+  height: 32px;
+  border-style: none;
+  width: 100%;
+  border: 1px solid #000;
+}
+
+.session_login input[type="submit"]:hover {
+  background: #f0c14b;
+}
+
+.session_remember {
+  margin-top: 32px
+}
+
+.session_sign_up {
+  margin-top: 10px
+}
+.session_sign_up a {
+  display: block;
+  color: #111;
+  text-align: center;
+}
+
+.session_sign_up a:hover {
+  background: #e7e9ec;
 }
 
 
