@@ -1,21 +1,26 @@
 <div class="nested-fields">
-  <div class="water_field">
+  <div class="col-md-4">
     <%= f.radio_button :sex_id, 1 %>
-    <%= f.label :sex ,"男性" %>
+    <%= f.label :sex ,"男性" , class:"col-form-label"%>
     <%= f.radio_button :sex_id, 2 %>
-    <%= f.label :sex ,"女性　" %>
+    <%= f.label :sex ,"女性　" , class:"col-form-label"%>
   </div>
-  <div class="water_field">
-    <%= f.label :temperature ,"温度" %>
-    <%= f.number_field :temperature %>
+  <div class="row">
+    <div class="col-md-3">
+      <%= f.label :temperature ,"温度", class:"col-form-label" %>
+      <%= f.number_field :temperature,class:"form-control" %>
+    </div>
+    <div class="col-md-3">
+      <%= f.label :intern ,"収容人数", class:"col-form-label" %>
+      <%= f.number_field :intern ,class:"form-control"%>
+    </div>
+    <div class="col-md-6">
+      <%= f.label :comment ,"コメント", class:"col-form-label" %>
+      <%= f.text_area :comment,class:"form-control" %>
+      <div class="form-text"> 例）水深70~130cm</div>
+    </div>
+    <div class="nested_fields">
+      <%= link_to_remove_association "入力欄削除", f %>
+    </div>
   </div>
-  <div class="water_field">
-    <%= f.label :intern ,"収容人数" %>
-    <%= f.number_field :intern %>
-  </div>
-  <div class="water_field">
-    <%= f.label :comment ,"コメント" %>
-    <%= f.text_area :comment %>
-  </div>
-    <%= link_to_remove_association "削除", f %>
 </div>

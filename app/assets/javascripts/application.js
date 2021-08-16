@@ -5,5 +5,7 @@
 //= require cocoon
 //= require underscore
 //= require gmaps/google
+//= require popper
+//= require bootstrap-sprockets
 
 //= require_tree .

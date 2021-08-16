@@ -1,3 +1,4 @@
+@import "bootstrap";
 body {
   margin: 0;
   padding: 0;
@@ -255,12 +256,9 @@ li { list-style: none; }
 
 
 /* facility#new.html */
-.nested-fields{
-  display: flex;
-}
-
-.sauna_field{
-
+.form_container{
+width: 768px;
+margin: 0 auto;
 }
 
 /*
