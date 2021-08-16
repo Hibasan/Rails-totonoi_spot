@@ -1,10 +1,11 @@
 <h2>施設情報</h2>
 <%= form_with model: @facility ,local: true do |form| %>
-  <div class="facility_field">
-    <%= form.label :name ,"施設名" %>
-    <%= form.text_field :name ,placeholder:"例）ファンタジーサウナ＆スパおふろの国"%>
+  <div class="mb-3">
+    <%= form.label :name ,"施設名", class:"form-label"%>
+    <%= form.text_field :name, class:"form-control form-control-lg"%>
+    <div class="form-text"> 例）ファンタジーサウナ＆スパおふろの国</div>
   </div>
-  <div class="facility_field">
+  <div class="mb-3">
     <%= form.label :prefecture ,"県名" %>
     <%= form.select :prefecture,['北海道',
     '青森県','岩手県','宮城県','秋田県','山形県','福島県',
@@ -13,43 +14,41 @@
     '岐阜県','静岡県','愛知県','三重県',
     '滋賀県','京都県','大阪府','兵庫県','奈良県','和歌山県',
     '鳥取県','島根県','岡山県','広島県','山口県','徳島県','香川県','愛媛県','高知県',
-    '福岡県','佐賀県','長崎県','熊本県','大分県','宮崎県','鹿児島県','沖縄県'], { include_blank: '選択してください' } %>
+    '福岡県','佐賀県','長崎県','熊本県','大分県','宮崎県','鹿児島県','沖縄県'], { include_blank: '選択してください' },
+    class:"form-select" %>
   </div>
-  <div class="facility_field">
-    <%= form.label :address ,"住所" %>
-    <%= form.text_area :address ,placeholder:"例）横浜市鶴見区下末吉２丁目２５−２３"%>
+  <div class="mb-3">
+    <%= form.label :address ,"住所", class:"form-label" %>
+    <%= form.text_area :address ,class:"form-control"%>
+    <div class="form-text"> 例）横浜市鶴見区下末吉２丁目２５−２３</div>
   </div>
-  <div class="facility_field">
-    <%= form.label :homepage ,"ホームページ" %>
-    <%= form.text_field :homepage %>
+  <div class="mb-3">
+    <%= form.label :homepage ,"ホームページ", class:"form-label" %>
+    <%= form.text_field :homepage ,class:"form-control" %>
   </div>
-  <div class="facility_field">
-    <%= form.label :business_hours ,"営業時間" %>
-    <%= form.text_area :business_hours,
-    placeholder:"例）月曜日:11時00分～0時00分
-火曜日:11時00分～0時00分
-水曜日:11時00分～0時00分
-木曜日:8時00分～0時00分
-金曜日:8時00分～0時00分
-土曜日:8時00分～0時00分
-日曜日:8時00分～0時00分" %>
+  <div class="mb-3">
+    <%= form.label :business_hours ,"営業時間", class:"form-label" %>
+    <%= form.text_area :business_hours,class:"form-control" %>
+    <div class="form-text"> 例）月曜日:11時00分～0時00分 火曜日:11時00分～0時00分 水曜日:11時00分～0時00分 木曜日:8時00分～0時00分 金曜日:8時00分～0時00分 土曜日:8時00分～0時00分 日曜日:8時00分～0時00分</div>
   </div>
-  <div class="facility_field">
-    <%= form.label :holiday ,"定休日" %>
-    <%= form.text_area :holiday %>
+  <div class="mb-3">
+    <%= form.label :holiday ,"定休日", class:"form-label" %>
+    <%= form.text_field :holiday,class:"form-control" %>
   </div>
-  <div class="facility_field">
-    <%= form.label :fee ,"利用料金" %>
-    <%= form.text_area :fee ,placeholder:"例）平日:750円
-土日祝日:900円"%>
+  <div class="mb-3">
+    <%= form.label :fee ,"利用料金", class:"form-label" %>
+    <%= form.text_area :fee ,class:"form-control" %>
+    <div class="form-text"> 例）平日:750円 土日祝日:900円</div>
   </div>
-  <div class="facility_field">
-    <%= form.label :payment ,"支払い方法" %>
-    <%= form.text_area :payment ,placeholder:"例）現金"%>
+  <div class="mb-3">
+    <%= form.label :payment ,"支払い方法" , class:"form-label"%>
+    <%= form.text_field :payment ,class:"form-control"%>
+    <div class="form-text"> 例）現金 クレジットカード</div>
   </div>
-  <div class="facility_field">
-    <%= form.label :comment ,"備考" %>
-    <%= form.text_area :comment ,placeholder:"例）入浴まで100円ロッカー２個あり（返却あり）"%>
+  <div class="mb-3">
+    <%= form.label :comment ,"備考" , class:"form-label"%>
+    <%= form.text_area :comment ,class:"form-control"%>
+    <div class="form-text"> 例）入浴まで100円ロッカー２個あり（返却あり）</div>
   </div>
   <%= form.submit "施設情報登録" %>
 
