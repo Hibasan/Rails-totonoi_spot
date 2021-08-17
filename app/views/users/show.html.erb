@@ -1,13 +1,14 @@
 <h2>ここはマイページ</h2>
-<%= link_to '評価履歴' , users_review_path %>
 <br>
-<%= link_to 'お気に入り施設' , users_favorite_facilities_path %>
+<h3><%= link_to '評価履歴' , users_review_path %></h3>
+<br>
+<br>
+<h3><%= link_to 'お気に入り施設' , users_favorite_facilities_path %></h3>
+<br>
 <br>
 <% if current_user.admin?%>
-<%= link_to '管理者画面へ移動' , rails_admin_path %>
+<h3><%= link_to '管理者画面へ移動' , rails_admin_path %></h3>
 <% end %>
 <br>
 <br>
-<p>名前の変更</p>
-<%= link_to 'メールアドレス・パスワードの変更・アカウントの削除はこちら' , edit_user_registration_path %>
-<br>
+<h3><%= link_to 'アカウント情報の変更' , edit_user_registration_path %></h3>
