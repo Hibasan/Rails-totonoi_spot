@@ -2,45 +2,53 @@
   <%= link_to '施設登録' , new_facility_path %>
 <% end %>
 <br>
+<div class="search_container">
+  <h3>検索</h3>
 <%= search_form_for @chair, url: facilities_path do |f| %>
-  <div class="search_field">
-    <%= f.label :facility_name_or_prefecture_or_address ,"キーワード" %>
-    <%= f.search_field :facility_name ,placeholder:"東京"%>
+  <div class="col-md-12">
+    <%= f.search_field :facility_name ,placeholder:"東京 かるまる", class:"form-control form-control-lg"%>
   </div>
+  <hr>
+  <div class="row">
+    <div class="col-md-6">
+      <%= f.label :chair, '場所' %>
+      <%= f.radio_button :rest_area_id_eq, '', checked: true ,class:"btn-check",name:"area",id:"none"%>
+      <%= f.label :chairs_rest_area_id, '未選択' ,class:"btn btn-outline-success" ,for:"none"%>
+      <%= f.radio_button :rest_area_id_eq, 1 ,class:"btn-check",name:"area",id:"inside"%>
+      <%= f.label :chairs_rest_area_id, '室内' ,class:"btn btn-outline-success" , for:"inside"%>
+      <%= f.radio_button :rest_area_id_eq, 2 ,class:"btn-check",name:"area",id:"outside"%>
+      <%= f.label :chairs_rest_area_id, '室外' ,class:"btn btn-outline-success" , for:"outside"%>
+    </div>
+    <div class="col-md-6">
+      <%= f.label :chair, '性別' %>
+      <%= f.radio_button :sex_id_eq, '' ,class:"btn-check",name:"sex",id:"not" %>
+      <%= f.label :chairs_sex_id, '未選択' ,class:"btn btn-outline-dark", for:"not"%>
+      <%= f.radio_button :sex_id_eq, 1 ,class:"btn-check",name:"sex",id:"male"%>
+      <%= f.label :chairs_sex_id, '男性' ,class:"btn btn-outline-primary", for:"male"%>
+      <%= f.radio_button :sex_id_eq, 2 ,class:"btn-check",name:"sex",id:"female"%>
+      <%= f.label :chairs_sex_id, '女性' ,class:"btn btn-outline-danger", for:"female"%>
+    </div>
+  </div>
+  <hr>
   <div class="search_field">
     <%= f.label :chair, '設備' %>
     <%= f.check_box :bath_not_in, include_hidden: false ,class:"btn-check" ,id:"bath"%>
-    <%= f.label :bath, '風呂イス' ,class:"btn btn-primary", for:"bath"%>
+    <%= f.label :bath, '風呂イス' ,class:"btn btn-primary btn_size", for:"bath"%>
     <%= f.check_box :deck_not_in, include_hidden: false ,class:"btn-check" ,id:"deck"%>
-    <%= f.label :deck, 'デッキチェア' ,class:"btn btn-primary", for:"deck"%>
+    <%= f.label :deck, 'デッキチェア' ,class:"btn btn-primary btn_size", for:"deck"%>
     <%= f.check_box :relax_not_in, include_hidden: false ,class:"btn-check" ,id:"relax"%>
-    <%= f.label :relax, 'リクライニングチェア' ,class:"btn btn-primary", for:"relax"%>
+    <%= f.label :relax, 'リクライニング' ,class:"btn btn-primary btn_size", for:"relax"%>
     <%= f.check_box :bench_not_in, include_hidden: false ,class:"btn-check" ,id:"bench"%>
-    <%= f.label :bench, 'ベンチ（背もたれあり）' ,class:"btn btn-primary", for:"bench"%>
+    <%= f.label :bench, 'ベンチ' ,class:"btn btn-primary btn_size", for:"bench"%>
     <%= f.check_box :bench_non_backrest_not_in, include_hidden: false ,class:"btn-check" ,id:"bench_non"%>
-    <%= f.label :bench_non_backrest, 'ベンチ（背もたれなし）' ,class:"btn btn-primary", for:"bench_non"%>
+    <%= f.label :bench_non_backrest, 'ベンチ(背なし)' ,class:"btn btn-primary btn_size", for:"bench_non"%>
   </div>
-  <div class="search_field">
-    <%= f.label :chair, '性別' %>
-    <%= f.radio_button :sex_id_eq, '', checked: true ,class:"btn-check",name:"sex",id:"not" %>
-    <%= f.label :chairs_sex_id, 'なし' ,class:"btn btn-primary", for:"not"%>
-    <%= f.radio_button :sex_id_eq, 1 ,class:"btn-check",name:"sex",id:"male"%>
-    <%= f.label :chairs_sex_id, '男性' ,class:"btn btn-primary", for:"male"%>
-    <%= f.radio_button :sex_id_eq, 2 ,class:"btn-check",name:"sex",id:"female"%>
-    <%= f.label :chairs_sex_id, '女性' ,class:"btn btn-primary", for:"female"%>
-  </div>
-  <div class="search_field">
-    <%= f.label :chair, '場所' %>
-    <%= f.radio_button :rest_area_id_eq, '', checked: true ,class:"btn-check",name:"area",id:"none"%>
-    <%= f.label :chairs_rest_area_id, 'なし' ,class:"btn btn-primary" ,for:"none"%>
-    <%= f.radio_button :rest_area_id_eq, 1 ,class:"btn-check",name:"area",id:"inside"%>
-    <%= f.label :chairs_rest_area_id, '室内' ,class:"btn btn-primary" , for:"inside"%>
-    <%= f.radio_button :rest_area_id_eq, 2 ,class:"btn-check",name:"area",id:"outside"%>
-    <%= f.label :chairs_rest_area_id, '室外' ,class:"btn btn-primary" , for:"outside"%>
-  </div>
+<br>
   <%= f.submit "search",name: :search,value: "search"%>
 <% end %>
-
+</div>
+<div class="new_review_container">
+<hr>
 <h3>最近評価された施設</h3>
 <% @new_reviews.each do |review| %>
   <div class="facility_review">
@@ -56,6 +64,9 @@
   <% end %>
   </div>
 <% end %>
+</div>
+<div class="new_facility_container">
+  <hr>
 <h3>最近更新された施設</h3>
 <% @new_facilities.each do |facility| %>
   <%= link_to facility_path(facility.id) do %>
@@ -66,7 +77,11 @@
 <% end %>
 <br>
 <%= link_to "全ての施設を見る" , facilities_path %>
-<br>
+</div>
+
+<div class="country_container">
+
+<hr>
 <h3>都道府県</h3>
 <%= link_to '北海道', controller: "facilities", action: "index", q: { prefecture_cont: '北海道' } %>
 <br>
@@ -122,3 +137,4 @@
 <%= link_to '宮崎', controller: "facilities", action: "index", q: { prefecture_cont: '宮崎' } %>
 <%= link_to '鹿児島', controller: "facilities", action: "index", q: { prefecture_cont: '鹿児島' } %>
 <%= link_to '沖縄', controller: "facilities", action: "index", q: { prefecture_cont: '沖縄' } %>
+</div>
