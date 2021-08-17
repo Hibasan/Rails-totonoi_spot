@@ -1,5 +1,5 @@
 class Facility < ApplicationRecord
-  validates :name, presence: true
+  validates :name, presence: true ,uniqueness: true
   validates :prefecture, presence: true
   validates :address, presence: true
   has_many :reviews, dependent: :destroy
