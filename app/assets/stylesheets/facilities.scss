@@ -1,4 +1,10 @@
 /* facilities#about.html */
+.top_container{
+  width: 768x;
+  margin: 160px auto;
+  text-align: center;
+}
+
 .about_content {
   text-align: center;
 }
@@ -23,7 +29,7 @@
 }
 
 .btn_size{
-  width: 120px;
+  min-width: 120px;
   height: 80px;
 }
 
@@ -66,40 +72,40 @@
 /* facility#show.html */
 .facility_show_1st{
   margin: 10px;
-  border: solid;
+
   display: grid;
-  grid-template-rows: 80px 200px;
-  grid-template-columns: 280px 120px 1fr 200px;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 200px;
   grid-template-areas:
-  "name  name  address  button"
-  "image  comment  comment  button";
+  "name  address  button"
+  "image  comment  button";
 }
 .facility_show_1st .name{
-  border: solid;
+
   grid-area: name;
 }
 .facility_show_1st .address{
-  border: solid;
+
   grid-area: address;
 }
 .facility_show_1st .button{
-  border: solid;
+
   grid-area: button;
 }
 .facility_show_1st .image{
-  border: solid;
+
   grid-area: image;
 }
 .facility_show_1st .comment{
-  border: solid;
+
   grid-area: comment;
 }
 
 .facility_show_2nd{
   margin: 10px;
-  border: solid;
+
   display: grid;
-  grid-template-rows: 40px 160px 160px 1fr 1fr;
+  grid-template-rows: 40px 1fr 1fr 1fr 1fr;
   grid-template-columns: 100px 1fr 1fr;
   grid-template-areas:
   "nil  label1  label2"
@@ -109,103 +115,103 @@
   "label6  male_water  female_water";
 }
 .facility_show_2nd .label1{
-  border: solid;
+
   grid-area: label1;
 }
 .facility_show_2nd .label2{
-  border: solid;
+
   grid-area: label2;
 }
 .facility_show_2nd .label3{
-  border: solid;
+
   grid-area: label3;
 }
 .facility_show_2nd .label4{
-  border: solid;
+
   grid-area: label4;
 }
 .facility_show_2nd .label5{
-  border: solid;
+
   grid-area: label5;
 }
 .facility_show_2nd .label6{
-  border: solid;
+
   grid-area: label6;
 }
 .facility_show_2nd .male_inside{
-  border: solid;
+
   grid-area: male_inside;
 }
 .facility_show_2nd .male_outside{
-  border: solid;
+
   grid-area: male_outside;
 }
 .facility_show_2nd .male_sauna{
-  border: solid;
+
   grid-area: male_sauna;
 }
 .facility_show_2nd .male_water{
-  border: solid;
+
   grid-area: male_water;
 }
 .facility_show_2nd .female_inside{
-  border: solid;
+
   grid-area: female_inside;
 }
 .facility_show_2nd .female_outside{
-  border: solid;
+
   grid-area: female_outside;
 }
 .facility_show_2nd .female_sauna{
-  border: solid;
+
   grid-area: female_sauna;
 }
 .facility_show_2nd .female_water{
-  border: solid;
+
   grid-area: female_water;
 }
 
 .facility_show_3rd{
   margin: 10px;
-  border: solid;
+
   display: grid;
   grid-template-columns: 560px 1fr;
   grid-template-areas:
   "map  facility";
 }
 .facility_show_3rd .facility{
-  border: solid;
+
   grid-area: facility;
 }
 .facility_show_3rd #map{
-  border: solid;
+
   grid-area: map;
 }
 
 .facility_show_4th{
   margin: 10px;
-  border: solid;
+
   display: grid;
-  grid-template-rows: 60px 1fr;
+  grid-template-rows: 40px 1fr;
   grid-template-columns: 280px 1fr 200px;
   grid-template-areas:
   "name  review  created_at"
   "comment  comment  comment";
 }
 .facility_show_4th .name{
-  border: solid;
+
   grid-area: name;
 }
 .facility_show_4th .review{
-  border: solid;
+
   grid-area: review;
 }
 .facility_show_4th .created_at{
-  border: solid;
+
   grid-area: created_at;
 }
 .facility_show_4th .comment{
-  border: solid;
+
   grid-area: comment;
 }
 

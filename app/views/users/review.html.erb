@@ -1,5 +1,23 @@
-<h2>自分の口コミ一覧</h2>
-<% @reviews.each do |review| %>
-<%= link_to "#{review.user.name}さんの#{review.facility.name}への口コミ" , review_path(review.id) %>
+<h2>自分の評価一覧</h2>
 <br>
+<% @reviews.each do |review| %>
+<%= link_to "#{review.facility.name}への口コミ" , facility_path(review.facility_id) %>
+  <div class="facility_show_4th">
+    <div class="name">
+      <%= review.user.name %>
+    </div>
+    <div class="review">
+        湿度:★<%= review.dry %>　
+        明るさ:★<%= review.light %>　
+        広さ:★<%= review.wide %>　
+    </div>
+    <div class="created_at">
+      投稿日
+      <%= review.created_at.strftime('%Y/%m/%d') %>
+    </div>
+    <div class="comment">
+      <%= review.comment %>
+    </div>
+  </div>
+<hr>
 <% end %>

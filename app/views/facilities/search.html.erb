@@ -5,7 +5,7 @@
 <div class="search_container">
   <h3>検索</h3>
 <%= search_form_for @chair, url: facilities_path do |f| %>
-  <div class="col-md-12">
+  <div class="col-md-10">
     <%= f.search_field :facility_name ,placeholder:"例）東京 かるまる", class:"form-control form-control-lg"%>
   </div>
   <hr>
@@ -53,11 +53,7 @@
 <% @new_reviews.each do |review| %>
   <div class="facility_review">
   <%= link_to facility_path(review.facility.id) do %>
-    <%= review.facility.name %>
-    <%= review.facility.prefecture + review.facility.address %>
-  <% end %>
-  <br>
-  <%= link_to review_path(review.id) do %>
+    <h5><%= review.facility.name + "　" + review.facility.prefecture + review.facility.address %></h5>
     <%= "#{review.user.name}さんの評価："%>
     <%= "★" * (review.dry + review.light + review.wide) %><br>
     <%= "#{review.comment}" %>
@@ -70,10 +66,8 @@
 <h3>最近更新された施設</h3>
 <% @new_facilities.each do |facility| %>
   <%= link_to facility_path(facility.id) do %>
-    <%= facility.name %>
-    <%= facility.prefecture + facility.address %>
+    <h5><%= facility.name + "　" + facility.prefecture + facility.address %></h5>
   <% end %>
-  <br>
 <% end %>
 <br>
 <%= link_to "全ての施設を見る" , facilities_path %>

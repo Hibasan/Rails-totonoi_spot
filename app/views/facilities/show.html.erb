@@ -10,7 +10,9 @@
         <%= render partial: 'favorite_facilities/favorite', locals: {facility: @facility} %>
       </li>
       <li><%= link_to '情報編集' , edit_facility_path(@facility.id) %></li>
+      <% if current_user.admin?%>
       <li><%= link_to '削除', facility_path(@facility.id),method: :delete ,data: { confirm: '削除します' } %></li>
+      <% end %>
     </ul>
   <% end %>
   </div>
@@ -18,13 +20,11 @@
     <%= @facility.prefecture + @facility.address %>
   </div>
   <div class="image">
-    写真用
   </div>
   <div class="comment">
-    コメント
   </div>
 </div>
-
+<hr>
 <h2>設備</h2>
 <div class="facility_show_2nd">
   <div class="label1">男湯</div>
@@ -40,7 +40,7 @@
       <td><%= chair&.deck && "デッキチェア#{chair.deck}" %></td>
       <td><%= chair&.relax && "リクライニング#{chair.relax}" %></td>
       <td><%= chair&.bench && "ベンチ#{chair.bench}" %></td>
-      <td><%= chair&.bench_non_backrest && "ベンチ(背もたれなし)#{chair.bench_non_backrest}" %></td>
+      <td><%= chair&.bench_non_backrest && "ベンチ(背なし)#{chair.bench_non_backrest}" %></td>
     </tr>
     <% end %>
   </div>
@@ -51,7 +51,7 @@
       <td><%= chair&.deck && "デッキチェア#{chair.deck}" %></td>
       <td><%= chair&.relax && "リクライニング#{chair.relax}" %></td>
       <td><%= chair&.bench && "ベンチ#{chair.bench}" %></td>
-      <td><%= chair&.bench_non_backrest && "ベンチ(背もたれなし)#{chair.bench_non_backrest}" %></td>
+      <td><%= chair&.bench_non_backrest && "ベンチ(背なし)#{chair.bench_non_backrest}" %></td>
     </tr>
     <% end %>
   </div>
@@ -62,7 +62,7 @@
       <td><%= chair&.deck && "デッキチェア#{chair.deck}" %></td>
       <td><%= chair&.relax && "リクライニング#{chair.relax}" %></td>
       <td><%= chair&.bench && "ベンチ#{chair.bench}" %></td>
-      <td><%= chair&.bench_non_backrest && "ベンチ(背もたれなし)#{chair.bench_non_backrest}" %></td>
+      <td><%= chair&.bench_non_backrest && "ベンチ(背なし)#{chair.bench_non_backrest}" %></td>
     </tr>
     <% end %>
   </div>
@@ -73,7 +73,7 @@
       <td><%= chair&.deck && "デッキチェア#{chair.deck}" %></td>
       <td><%= chair&.relax && "リクライニング#{chair.relax}" %></td>
       <td><%= chair&.bench && "ベンチ#{chair.bench}" %></td>
-      <td><%= chair&.bench_non_backrest && "ベンチ(背もたれなし)#{chair.bench_non_backrest}" %></td>
+      <td><%= chair&.bench_non_backrest && "ベンチ(背なし)#{chair.bench_non_backrest}" %></td>
     </tr>
     <% end %>
   </div>
@@ -114,7 +114,7 @@
     <% end %>
   </div>
 </div>
-
+<hr>
 <h2>店舗情報</h2>
 <div class="facility_show_3rd">
   <div class="facility">
@@ -153,7 +153,7 @@
     });
   </script>
 </div>
-
+<hr>
 <h2>ユーザーのコメント</h2>
 <% @reviews.each do |review| %>
   <div class="facility_show_4th">
@@ -173,6 +173,7 @@
       <%= review.comment %>
     </div>
   </div>
+<hr>
 <% end %>
 
 <a href="javascript:history.back()">[戻る]</a>
