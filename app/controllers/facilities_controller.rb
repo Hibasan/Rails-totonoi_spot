@@ -25,13 +25,17 @@ class FacilitiesController < ApplicationController
   end
 
   def index
-    if params[:search] == "search"
+    case
+    when params[:search] == "search"
       name = params[:q][:facility_name]
       @facilities = Facility.where("(name LIKE ?) OR (prefecture LIKE ?) OR (address LIKE ?)","%#{name}%","%#{name}%","%#{name}%")
       @chair = Chair.ransack(params[:q])
       @chairs = @chair.result(distinct: true)
       chairs_facility_ids = @chairs.pluck(:facility_id)
       @facilities = @facilities.where(id: chairs_facility_ids)
+    when params[:q][:search] == "search"
+      name = params[:q][:facility_name]
+      @facilities = Facility.where("prefecture LIKE ?","%#{name}%")
     else
       @facilities = Facility.all
     end

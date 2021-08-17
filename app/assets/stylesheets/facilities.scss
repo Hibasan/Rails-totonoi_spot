@@ -12,6 +12,21 @@
   border-radius: 10px;
 }
 
+.search_container{
+  width: 768px;
+  margin: 0 auto;
+}
+
+.new_review_container, .new_facility_container, .country_container{
+  width: 1028px;
+  margin: 0 auto;
+}
+
+.btn_size{
+  width: 120px;
+  height: 80px;
+}
+
 /* facilities#index.html */
 .facility_index{
   height: 260px;
