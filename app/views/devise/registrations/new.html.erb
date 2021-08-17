@@ -1,18 +1,18 @@
-<div class="sign_up_container">
-
+<div class="devise_container">
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <div class="sign_up_content">
-  <div class="sign_up_name">
+  <div class="devise_content">
+  <h4>アカウント登録</h4>
+  <div class="devise_name">
     <%= f.label :name %><br />
     <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
   </div>
 
-  <div class="sign_up_email">
+  <div class="devise_email">
     <%= f.label :email %><br />
     <%= f.email_field :email, autocomplete: "email" %>
   </div>
 
-  <div class="sign_up_password">
+  <div class="devise_password">
     <%= f.label :password %>
     <% if @minimum_password_length %>
     <em><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></em>
@@ -20,17 +20,17 @@
     <%= f.password_field :password, autocomplete: "new-password" %>
   </div>
 
-  <div class="sign_up_password">
+  <div class="devise_password">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
-  <div class="sign_up_create">
+  <div class="devise_button">
     <%= f.submit t('.sign_up') %>
   </div>
 <% end %>
 <hr>
-<div class="sign_up_login">
+<div class="devise_link">
   <%= link_to "ログイン", new_user_session_path %>
   <br>
   <%= link_to "登録メールを受け取っていませんか？", new_user_confirmation_path %>

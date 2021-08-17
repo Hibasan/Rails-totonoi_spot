@@ -265,101 +265,6 @@ margin: 0 auto;
   margin: 0 auto;
 }
 
-/* user#session.html */
-.session_container {
-  width: 360px;
-  margin: 20px auto;
-  border: 2px #FFF solid;
-  border-radius: 6px;
-}
-.session_content {
-  margin: 20px;
-}
-.session_email input[type="email"], .session_password input[type="password"] {
-  border-style: none;
-  box-sizing: border-box;
-  width: 100%;
-  height: 32px;
-  border: 1px solid #000;
-  border-radius: 3px;
-}
-.session_password{
-  margin-top: 20px;
-}
-.session_login {
-  margin-top: 32px;
-}
-.session_login input[type="submit"] {
-  height: 32px;
-  border-style: none;
-  width: 100%;
-  border: 1px solid #000;
-}
-.session_login input[type="submit"]:hover {
-  background: #f0c14b;
-}
-.session_remember {
-  margin-top: 16px
-}
-.session_sign_up {
-  margin-top: 10px
-}
-.session_sign_up a {
-  display: block;
-  color: #111;
-  text-align: center;
-}
-.session_sign_up a:hover {
-  background: #e7e9ec;
-}
-
-
-/* user#new.html */
-.sign_up_container {
-  width: 360px;
-  margin: 20px auto;
-  border: 2px #FFF solid;
-  border-radius: 6px;
-}
-.sign_up_content {
-  margin: 20px;
-}
-.sign_up_name input[type="text"], .sign_up_email input[type="email"], .sign_up_password input[type="password"] {
-  border-style: none;
-  box-sizing: border-box;
-  width: 100%;
-  height: 32px;
-  border: 1px solid #000;
-  border-radius: 3px;
-}
-.sign_up_password, .sign_up_email {
-  margin-top: 16px;
-}
-.sign_up_create {
-  margin-top: 32px;
-}
-.sign_up_create input[type="submit"] {
-  height: 32px;
-  border-style: none;
-  width: 100%;
-  border: 1px solid #000;
-}
-.sign_up_create input[type="submit"]:hover {
-  background: #f0c14b;
-}
-.sign_up_login {
-  margin-top: 16px
-}
-.sign_up_login a {
-  display: block;
-  color: #111;
-  text-align: center;
-}
-.sign_up_login a:hover {
-  background: #e7e9ec;
-}
-
-
 /* devise */
 .devise_container {
   width: 360px;
@@ -378,12 +283,13 @@ margin: 0 auto;
   border: 1px solid #000;
   border-radius: 3px;
 }
-.devise_password, .devise_email {
+.devise_name, .devise_email, .devise_password, .devise_remember {
   margin-top: 16px;
 }
 .devise_button {
   margin-top: 32px;
 }
+
 .devise_button input[type="submit"] {
   height: 32px;
   border-style: none;
