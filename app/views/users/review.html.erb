@@ -1,4 +1,4 @@
-<h2>自分の口コミ一覧</h2>
+<h2>自分の評価一覧</h2>
 <br>
 <% @reviews.each do |review| %>
 <%= link_to "#{review.facility.name}への口コミ" , facility_path(review.facility_id) %>
