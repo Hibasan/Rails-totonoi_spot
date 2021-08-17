@@ -1,4 +1,10 @@
 /* facilities#about.html */
+.top_container{
+  width: 768x;
+  margin: 160px auto;
+  text-align: center;
+}
+
 .about_content {
   text-align: center;
 }
@@ -23,7 +29,7 @@
 }
 
 .btn_size{
-  width: 120px;
+  min-width: 120px;
   height: 80px;
 }
 
