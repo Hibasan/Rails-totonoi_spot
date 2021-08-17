@@ -1,7 +1,7 @@
 <div class="sign_up_container">
+
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <div class="sign_up_content">
-
   <div class="sign_up_name">
     <%= f.label :name %><br />
     <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
@@ -31,7 +31,9 @@
 <% end %>
 <hr>
 <div class="sign_up_login">
-  <%= render "devise/shared/links" %>
+  <%= link_to "ログイン", new_user_session_path %>
+  <br>
+  <%= link_to "登録メールを受け取っていませんか？", new_user_confirmation_path %>
 </div>
 
 </div>

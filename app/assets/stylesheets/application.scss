@@ -358,6 +358,53 @@ margin: 0 auto;
 .sign_up_login a:hover {
   background: #e7e9ec;
 }
+
+
+/* devise */
+.devise_container {
+  width: 360px;
+  margin: 20px auto;
+  border: 2px #FFF solid;
+  border-radius: 6px;
+}
+.devise_content {
+  margin: 20px;
+}
+.devise_name input[type="text"], .devise_email input[type="email"], .devise_password input[type="password"] {
+  border-style: none;
+  box-sizing: border-box;
+  width: 100%;
+  height: 32px;
+  border: 1px solid #000;
+  border-radius: 3px;
+}
+.devise_password, .devise_email {
+  margin-top: 16px;
+}
+.devise_button {
+  margin-top: 32px;
+}
+.devise_button input[type="submit"] {
+  height: 32px;
+  border-style: none;
+  width: 100%;
+  border: 1px solid #000;
+}
+.devise_button input[type="submit"]:hover {
+  background: #f0c14b;
+}
+.devise_link {
+  margin-top: 16px
+}
+.devise_link a {
+  display: block;
+  color: #111;
+  text-align: center;
+}
+.devise_link a:hover {
+  background: #e7e9ec;
+}
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -370,6 +417,6 @@ margin: 0 auto;
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
  *= require_self
+ *= require_tree .
  */
