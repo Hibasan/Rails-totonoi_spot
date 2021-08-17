@@ -2,13 +2,13 @@
 <h2>施設情報</h2>
 <%= form_with model: @facility ,local: true do |form| %>
 <div class=" col-md-12">
-  <%= form.label :name ,"施設名", class:"form-label"%>
+  <%= form.label :name ,"施設名　(※入力必須)", class:"form-label"%>
   <%= form.text_field :name, class:"form-control form-control-lg"%>
   <div class="form-text"> 例）ファンタジーサウナ＆スパおふろの国</div>
 </div>
 <div class="row">
   <div class=" col-md-4">
-    <%= form.label :prefecture ,"県名" %>
+    <%= form.label :prefecture ,"県名　(※入力必須)" %>
     <%= form.select :prefecture,['北海道',
     '青森県','岩手県','宮城県','秋田県','山形県','福島県',
     '茨城県','栃木県','埼玉県','千葉県','東京都','神奈川県',
@@ -20,7 +20,7 @@
     class:"form-select" %>
   </div>
   <div class=" col-md-8">
-    <%= form.label :address ,"住所", class:"form-label" %>
+    <%= form.label :address ,"住所　(※入力必須)", class:"form-label" %>
     <%= form.text_area :address ,class:"form-control"%>
     <div class="form-text"> 例）横浜市鶴見区下末吉２丁目２５−２３</div>
   </div>
