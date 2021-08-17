@@ -186,7 +186,7 @@
   margin: 10px;
 
   display: grid;
-  grid-template-rows: 60px 1fr;
+  grid-template-rows: 40px 1fr;
   grid-template-columns: 280px 1fr 200px;
   grid-template-areas:
   "name  review  created_at"

@@ -9,10 +9,13 @@ class UsersController < ApplicationController
 
   def review
     @reviews = Review.includes(:user,:facility).where(user_id: current_user.id)
+    
   end
 
   def favorite_facilities
     @favorites = FavoriteFacility.includes(:facility).where(user_id: current_user.id)
+    facility_ids = @favorites.pluck(:facility_id)
+    @facilities = Facility.where(id: facility_ids)
   end
 
   def guest_sign_in
