@@ -36,7 +36,7 @@ class FacilitiesController < ApplicationController
     when params[:q][:search] == "search"
       name = params[:q][:facility_name]
       @facilities = Facility.where("prefecture LIKE ?","%#{name}%")
-    else
+    when params[:q][:search] == "all"
       @facilities = Facility.all
     end
 

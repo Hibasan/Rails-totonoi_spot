@@ -70,7 +70,7 @@
   <% end %>
 <% end %>
 <br>
-<%= link_to "全ての施設を見る" , facilities_path %>
+<%= link_to '全ての施設を見る', controller: "facilities", action: "index", q: { search: "all" }%>
 </div>
 
 <div class="country_container">
