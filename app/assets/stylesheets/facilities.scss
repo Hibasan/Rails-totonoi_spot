@@ -193,26 +193,28 @@
 
   display: grid;
   grid-template-rows: 40px 1fr;
-  grid-template-columns: 280px 1fr 200px;
+  grid-template-columns: 280px 1fr 200px 100px;
   grid-template-areas:
-  "name  review  created_at"
-  "comment  comment  comment";
+  "name  review  created_at edit"
+  "comment  comment  comment destroy";
 }
 .facility_show_4th .name{
-
   grid-area: name;
 }
 .facility_show_4th .review{
-
   grid-area: review;
 }
 .facility_show_4th .created_at{
-
   grid-area: created_at;
 }
 .facility_show_4th .comment{
-
   grid-area: comment;
+}
+.facility_show_4th .edit{
+  grid-area: edit;
+}
+.facility_show_4th .destroy{
+  grid-area: destroy;
 }
 
 /* facility#new.html */
