@@ -18,7 +18,7 @@
       <li><%= link_to 'このサイトについて' , about_path %></li>
     </ul>
     <ul class="top_menu_center">
-      <li><%= link_to 'letter_opener_web', letter_opener_web_path , target: :_blank, rel: "noopener noreferrer"%></li>
+      <li><%= link_to 'letter_opener_web(アカウント認証用)', letter_opener_web_path , target: :_blank, rel: "noopener noreferrer"%></li>
       <li><%= link_to '検索ページ' , facilities_search_path %></li>
     </ul>
     <ul class="top_menu_right">
@@ -30,7 +30,11 @@
       <li><%= link_to 'アカウント登録' , new_user_registration_path %></li>
     <% end %>
     </ul>
+
     </header>
+    <% flash.each do |key, value| %>
+  <%= content_tag(:div, value, class: "#{key}") %>
+<% end %>
     <div class="wrapper">
     <%= yield %>
     </div>
