@@ -1,10 +1,6 @@
+# bundle exec rspec spec/system/user_spec.rb
 require 'rails_helper'
 RSpec.describe 'ユーザー関連', type: :system do
-  before do
-    visit root_path
-    sleep 0.5
-  end
-
   describe 'ユーザー登録のテスト' do
     context 'ユーザーが新規登録した場合' do
       it 'オープンレターに認証メールが届く' do

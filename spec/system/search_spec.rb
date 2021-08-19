@@ -80,27 +80,27 @@ RSpec.describe 'ユーザー関連', type: :system do
     end
   end
 
-private
-def model_create
-  FactoryBot.create(:sex1)
-  FactoryBot.create(:sex2)
-  FactoryBot.create(:area1)
-  FactoryBot.create(:area2)
-  FactoryBot.create(:facility1)
-  FactoryBot.create(:chair1)
-  FactoryBot.create(:chair2)
-  FactoryBot.create(:facility2)
-  FactoryBot.create(:chair3)
-  FactoryBot.create(:chair4)
-  FactoryBot.create(:facility3)
-  FactoryBot.create(:chair5)
-  FactoryBot.create(:chair6)
-  FactoryBot.create(:facility4)
-  FactoryBot.create(:chair7)
-  FactoryBot.create(:chair8)
-  FactoryBot.create(:facility5)
-  FactoryBot.create(:chair9)
-  FactoryBot.create(:chair10)
-end
+  private
+  def model_create
+    FactoryBot.create(:sex1)
+    FactoryBot.create(:sex2)
+    FactoryBot.create(:area1)
+    FactoryBot.create(:area2)
+    FactoryBot.create(:facility1)
+    FactoryBot.create(:chair1)
+    FactoryBot.create(:chair2)
+    FactoryBot.create(:facility2)
+    FactoryBot.create(:chair3)
+    FactoryBot.create(:chair4)
+    FactoryBot.create(:facility3)
+    FactoryBot.create(:chair5)
+    FactoryBot.create(:chair6)
+    FactoryBot.create(:facility4)
+    FactoryBot.create(:chair7)
+    FactoryBot.create(:chair8)
+    FactoryBot.create(:facility5)
+    FactoryBot.create(:chair9)
+    FactoryBot.create(:chair10)
+  end
 
 end
