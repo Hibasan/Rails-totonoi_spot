@@ -21,7 +21,7 @@ FactoryBot.define do
   end
   factory :facility5,class:Facility do
     name{'みうら湯'}
-    prefecture{'神奈川県'}
+    prefecture{'東京都'}
     address{'横浜市南区中里１丁目２５−１'}
   end
 end
