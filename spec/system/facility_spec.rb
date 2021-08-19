@@ -1,3 +1,5 @@
+# bundle exec rspec spec/system/facility_spec.rb
+
 require 'rails_helper'
 RSpec.describe 'ユーザー関連', type: :system do
   before do
