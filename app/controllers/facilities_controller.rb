@@ -18,7 +18,7 @@ class FacilitiesController < ApplicationController
   def create
     @facility = Facility.new(facility_params)
     if @facility.save
-      redirect_to root_path,notice:"施設情報を登録しました"
+      redirect_to facility_path(@facility.id),notice:"施設情報を登録しました"
     else
       render :new
     end
@@ -74,7 +74,7 @@ class FacilitiesController < ApplicationController
   def destroy
     @facility = Facility.find(params[:id])
     @facility.destroy
-    redirect_to root_path,notice:"施設情報を削除しました"
+    redirect_to facilities_search_path,notice:"施設情報を削除しました"
   end
 
   private

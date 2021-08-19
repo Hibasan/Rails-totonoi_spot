@@ -5,6 +5,9 @@ Rails.application.configure do
     Bullet.raise         = true # raise an error if n+1 query occurs
   end
 
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.delivery_method = :letter_opener_web
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # The test environment is used exclusively to run your application's
