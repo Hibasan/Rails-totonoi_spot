@@ -12,20 +12,20 @@
   <div class="row">
     <div class="col-md-6">
       <%= f.label :chair, '場所' %>
-      <%= f.radio_button :rest_area_id_eq, '', checked: true ,class:"btn-check",name:"area",id:"none"%>
+      <%= f.radio_button :rest_area_id_eq, '', checked: true ,class:"btn-check",id:"none"%>
       <%= f.label :chairs_rest_area_id, '未選択' ,class:"btn btn-outline-success" ,for:"none"%>
-      <%= f.radio_button :rest_area_id_eq, 1 ,class:"btn-check",name:"area",id:"inside"%>
+      <%= f.radio_button :rest_area_id_eq, 1 ,class:"btn-check",id:"inside"%>
       <%= f.label :chairs_rest_area_id, '室内' ,class:"btn btn-outline-success" , for:"inside"%>
-      <%= f.radio_button :rest_area_id_eq, 2 ,class:"btn-check",name:"area",id:"outside"%>
+      <%= f.radio_button :rest_area_id_eq, 2 ,class:"btn-check",id:"outside"%>
       <%= f.label :chairs_rest_area_id, '室外' ,class:"btn btn-outline-success" , for:"outside"%>
     </div>
     <div class="col-md-6">
       <%= f.label :chair, '性別' %>
-      <%= f.radio_button :sex_id_eq, '' ,class:"btn-check",name:"sex",id:"not" %>
+      <%= f.radio_button :sex_id_eq, '' ,class:"btn-check",id:"not" %>
       <%= f.label :chairs_sex_id, '未選択' ,class:"btn btn-outline-dark", for:"not"%>
-      <%= f.radio_button :sex_id_eq, 1 ,class:"btn-check",name:"sex",id:"male"%>
+      <%= f.radio_button :sex_id_eq, 1 ,class:"btn-check",id:"male"%>
       <%= f.label :chairs_sex_id, '男性' ,class:"btn btn-outline-primary", for:"male"%>
-      <%= f.radio_button :sex_id_eq, 2 ,class:"btn-check",name:"sex",id:"female"%>
+      <%= f.radio_button :sex_id_eq, 2 ,class:"btn-check",id:"female"%>
       <%= f.label :chairs_sex_id, '女性' ,class:"btn btn-outline-danger", for:"female"%>
     </div>
   </div>

@@ -57,7 +57,7 @@
   <%= form.text_area :comment ,class:"form-control"%>
   <div class="form-text"> 例）入浴まで100円ロッカー２個あり（返却あり）</div>
 </div>
-<%= form.submit "施設情報登録" %>
+<%= form.submit "施設情報登録" ,class:'commit'%>
 
 <% @facility.errors.full_messages.each do |msg| %>
 <li><%= msg %></li>
@@ -100,7 +100,7 @@ data: {
       association_insertion_method: 'after' } %>
 
       <div class="">
-        <%= form.submit "施設情報登録" %>
+        <%= form.submit "施設情報登録" ,class:'commit'%>
       </div>
 
       <% end %>
