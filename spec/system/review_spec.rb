@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe '評価・コメント関連', type: :system do
   before do
     create_model
+    sleep 1
   end
   describe '評価・コメントのテスト' do
     context '作成した場合' do

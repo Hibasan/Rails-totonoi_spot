@@ -1,6 +1,9 @@
 # bundle exec rspec spec/system/favorite_spec.rb
 require 'rails_helper'
 RSpec.describe 'お気に入り関連', type: :system do
+  before do
+    sleep 1
+  end
   describe 'お気に入り機能のテスト' do
     context 'お気に入りの登録/解除した場合' do
       it 'マイページのお気に入り一覧に追加/削除される' do

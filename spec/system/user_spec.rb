@@ -3,10 +3,11 @@ require 'rails_helper'
 RSpec.describe 'ユーザー関連', type: :system do
   before do
     create_model
+    sleep 1
   end
   describe 'ユーザー登録のテスト' do
     context 'ユーザーが新規登録した場合' do
-      it 'オープンレターに認証メールが届く' do
+      it '認証メールが送信されること' do
         visit root_path
         click_link 'アカウント登録'
         fill_in 'user_name' , with: 'おめシス'

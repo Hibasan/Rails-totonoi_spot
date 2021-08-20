@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe '施設関連', type: :system do
   before do
     create_model
+    sleep 1
   end
   describe '施設登録の登録テスト(管理者)' do
     context '施設情報を登録した場合' do

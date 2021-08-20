@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe '検索関連', type: :system do
   before do
     create_model
+    sleep 1
   end
   describe '登録施設の検索テスト' do
     context '名前で検索した場合' do
