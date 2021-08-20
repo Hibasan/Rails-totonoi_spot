@@ -1,13 +1,16 @@
 # bundle exec rspec spec/system/user_spec.rb
 require 'rails_helper'
 RSpec.describe 'ユーザー関連', type: :system do
+  before do
+    create_model
+  end
   describe 'ユーザー登録のテスト' do
     context 'ユーザーが新規登録した場合' do
       it 'オープンレターに認証メールが届く' do
         visit root_path
         click_link 'アカウント登録'
         fill_in 'user_name' , with: 'おめシス'
-        fill_in 'user_email',with: 'test01@email.com'
+        fill_in 'user_email',with: 'test10@email.com'
         fill_in 'user_password',with: 'password'
         fill_in 'user_password_confirmation',with: 'password'
         binding.irb
@@ -20,7 +23,6 @@ RSpec.describe 'ユーザー関連', type: :system do
   describe 'ユーザーログインのテスト' do
     context 'ユーザーがログインした場合' do
       it 'ログインしてトップページが表示される' do
-        FactoryBot.create(:user1)
         visit root_path
         admin_login
         expect(page).to have_content 'ログインしました'
@@ -37,7 +39,6 @@ RSpec.describe 'ユーザー関連', type: :system do
         expect(page).not_to have_content '施設登録'
       end
       it 'マイページ機能が表示されない' do
-        FactoryBot.create(:facility1)
         visit root_path
         click_link 'ととのいにいく'
         click_link 'おふろの国'
@@ -52,8 +53,6 @@ RSpec.describe 'ユーザー関連', type: :system do
   describe '一般ユーザーのリンク表示テスト' do
     context '一般ユーザーでログインしている場合' do
       it '施設の削除リンクがない' do
-        FactoryBot.create(:user2)
-        FactoryBot.create(:facility1)
         visit root_path
         user_login
         click_link 'ととのいにいく'
@@ -61,8 +60,6 @@ RSpec.describe 'ユーザー関連', type: :system do
         expect(page).not_to have_content '削除'
       end
       it 'マイページに管理者画面リンクがない' do
-        FactoryBot.create(:user2)
-        FactoryBot.create(:facility1)
         visit root_path
         user_login
         click_link 'マイページ'
@@ -119,5 +116,11 @@ RSpec.describe 'ユーザー関連', type: :system do
     fill_in 'user_email',with: 'test02@email.com'
     fill_in 'user_password',with: 'password'
     click_button 'ログイン'
+  end
+
+  def create_model
+    FactoryBot.create(:user1)
+    FactoryBot.create(:user2)
+    FactoryBot.create(:facility1)
   end
 end

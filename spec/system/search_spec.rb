@@ -1,10 +1,12 @@
 # bundle exec rspec spec/system/search_spec.rb
 require 'rails_helper'
 RSpec.describe '検索関連', type: :system do
+  before do
+    create_model
+  end
   describe '登録施設の検索テスト' do
     context '名前で検索した場合' do
       it '施設登録が表示される' do
-        model_create
         visit root_path
         click_link '検索ページ'
         fill_in 'q_facility_name' , with: '湯けむり'
@@ -14,7 +16,6 @@ RSpec.describe '検索関連', type: :system do
     end
     context '名前＋性別した場合' do
       it '施設登録が表示される' do
-        model_create
         visit root_path
         click_link '検索ページ'
         fill_in 'q_facility_name' , with: '湯けむり'
@@ -26,7 +27,6 @@ RSpec.describe '検索関連', type: :system do
     end
     context '性別＋設備で検索した場合' do
       it '施設登録が表示される' do
-        model_create
         visit root_path
         click_link '検索ページ'
         page.all(".btn-outline-primary")[0].click
@@ -38,7 +38,6 @@ RSpec.describe '検索関連', type: :system do
     end
     context '空欄で検索した場合' do
       it 'すべての施設が表示される' do
-        model_create
         visit root_path
         click_link '検索ページ'
         click_button 'search'
@@ -51,7 +50,6 @@ RSpec.describe '検索関連', type: :system do
   describe '登録施設の検索テスト' do
     context '全ての施設を見るを押した場合' do
       it '全ての施設が表示される' do
-        model_create
         visit root_path
         click_link '検索ページ'
         click_link '全ての施設を見る'
@@ -60,7 +58,6 @@ RSpec.describe '検索関連', type: :system do
     end
     context '東京都を押した場合' do
       it '１件表示される' do
-        model_create
         visit root_path
         click_link '検索ページ'
         click_link '東京'
@@ -70,7 +67,6 @@ RSpec.describe '検索関連', type: :system do
     end
     context '神奈川を押した場合' do
       it '４件表示される' do
-        model_create
         visit root_path
         click_link '検索ページ'
         click_link '神奈川'
@@ -81,7 +77,7 @@ RSpec.describe '検索関連', type: :system do
   end
 
   private
-  def model_create
+  def create_model
     FactoryBot.create(:sex1)
     FactoryBot.create(:sex2)
     FactoryBot.create(:area1)
