@@ -14,9 +14,21 @@ RSpec.describe 'ユーザー関連', type: :system do
         fill_in 'user_email',with: 'test10@email.com'
         fill_in 'user_password',with: 'password'
         fill_in 'user_password_confirmation',with: 'password'
-        binding.irb
         click_button 'アカウント登録'
-        expect(page).to have_content 'オープンレターにメール届かない'
+        expect(ActionMailer::Base.deliveries.last.to).to eq ['test10@email.com']
+        expect(ActionMailer::Base.deliveries.last.subject).to eq 'メールアドレス確認メール'
+      end
+    end
+    context 'メールアドレスが重複している場合' do
+      it 'ユニークエラーが表示されること' do
+        visit root_path
+        click_link 'アカウント登録'
+        fill_in 'user_name' , with: 'おめシス'
+        fill_in 'user_email',with: 'test01@email.com'
+        fill_in 'user_password',with: 'password'
+        fill_in 'user_password_confirmation',with: 'password'
+        click_button 'アカウント登録'
+        expect(page).not_to have_content 'メールアドレスはすでに存在しています'
       end
     end
   end
