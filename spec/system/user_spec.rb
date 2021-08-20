@@ -10,6 +10,7 @@ RSpec.describe 'ユーザー関連', type: :system do
         fill_in 'user_email',with: 'test01@email.com'
         fill_in 'user_password',with: 'password'
         fill_in 'user_password_confirmation',with: 'password'
+        binding.irb
         click_button 'アカウント登録'
         expect(page).to have_content 'オープンレターにメール届かない'
       end

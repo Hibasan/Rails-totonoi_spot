@@ -1,6 +1,6 @@
 # bundle exec rspec spec/system/facility_spec.rb
 require 'rails_helper'
-RSpec.describe 'ユーザー関連', type: :system do
+RSpec.describe '施設関連', type: :system do
   describe '施設登録の登録テスト(管理者)' do
     context '施設情報を登録した場合' do
       it '施設登録が表示される' do

@@ -1,6 +1,6 @@
 # bundle exec rspec spec/system/favorite_spec.rb
 require 'rails_helper'
-RSpec.describe 'ユーザー関連', type: :system do
+RSpec.describe 'お気に入り関連', type: :system do
   describe 'お気に入り機能のテスト' do
     context 'お気に入りの登録/解除した場合' do
       it 'マイページのお気に入り一覧に追加/削除される' do
@@ -38,7 +38,6 @@ RSpec.describe 'ユーザー関連', type: :system do
       end
     end
   end
-
   private
   def model_create
     FactoryBot.create(:facility1)
@@ -47,5 +46,4 @@ RSpec.describe 'ユーザー関連', type: :system do
     FactoryBot.create(:facility4)
     FactoryBot.create(:facility5)
   end
-
 end

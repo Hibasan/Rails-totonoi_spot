@@ -1,6 +1,6 @@
 # bundle exec rspec spec/system/search_spec.rb
 require 'rails_helper'
-RSpec.describe 'ユーザー関連', type: :system do
+RSpec.describe '検索関連', type: :system do
   describe '登録施設の検索テスト' do
     context '名前で検索した場合' do
       it '施設登録が表示される' do
