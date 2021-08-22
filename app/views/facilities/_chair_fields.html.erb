@@ -14,30 +14,31 @@
   </div>
   </div>
   <div class="row">
-  <div class="col-md-2">
+  <div class="col-md">
     <%= f.label :bath ,"風呂イス" %><br>
-    <%= f.number_field :bath,class:"form-control" %>
+    <%= f.number_field :bath,class:"form-control" , placeholder:'数字を入力'%>
   </div>
-  <div class="col-md-2">
-    <%= f.label :deck ,"デッキ" %><br>
-    <%= f.number_field :deck,class:"form-control" %>
+  <div class="col-md">
+    <%= f.label :deck ,"デッキチェア" %><br>
+    <%= f.number_field :deck,class:"form-control" , placeholder:'数字を入力'%>
   </div>
-  <div class="col-md-3">
+  <div class="col-md">
     <%= f.label :relax ,"リラックス" %><br>
-    <%= f.number_field :relax,class:"form-control" %>
+    <%= f.number_field :relax,class:"form-control" , placeholder:'数字を入力'%>
   </div>
-  <div class="col-md-2">
+  <div class="col-md">
     <%= f.label :bench ,"ベンチ" %><br>
-    <%= f.number_field :bench,class:"form-control" %>
+    <%= f.number_field :bench,class:"form-control" , placeholder:'数字を入力'%>
   </div>
-  <div class="col-md-3">
+  <div class="col-md">
     <%= f.label :bench_non_backrest ,"ベンチ(背なし)" %><br>
-    <%= f.number_field :bench_non_backrest,class:"form-control" %>
+    <%= f.number_field :bench_non_backrest,class:"form-control" , placeholder:'数字を入力'%>
   </div>
     </div>
   <div class="col-md-6">
     <%= f.label :comment ,"コメント" %><br>
     <%= f.text_area :comment,class:"form-control" %>
+    <div class="form-text"> 例）階段状で座れるスペースあり。最上段では横になれる。</div>
   </div>
 
   <%= link_to_remove_association "入力欄削除", f %>
