@@ -1,14 +1,17 @@
-<br>
-<br>
 <div class="top_container">
-<h2><%= link_to 'ととのいにいく' , facilities_search_path %></h2>
-<br>
-<br>
-<br>
-<br>
-<% if user_signed_in? %>
-<% else %>
-  <h2><%= link_to '一般者ログイン(ゲスト)' , users_guest_sign_in_path, method: :post %></h2>
-  <h2><%= link_to '管理者ログイン(ゲスト)' , users_admin_guest_sign_in_path , method: :post %></h2>
-<% end %>
+  <%= image_tag "title_logo.png" , class:'title' %>
+  <h2><%= link_to 'ととのいにいく' , facilities_search_path %></h2>
+
+  <div class="comment">
+    <p>サウナ活動には休憩エリアが必要不可欠</p>
+    <p>このサイトはクールダウン環境がある施設を集めたサイトです</p>
+    <p>よりよき、ととのいライフを！！！</p>
+  </div>
+
+  <% unless user_signed_in? %>
+    <ul class="guest_login">
+      <li><%= link_to '一般者ログイン(ゲスト)' , users_guest_sign_in_path, method: :post %></li>
+      <li><%= link_to '管理者ログイン(ゲスト)' , users_admin_guest_sign_in_path , method: :post %></li>
+    </ul>
+  <% end %>
 </div>
