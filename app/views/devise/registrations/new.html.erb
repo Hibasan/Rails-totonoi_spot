@@ -3,12 +3,12 @@
   <div class="devise_content">
     <h4>アカウント登録</h4>
     <div class="devise_name">
-      <%= f.label :name %><br />
-      <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+      <%= f.label :name ,'ニックネーム （あとから変更可）'%><br />
+      <%= f.text_field :name, autofocus: true, autocomplete: "name" ,placeholder:'例）ととのい たろじゅ'%>
     </div>
     <div class="devise_email">
       <%= f.label :email %><br />
-      <%= f.email_field :email, autocomplete: "email" %>
+      <%= f.email_field :email, autocomplete: "email" ,placeholder:'例）example@mail.com'%>
     </div>
     <div class="devise_password">
       <%= f.label :password %>
