@@ -18,7 +18,7 @@
 - gem 'geocoder' 住所を緯度経度に変換
 - gem 'gmaps4rails' 緯度経度からgoogleMAPを表示
 
-####　使用Gem
+#### 使用Gem
 - gem 'devise'
 - gem 'rails_admin'
 - gem 'cancancan'
