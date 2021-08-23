@@ -18,7 +18,11 @@
       <li><%= link_to 'このサイトについて' , about_path %></li>
     </ul>
     <ul class="top_menu_center">
-      <li><%= link_to 'letter_opener_web(アカウント認証用)', letter_opener_web_path , target: :_blank, rel: "noopener noreferrer"%></li>
+      <% if user_signed_in? %>
+        <li><%= "#{current_user.name} でログイン中" %></li>
+      <% else %>
+        <li><%= link_to 'letter_opener_web(アカウント認証用)', letter_opener_web_path , target: :_blank, rel: "noopener noreferrer"%></li>
+      <% end %>
       <li><%= link_to '検索ページ' , facilities_search_path %></li>
     </ul>
     <ul class="top_menu_right">
