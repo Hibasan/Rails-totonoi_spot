@@ -36,9 +36,9 @@ RSpec.describe '評価・コメント関連', type: :system do
         click_link 'マイページ'
         click_link '評価履歴'
         click_link '編集'
-        page.all("#review_sex_男性")[0].click
-        select '★5' ,from: 'review_light'
-        fill_in 'review_comment' , with: 'サウナそのもの'
+        page.all('#review_sex_男性')[0].click
+        select '★5', from: 'review_light'
+        fill_in 'review_comment', with: 'サウナそのもの'
         click_button '投稿する'
         expect(page).to have_content '評価を編集しました'
         expect(page).to have_content 'サウナそのもの'
@@ -71,6 +71,7 @@ RSpec.describe '評価・コメント関連', type: :system do
   end
 
   private
+
   def create_model
     FactoryBot.create(:sex1)
     FactoryBot.create(:sex2)
@@ -92,18 +93,19 @@ RSpec.describe '評価・コメント関連', type: :system do
     FactoryBot.create(:chair9)
     FactoryBot.create(:chair10)
   end
+
   def create_review
     click_link '一般者ログイン'
     click_link 'ととのいにいく'
-    fill_in 'q_facility_name' , with: 'おふろ'
+    fill_in 'q_facility_name', with: 'おふろ'
     click_button 'search'
     click_link 'おふろの国'
     click_link '評価・コメントをする'
-    page.all("#review_sex_女性")[0].click
-    select '★4' ,from: 'review_dry'
-    select '★5' ,from: 'review_light'
-    select '★3' ,from: 'review_wide'
-    fill_in 'review_comment' , with: '平日の18時に訪問、客層がサウナーな印象。ととのうためにイスを使っており回転率がいいように感じました。'
+    page.all('#review_sex_女性')[0].click
+    select '★4', from: 'review_dry'
+    select '★5', from: 'review_light'
+    select '★3', from: 'review_wide'
+    fill_in 'review_comment', with: '平日の18時に訪問、客層がサウナーな印象。ととのうためにイスを使っており回転率がいいように感じました。'
     click_button '投稿する'
   end
 end

@@ -41,7 +41,9 @@ RSpec.describe 'お気に入り関連', type: :system do
       end
     end
   end
+
   private
+
   def model_create
     FactoryBot.create(:facility1)
     FactoryBot.create(:facility2)
