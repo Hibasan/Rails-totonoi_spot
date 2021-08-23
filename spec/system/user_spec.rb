@@ -10,10 +10,10 @@ RSpec.describe 'ユーザー関連', type: :system do
       it '認証メールが送信されること' do
         visit root_path
         click_link 'アカウント登録'
-        fill_in 'user_name' , with: 'おめシス'
-        fill_in 'user_email',with: 'test10@email.com'
-        fill_in 'user_password',with: 'password'
-        fill_in 'user_password_confirmation',with: 'password'
+        fill_in 'user_name', with: 'おめシス'
+        fill_in 'user_email', with: 'test10@email.com'
+        fill_in 'user_password', with: 'password'
+        fill_in 'user_password_confirmation', with: 'password'
         click_button 'アカウント登録'
         expect(ActionMailer::Base.deliveries.last.to).to eq ['test10@email.com']
         expect(ActionMailer::Base.deliveries.last.subject).to eq 'メールアドレス確認メール'
@@ -23,10 +23,10 @@ RSpec.describe 'ユーザー関連', type: :system do
       it 'ユニークエラーが表示されること' do
         visit root_path
         click_link 'アカウント登録'
-        fill_in 'user_name' , with: 'おめシス'
-        fill_in 'user_email',with: 'test01@email.com'
-        fill_in 'user_password',with: 'password'
-        fill_in 'user_password_confirmation',with: 'password'
+        fill_in 'user_name', with: 'おめシス'
+        fill_in 'user_email', with: 'test01@email.com'
+        fill_in 'user_password', with: 'password'
+        fill_in 'user_password_confirmation', with: 'password'
         click_button 'アカウント登録'
         expect(page).not_to have_content 'メールアドレスはすでに存在しています'
       end
@@ -117,17 +117,18 @@ RSpec.describe 'ユーザー関連', type: :system do
   end
 
   private
+
   def admin_login
     click_link 'ログイン'
-    fill_in 'user_email',with: 'test01@email.com'
-    fill_in 'user_password',with: 'password'
+    fill_in 'user_email', with: 'test01@email.com'
+    fill_in 'user_password', with: 'password'
     click_button 'ログイン'
   end
 
   def user_login
     click_link 'ログイン'
-    fill_in 'user_email',with: 'test02@email.com'
-    fill_in 'user_password',with: 'password'
+    fill_in 'user_email', with: 'test02@email.com'
+    fill_in 'user_password', with: 'password'
     click_button 'ログイン'
   end
 

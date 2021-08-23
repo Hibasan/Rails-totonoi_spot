@@ -10,7 +10,7 @@ RSpec.describe '検索関連', type: :system do
       it '施設登録が表示される' do
         visit root_path
         click_link '検索ページ'
-        fill_in 'q_facility_name' , with: '湯けむり'
+        fill_in 'q_facility_name', with: '湯けむり'
         click_button 'search'
         expect(page).to have_content '2件表示'
       end
@@ -19,8 +19,8 @@ RSpec.describe '検索関連', type: :system do
       it '施設登録が表示される' do
         visit root_path
         click_link '検索ページ'
-        fill_in 'q_facility_name' , with: '湯けむり'
-        page.all(".btn-outline-danger")[0].click
+        fill_in 'q_facility_name', with: '湯けむり'
+        page.all('.btn-outline-danger')[0].click
         click_button 'search'
         sleep 1
         expect(page).to have_content '1件表示'
@@ -30,8 +30,8 @@ RSpec.describe '検索関連', type: :system do
       it '施設登録が表示される' do
         visit root_path
         click_link '検索ページ'
-        page.all(".btn-outline-primary")[0].click
-        page.all(".btn-primary")[1].click
+        page.all('.btn-outline-primary')[0].click
+        page.all('.btn-primary')[1].click
         click_button 'search'
         sleep 1
         expect(page).to have_content '4件表示'
@@ -78,6 +78,7 @@ RSpec.describe '検索関連', type: :system do
   end
 
   private
+
   def create_model
     FactoryBot.create(:sex1)
     FactoryBot.create(:sex2)
@@ -99,5 +100,4 @@ RSpec.describe '検索関連', type: :system do
     FactoryBot.create(:chair9)
     FactoryBot.create(:chair10)
   end
-
 end

@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!, except: [:guest_sign_in,:admin_guest_sign_in]
+  before_action :authenticate_user!, except: %i[guest_sign_in admin_guest_sign_in]
 
   def show
     @resource = User.find(current_user.id)
@@ -8,8 +8,7 @@ class UsersController < ApplicationController
   end
 
   def review
-    @reviews = Review.includes(:user,:facility).where(user_id: current_user.id)
-
+    @reviews = Review.includes(:user, :facility).where(user_id: current_user.id)
   end
 
   def favorite_facilities
@@ -29,5 +28,4 @@ class UsersController < ApplicationController
     sign_in user
     redirect_to facilities_search_path, notice: 'ゲスト管理者でログインしました'
   end
-
 end

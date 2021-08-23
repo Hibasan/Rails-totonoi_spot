@@ -12,10 +12,10 @@ RSpec.describe '施設関連', type: :system do
         admin_login
         click_link 'ととのいにいく'
         click_link '施設登録'
-        fill_in 'facility_name' , with: 'RAKU-SUPA'
-        select '神奈川県' ,from: 'facility_prefecture'
-        fill_in 'facility_address' , with: '横浜市鶴見区下末吉２丁目２５−２３'
-        page.all(".commit")[0].click
+        fill_in 'facility_name', with: 'RAKU-SUPA'
+        select '神奈川県', from: 'facility_prefecture'
+        fill_in 'facility_address', with: '横浜市鶴見区下末吉２丁目２５−２３'
+        page.all('.commit')[0].click
         expect(page).to have_content '施設情報を登録しました'
         expect(page).to have_content 'RAKU-SUPA'
       end
@@ -27,10 +27,10 @@ RSpec.describe '施設関連', type: :system do
         click_link 'ととのいにいく'
         click_link 'おふろの国'
         click_link '情報編集'
-        fill_in 'facility_name' , with: 'RAKU-SUPA'
-        select '東京都' ,from: 'facility_prefecture'
-        fill_in 'facility_address' , with: '港区新橋３丁目１２−３'
-        page.all(".commit")[0].click
+        fill_in 'facility_name', with: 'RAKU-SUPA'
+        select '東京都', from: 'facility_prefecture'
+        fill_in 'facility_address', with: '港区新橋３丁目１２−３'
+        page.all('.commit')[0].click
         expect(page).to have_content '施設情報を編集しました'
         expect(page).to have_content 'RAKU-SUPA'
       end
@@ -54,10 +54,10 @@ RSpec.describe '施設関連', type: :system do
         admin_login
         click_link 'ととのいにいく'
         click_link '施設登録'
-        fill_in 'facility_saunas_attributes_0_temperature' , with: '1'
-        fill_in 'facility_water_baths_attributes_0_temperature' , with: '1'
-        fill_in 'facility_chairs_attributes_0_bath' , with: '1'
-        page.all(".commit")[0].click
+        fill_in 'facility_saunas_attributes_0_temperature', with: '1'
+        fill_in 'facility_water_baths_attributes_0_temperature', with: '1'
+        fill_in 'facility_chairs_attributes_0_bath', with: '1'
+        page.all('.commit')[0].click
         expect(page).to have_content '名前を入力してください'
         expect(page).to have_content '県名を入力してください'
         expect(page).to have_content '住所を入力してください'
@@ -76,10 +76,10 @@ RSpec.describe '施設関連', type: :system do
         user_login
         click_link 'ととのいにいく'
         click_link '施設登録'
-        fill_in 'facility_name' , with: 'RAKU-SUPA'
-        select '神奈川県' ,from: 'facility_prefecture'
-        fill_in 'facility_address' , with: '横浜市鶴見区下末吉２丁目２５−２３'
-        page.all(".commit")[0].click
+        fill_in 'facility_name', with: 'RAKU-SUPA'
+        select '神奈川県', from: 'facility_prefecture'
+        fill_in 'facility_address', with: '横浜市鶴見区下末吉２丁目２５−２３'
+        page.all('.commit')[0].click
         expect(page).to have_content '施設情報を登録しました'
         expect(page).to have_content 'RAKU-SUPA'
       end
@@ -91,10 +91,10 @@ RSpec.describe '施設関連', type: :system do
         click_link 'ととのいにいく'
         click_link 'おふろの国'
         click_link '情報編集'
-        fill_in 'facility_name' , with: 'RAKU-SUPA'
-        select '東京都' ,from: 'facility_prefecture'
-        fill_in 'facility_address' , with: '港区新橋３丁目１２−３'
-        page.all(".commit")[0].click
+        fill_in 'facility_name', with: 'RAKU-SUPA'
+        select '東京都', from: 'facility_prefecture'
+        fill_in 'facility_address', with: '港区新橋３丁目１２−３'
+        page.all('.commit')[0].click
         expect(page).to have_content '施設情報を編集しました'
         expect(page).to have_content 'RAKU-SUPA'
       end
@@ -105,10 +105,10 @@ RSpec.describe '施設関連', type: :system do
         user_login
         click_link 'ととのいにいく'
         click_link '施設登録'
-        fill_in 'facility_saunas_attributes_0_temperature' , with: '1'
-        fill_in 'facility_water_baths_attributes_0_temperature' , with: '1'
-        fill_in 'facility_chairs_attributes_0_bath' , with: '1'
-        page.all(".commit")[0].click
+        fill_in 'facility_saunas_attributes_0_temperature', with: '1'
+        fill_in 'facility_water_baths_attributes_0_temperature', with: '1'
+        fill_in 'facility_chairs_attributes_0_bath', with: '1'
+        page.all('.commit')[0].click
         expect(page).to have_content '名前を入力してください'
         expect(page).to have_content '県名を入力してください'
         expect(page).to have_content '住所を入力してください'
@@ -121,17 +121,18 @@ RSpec.describe '施設関連', type: :system do
   end
 
   private
+
   def admin_login
     click_link 'ログイン'
-    fill_in 'user_email',with: 'test01@email.com'
-    fill_in 'user_password',with: 'password'
+    fill_in 'user_email', with: 'test01@email.com'
+    fill_in 'user_password', with: 'password'
     click_button 'ログイン'
   end
 
   def user_login
     click_link 'ログイン'
-    fill_in 'user_email',with: 'test02@email.com'
-    fill_in 'user_password',with: 'password'
+    fill_in 'user_email', with: 'test02@email.com'
+    fill_in 'user_password', with: 'password'
     click_button 'ログイン'
   end
 

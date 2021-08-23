@@ -14,16 +14,16 @@ module TotoSupo
     config.time_zone = 'Tokyo'
     config.active_record.default_timezone = :local
     config.assets.initialize_on_precompile = false
-    config.action_view.field_error_proc = Proc.new { |html_tag, instance| html_tag }
+    config.action_view.field_error_proc = proc { |html_tag, _instance| html_tag }
     config.generators do |g|
       g.test_framework :rspec,
-        fixtures: true,
-        view_specs: false,
-        helper_specs: false,
-        routing_specs: false,
-        controller_specs: false,
-        request_specs: false
-      g.fixture_replacement :factory_bot, dir: "spec/factories"
+                       fixtures: true,
+                       view_specs: false,
+                       helper_specs: false,
+                       routing_specs: false,
+                       controller_specs: false,
+                       request_specs: false
+      g.fixture_replacement :factory_bot, dir: 'spec/factories'
     end
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers

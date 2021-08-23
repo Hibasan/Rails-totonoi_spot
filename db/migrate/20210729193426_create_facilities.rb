@@ -1,7 +1,7 @@
 class CreateFacilities < ActiveRecord::Migration[5.2]
   def change
     create_table :facilities do |t|
-      t.string :name,  null: false, index: true
+      t.string :name, null: false, index: true
       t.string :prefecture, null: false, index: true
       t.string :address, null: false, index: true
       t.string :homepage

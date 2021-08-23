@@ -9,7 +9,7 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
     if @review.save
-      redirect_to facility_path(@review.facility_id),notice:"#{@review.facility.name}に評価投稿をしました"
+      redirect_to facility_path(@review.facility_id), notice: "#{@review.facility.name}に評価投稿をしました"
     else
       render :new
     end
@@ -26,7 +26,7 @@ class ReviewsController < ApplicationController
   def update
     @review = Review.find(params[:id])
     if @review.update(review_params)
-      redirect_to facility_path(@review.facility_id),notice:"評価を編集しました"
+      redirect_to facility_path(@review.facility_id), notice: '評価を編集しました'
     else
       render :edit
     end
@@ -35,11 +35,12 @@ class ReviewsController < ApplicationController
   def destroy
     @review = Review.find(params[:id])
     @review.destroy
-    redirect_to facility_path(@review.facility_id),notice:"評価を削除しました"
+    redirect_to facility_path(@review.facility_id), notice: '評価を削除しました'
   end
 
   private
+
   def review_params
-    params.require(:review).permit(:sex, :dry, :light, :wide, :comment,:user_id, :facility_id)
+    params.require(:review).permit(:sex, :dry, :light, :wide, :comment, :user_id, :facility_id)
   end
 end
