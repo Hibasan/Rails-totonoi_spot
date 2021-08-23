@@ -21,13 +21,13 @@ class UsersController < ApplicationController
   def guest_sign_in
     user = User.guest
     sign_in user
-    redirect_to facilities_search_path
+    redirect_to facilities_search_path, notice: 'ゲストユーザーでログインしました'
   end
 
   def admin_guest_sign_in
     user = User.admin_guest
     sign_in user
-    redirect_to facilities_search_path
+    redirect_to facilities_search_path, notice: 'ゲスト管理者でログインしました'
   end
 
 end
