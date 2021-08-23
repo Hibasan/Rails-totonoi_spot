@@ -48,6 +48,11 @@ ja:
         sex_id: 休憩エリア情報の性別
         rest_area: 休憩エリア情報の場所
         rest_area_id: 休憩エリア情報の場所
+        bath: 風呂イス
+        deck: デッキチェア
+        relax: リラックスチェア
+        bench: ベンチ
+        bench_non_backrest: ベンチ(背なし)
       rest_area:
         area: 休憩場所
       review:
