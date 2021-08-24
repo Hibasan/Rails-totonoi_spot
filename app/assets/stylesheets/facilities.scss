@@ -138,7 +138,7 @@ input:checked + label img.chair_image {
 
 /* facilities#index.html */
 .facility_index{
-  height: 260px;
+  height: 100%;
 }
 
 .facility_index h4{
@@ -156,10 +156,10 @@ input:checked + label img.chair_image {
 
 .facility_index_left{
   background-color: #FFF;
-  height: 200px;
-  width: 200px;
+  height: 240px;
+  width: 240px;
   float: left;
-  margin: 10px;
+  margin: 20px 10px;
 }
 
 
@@ -178,14 +178,13 @@ input:checked + label img.chair_image {
   position: relative;
   background-color: #fff;
   border-radius: 8px;
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
 }
 
 .index_image img{
-  width: 80px;
-  height: 80px;
-  opacity: 1.0;
+  width: 100px;
+  height: 100px;
   position: absolute;
   top: -5px;
 }
@@ -197,7 +196,7 @@ input:checked + label img.chair_image {
   font-size: 32px;
   opacity: 0.8;
   position: absolute;
-  bottom: -5px;
+  top: -5px;
   right: 5px;
   text-shadow    :
        2px  2px 1px #000, -2px  2px 1px #000,
@@ -213,7 +212,7 @@ input:checked + label img.chair_image {
   font-size: 32px;
   opacity: 0.8;
   position: absolute;
-  bottom: -5px;
+  top: -5px;
   left: 5px;
   text-shadow    :
        2px  2px 1px #000, -2px  2px 1px #000,
@@ -222,8 +221,25 @@ input:checked + label img.chair_image {
       -2px  0px 1px #000,  0px -2px 1px #000;
 }
 
+.index_image .chair_label{
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  font-size: 12px;
+  font-weight: bold;
+  position: absolute;
+  bottom: 4px;
+  left: 4px;
+
+}
+
+
 .chair{
   display: flex;
+}
+
+.index_table{
+  font-size: 28px;
 }
 
 .index_table .content{

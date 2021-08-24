@@ -12,10 +12,10 @@
   <% end %>
   <table class="index_table">
     <tr>
-      <th></th>
-      <th>サウナ</th>
-      <th>水風呂</th>
-      <th>設備</th>
+      <td></td>
+      <td>サウナ</td>
+      <td>水風呂</td>
+      <td>設備</td>
     </tr>
     <tr class="content">
       <td>男性</td>
@@ -42,6 +42,7 @@
             <%= image_tag "bath.png"%>
             <p class="inside"><%= inside&.bath %></p>
             <p class="outside"><%= outside&.bath %></p>
+            <p class="chair_label">風呂イス</p>
           </li>
           <% end %>
           <% if inside&.deck.present? || outside&.deck.present? %>
@@ -49,6 +50,7 @@
             <%= image_tag "deck.png"%>
             <p class="inside"><%= inside&.deck %></p>
             <p class="outside"><%= outside&.deck %></p>
+            <p class="chair_label">デッキチェア</p>
           </li>
           <% end %>
           <% if inside&.relax.present? || outside&.relax.present? %>
@@ -56,6 +58,7 @@
             <%= image_tag "relax.png"%>
             <p class="inside"><%= inside&.relax %></p>
             <p class="outside"><%= outside&.relax %></p>
+            <p class="chair_label">リクライニング</p>
           </li>
           <% end %>
           <% if inside&.bench.present? || outside&.bench.present? %>
@@ -63,6 +66,7 @@
             <%= image_tag "bench.png"%>
             <p class="inside"><%= inside&.bench %></p>
             <p class="outside"><%= outside&.bench %></p>
+            <p class="chair_label">ベンチ</p>
           </li>
           <% end %>
           <% if inside&.bench_non_backrest.present? && outside&.bench_non_backrest.present? %>
@@ -70,6 +74,7 @@
             <%= image_tag "bench_non.png"%>
             <p class="inside"><%= inside&.bench_non_backrest %></p>
             <p class="outside"><%= outside&.bench_non_backrest %></p>
+            <p class="chair_label">ベンチ(背なし)</p>
           </li>
           <% end %>
         </ul>
@@ -100,6 +105,7 @@
             <%= image_tag "bath.png"%>
             <p class="inside"><%= inside&.bath %></p>
             <p class="outside"><%= outside&.bath %></p>
+            <p class="chair_label">風呂イス</p>
           </li>
           <% end %>
           <% if inside&.deck.present? || outside&.deck.present? %>
@@ -107,6 +113,7 @@
             <%= image_tag "deck.png"%>
             <p class="inside"><%= inside&.deck %></p>
             <p class="outside"><%= outside&.deck %></p>
+            <p class="chair_label">デッキチェア</p>
           </li>
           <% end %>
           <% if inside&.relax.present? || outside&.relax.present? %>
@@ -114,6 +121,7 @@
             <%= image_tag "relax.png"%>
             <p class="inside"><%= inside&.relax %></p>
             <p class="outside"><%= outside&.relax %></p>
+            <p class="chair_label">リクライニング</p>
           </li>
           <% end %>
           <% if inside&.bench.present? || outside&.bench.present? %>
@@ -121,6 +129,7 @@
             <%= image_tag "bench.png"%>
             <p class="inside"><%= inside&.bench %></p>
             <p class="outside"><%= outside&.bench %></p>
+            <p class="chair_label">ベンチ</p>
           </li>
           <% end %>
           <% if inside&.bench_non_backrest.present? && outside&.bench_non_backrest.present? %>
@@ -128,6 +137,7 @@
             <%= image_tag "bench_non.png"%>
             <p class="inside"><%= inside&.bench_non_backrest %></p>
             <p class="outside"><%= outside&.bench_non_backrest %></p>
+            <p class="chair_label">ベンチ(背なし)</p>
           </li>
           <% end %>
         </ul>
