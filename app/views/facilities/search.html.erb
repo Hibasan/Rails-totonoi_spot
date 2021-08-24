@@ -1,7 +1,6 @@
 <% if user_signed_in? %>
 <%= link_to '施設登録' , new_facility_path %>
 <% end %>
-<br>
 <div class="search_container">
   <h3>検索</h3>
   <%= search_form_for @chair, url: facilities_path do |f| %>
@@ -32,9 +31,7 @@
   <hr>
   <div class="search_chair">
     <ul>
-      <li>
-        <div>設備</div>
-      </li>
+      <li>設備</li>
       <li>
         <div class="chack_box_image">
           <%= f.check_box :bath_not_in, include_hidden: false ,class:"chack_box" ,id:"bath"%>
@@ -72,10 +69,9 @@
       </li>
     </ul>
   </div>
-
-
   <br>
-  <%= f.submit "search",name: :search,value: "search"%>
+  <%= f.hidden_field :search,value: "search" %>
+  <%= f.submit "検索", class:"facility_search"%>
   <% end %>
 </div>
 <div class="new_review_container">
