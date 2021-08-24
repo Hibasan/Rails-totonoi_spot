@@ -162,6 +162,7 @@ input:checked + label img.chair_image {
   margin: 10px;
 }
 
+
 .facility_index_view{
   padding-left: 20px;
   display: flex;
@@ -218,6 +219,11 @@ input:checked + label img.chair_image {
        2px -2px 1px #000, -2px -2px 1px #000,
        2px  0px 1px #000,  0px  2px 1px #000,
       -2px  0px 1px #000,  0px -2px 1px #000;
+}
+
+
+.chair{
+  display: flex;
 }
 
 /* facility#show.html */
