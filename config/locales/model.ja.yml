@@ -40,9 +40,12 @@ ja:
       facility/saunas:
         sex: サウナ情報の性別
         sex_id: サウナ情報の性別
+        temperature: サウナの温度
+        intern: サウナの収容人数
       facility/water_baths:
         sex: 水風呂情報の性別
         sex_id: 水風呂情報の性別
+        intern: 水風呂の収容人数
       facility/chairs:
         sex: 休憩エリア情報の性別
         sex_id: 休憩エリア情報の性別
