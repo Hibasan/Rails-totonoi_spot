@@ -8,17 +8,17 @@
     <p>よりよき、ととのいライフを！！！</p>
   </div>
 
-  <% unless user_signed_in? %>
+  <div class="top_image">
+    <%= image_tag "bath.png" ,class:'col-2'%>
+    <%= image_tag "deck.png" ,class:'col-2'%>
+    <%= image_tag "relax.png" ,class:'col-2'%>
+    <%= image_tag "bench.png" ,class:'col-2'%>
+    <%= image_tag "bench_non.png" ,class:'col-2' %>
+  </div>
+    <% unless user_signed_in? %>
     <ul class="guest_login">
       <li><%= link_to '一般者ログイン(ゲスト)' , users_guest_sign_in_path, method: :post %></li>
       <li><%= link_to '管理者ログイン(ゲスト)' , users_admin_guest_sign_in_path , method: :post %></li>
     </ul>
-  <% end %>
+    <% end %>
 </div>
-
-
-<%= image_tag "bath.png" %>
-<%= image_tag "deck.png" %>
-<%= image_tag "relax.png" %>
-<%= image_tag "bench.png" %>
-<%= image_tag "bench_non.png" %>
