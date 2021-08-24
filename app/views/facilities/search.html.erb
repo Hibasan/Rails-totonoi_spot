@@ -37,36 +37,36 @@
       </li>
       <li>
         <div class="chack_box_image">
-          <label for="bath"><%= image_tag "bath.png", class:"chair_image btn"%></label>
           <%= f.check_box :bath_not_in, include_hidden: false ,class:"chack_box" ,id:"bath"%>
+          <label for="bath"><%= image_tag "bath.png", class:"chair_image btn"%></label>
           <%= f.label :bath, '風呂イス' ,class:"chair_label btn", for:"bath"%>
         </div>
       </li>
       <li>
         <div class="chack_box_image">
-          <label for="deck"><%= image_tag "deck.png", class:"chair_image btn"%></label>
           <%= f.check_box :deck_not_in, include_hidden: false ,class:"chack_box" ,id:"deck"%>
+          <label for="deck"><%= image_tag "deck.png", class:"chair_image btn"%></label>
           <%= f.label :deck, 'デッキチェア' ,class:"chair_label btn", for:"deck"%>
         </div>
       </li>
       <li>
         <div class="chack_box_image">
-          <label for="relax"><%= image_tag "relax.png", class:"chair_image btn"%></label>
           <%= f.check_box :relax_not_in, include_hidden: false ,class:"chack_box" ,id:"relax"%>
+          <label for="relax"><%= image_tag "relax.png", class:"chair_image btn"%></label>
           <%= f.label :relax, 'リクライニング' ,class:"chair_label btn", for:"relax"%>
         </div>
       </li>
       <li>
         <div class="chack_box_image">
-          <label for="bench"><%= image_tag "bench.png", class:"chair_image btn"%></label>
           <%= f.check_box :bench_not_in, include_hidden: false ,class:"chack_box" ,id:"bench"%>
+          <label for="bench"><%= image_tag "bench.png", class:"chair_image btn"%></label>
           <%= f.label :bench, 'ベンチ' ,class:"chair_label btn", for:"bench"%>
         </div>
       </li>
       <li>
         <div class="chack_box_image">
-          <label for="bench_non"><%= image_tag "bench_non.png", class:"chair_image btn"%></label>
           <%= f.check_box :bench_non_backrest_not_in, include_hidden: false ,class:"chack_box" ,id:"bench_non"%>
+          <label for="bench_non"><%= image_tag "bench_non.png", class:"chair_image btn"%></label>
           <%= f.label :bench_non_backrest, 'ベンチ(背なし)' ,class:"chair_label btn", for:"bench_non"%>
         </div>
       </li>

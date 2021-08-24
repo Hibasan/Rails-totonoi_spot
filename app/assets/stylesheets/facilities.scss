@@ -64,20 +64,29 @@
   border-radius: 8px;
   width: 120px;
   height: 120px;
+  opacity: 0.7;
 }
 
 .chack_box_image .chack_box{
+  display: none;
   position: absolute;
   top: 12px;
   left: 12px;
 }
+
+input:checked + label img.chair_image {
+  border: solid;
+  border-color: blue;
+  opacity: 1.0;
+}
+
 
 .chack_box_image .chair_label{
   padding: 0;
   width: 100%;
   font-size: 12px;
   position: absolute;
-  bottom: 0px;
+  bottom: 6px;
   left: 50%;
   -webkit-transform: translateX(-50%);
 }
