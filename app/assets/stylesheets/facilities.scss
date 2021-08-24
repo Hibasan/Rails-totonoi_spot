@@ -49,10 +49,39 @@
   margin: 0 auto;
 }
 
-.btn_size{
-  min-width: 120px;
-  height: 80px;
+.search_chair li{
+  display: inline-block;
 }
+
+.chack_box_image{
+  position: relative;
+  min-width: 120px;
+  height: 120px;
+}
+
+.chack_box_image .chair_image{
+  background-color: #fff;
+  border-radius: 8px;
+  width: 120px;
+  height: 120px;
+}
+
+.chack_box_image .chack_box{
+  position: absolute;
+  top: 12px;
+  left: 12px;
+}
+
+.chack_box_image .chair_label{
+  padding: 0;
+  width: 100%;
+  font-size: 12px;
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+}
+
 
 /* facilities#index.html */
 .facility_index{
