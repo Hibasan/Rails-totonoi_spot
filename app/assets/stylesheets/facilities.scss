@@ -172,6 +172,44 @@ input:checked + label img.chair_image {
   padding: 0 3px;
 }
 
+.index_image{
+  position: relative;
+  background-color: #fff;
+  border-radius: 8px;
+  width: 80px;
+  height: 80px;
+}
+
+.index_image img{
+  width: 80px;
+  height: 80px;
+  opacity: 1.0;
+  position: absolute;
+  bottom: 0;
+  left: -5px;
+  top: -5px;
+}
+
+.index_image p {
+  margin: 0;
+  padding: 0;
+  color: #78ff9c;
+  font-size: 40px;
+  opacity: 0.8;
+  position: absolute;
+  bottom: -5px;
+  right: 5px;
+  text-shadow    :
+       2px  2px 1px #000,
+      -2px  2px 1px #000,
+       2px -2px 1px #000,
+      -2px -2px 1px #000,
+       2px  0px 1px #000,
+       0px  2px 1px #000,
+      -2px  0px 1px #000,
+       0px -2px 1px #000;
+}
+
 /* facility#show.html */
 .facility_show_1st{
   margin: 10px;

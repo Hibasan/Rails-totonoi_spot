@@ -1,5 +1,33 @@
 <h2><%= "#{@facilities.size}件表示" %></h2>
 <br>
+<div class="top_image">
+  <div class="index_image">
+    <%= image_tag "bath.png"%>
+    <p>2</p>
+  </div>
+  <div class="index_image">
+    <%= image_tag "deck.png"%>
+    <p>3</p>
+  </div>
+  <div class="index_image">
+    <%= image_tag "relax.png"%>
+    <p>4</p>
+  </div>
+  <div class="index_image">
+    <%= image_tag "bench.png"%>
+    <p>5</p>
+  </div>
+  <div class="index_image">
+    <%= image_tag "bench_non.png"%>
+    <p>6</p>
+  </div>
+
+
+
+
+
+
+</div>
 <% @facilities.each do |facility| %>
 <div class="facility_index">
   <%= link_to facility_path(facility.id) do %>
