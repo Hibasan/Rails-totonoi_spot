@@ -174,6 +174,7 @@ input:checked + label img.chair_image {
 }
 
 .index_image{
+  margin: 10px 5px;
   position: relative;
   background-color: #fff;
   border-radius: 8px;
@@ -221,9 +222,12 @@ input:checked + label img.chair_image {
       -2px  0px 1px #000,  0px -2px 1px #000;
 }
 
-
 .chair{
   display: flex;
+}
+
+.index_table .content{
+  height: 100px;
 }
 
 /* facility#show.html */
