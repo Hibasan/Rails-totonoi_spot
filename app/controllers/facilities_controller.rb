@@ -81,13 +81,13 @@ class FacilitiesController < ApplicationController
                                      :homepage, :business_hours, :holiday,
                                      :fee, :payment, :comment,
                                      saunas_attributes: %i[
-                                       id sex_id temperature intern comment
+                                       id sex sex_id temperature intern comment
                                      ],
                                      water_baths_attributes: %i[
-                                       id sex_id temperature intern comment
+                                       id sex sex_id temperature intern comment
                                      ],
                                      chairs_attributes: %i[
-                                       id sex_id rest_area_id comment
+                                       id sex sex_id rest_area_id comment
                                        bath deck relax bench bench_non_backrest
                                      ])
   end
