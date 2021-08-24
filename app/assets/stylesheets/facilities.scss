@@ -190,24 +190,36 @@ input:checked + label img.chair_image {
   top: -5px;
 }
 
-.index_image p {
+.index_image .inside {
   margin: 0;
   padding: 0;
   color: #78ff9c;
-  font-size: 40px;
+  font-size: 32px;
   opacity: 0.8;
   position: absolute;
   bottom: -5px;
   right: 5px;
   text-shadow    :
-       2px  2px 1px #000,
-      -2px  2px 1px #000,
-       2px -2px 1px #000,
-      -2px -2px 1px #000,
-       2px  0px 1px #000,
-       0px  2px 1px #000,
-      -2px  0px 1px #000,
-       0px -2px 1px #000;
+       2px  2px 1px #000, -2px  2px 1px #000,
+       2px -2px 1px #000, -2px -2px 1px #000,
+       2px  0px 1px #000,  0px  2px 1px #000,
+      -2px  0px 1px #000,  0px -2px 1px #000;
+}
+
+.index_image .outside {
+  margin: 0;
+  padding: 0;
+  color: #ffd478;
+  font-size: 32px;
+  opacity: 0.8;
+  position: absolute;
+  bottom: -5px;
+  left: 5px;
+  text-shadow    :
+       2px  2px 1px #000, -2px  2px 1px #000,
+       2px -2px 1px #000, -2px -2px 1px #000,
+       2px  0px 1px #000,  0px  2px 1px #000,
+      -2px  0px 1px #000,  0px -2px 1px #000;
 }
 
 /* facility#show.html */
