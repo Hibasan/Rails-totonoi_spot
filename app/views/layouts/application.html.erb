@@ -20,10 +20,8 @@
     <ul class="top_menu_left">
       <li><%= link_to 'このサイトについて' , about_path %></li>
       <li><%= link_to '探しにいく' , facilities_search_path %></li>
-    </ul>
-    <ul class="top_menu_center">
       <% if user_signed_in? %>
-        <li><%= "#{current_user.name} でログイン中" %></li>
+        <li><%= "こんにちは、#{current_user.name} さん" %></li>
       <% end %>
     </ul>
     <ul class="top_menu_right">
