@@ -241,6 +241,10 @@ input:checked + label img.chair_image {
   height: 100px;
 }
 
+.chairs{
+  display: flex;
+}
+
 /* facility#show.html */
 .facility_show_1st{
   margin: 10px;
