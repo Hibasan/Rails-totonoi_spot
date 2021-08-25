@@ -1,4 +1,3 @@
-
 <div class="form_container">
 <h2>施設情報</h2>
 <%= form_with model: @facility ,local: true do |form| %>
@@ -74,6 +73,15 @@
 </div>
 <%= form.submit "施設情報登録" ,class:'commit'%>
 <h2>サウナ情報</h2>
+<% @facility.errors.full_messages_for(:"saunas.sex_id").each do |msg| %>
+<li class=error_message><%= msg %></li>
+<% end %>
+<% @facility.errors.full_messages_for(:"saunas.temperature").each do |msg| %>
+<li class=error_message><%= msg %></li>
+<% end %>
+<% @facility.errors.full_messages_for(:"saunas.intern").each do |msg| %>
+<li class=error_message><%= msg %></li>
+<% end %>
 <div class="sauna">
   <%= form.fields_for :saunas do |sauna| %>
   <% render "sauna_fields",f: sauna %>
@@ -84,8 +92,16 @@
 data: {
   association_insertion_node: '#detail-association-insertion-point_sauna',
   association_insertion_method: 'after' } %>
-
   <h2>水風呂情報</h2>
+  <% @facility.errors.full_messages_for(:"water_baths.sex_id").each do |msg| %>
+  <li class=error_message><%= msg %></li>
+  <% end %>
+  <% @facility.errors.full_messages_for(:"water_baths.temperature").each do |msg| %>
+  <li class=error_message><%= msg %></li>
+  <% end %>
+  <% @facility.errors.full_messages_for(:"water_baths.intern").each do |msg| %>
+  <li class=error_message><%= msg %></li>
+  <% end %>
   <div class="water_bath">
     <%= form.fields_for :water_baths do |water| %>
     <% render "water_bath_fields",f: water %>
@@ -96,8 +112,28 @@ data: {
   data: {
     association_insertion_node: '#detail-association-insertion-point_water',
     association_insertion_method: 'after' } %>
-
     <h2>休憩エリア情報</h2>
+    <% @facility.errors.full_messages_for(:"chairs.sex_id").each do |msg| %>
+    <li class=error_message><%= msg %></li>
+    <% end %>
+    <% @facility.errors.full_messages_for(:"chairs.rest_area_id").each do |msg| %>
+    <li class=error_message><%= msg %></li>
+    <% end %>
+    <% @facility.errors.full_messages_for(:"chairs.bath").each do |msg| %>
+    <li class=error_message><%= msg %></li>
+    <% end %>
+    <% @facility.errors.full_messages_for(:"chairs.deck").each do |msg| %>
+    <li class=error_message><%= msg %></li>
+    <% end %>
+    <% @facility.errors.full_messages_for(:"chairs.relax").each do |msg| %>
+    <li class=error_message><%= msg %></li>
+    <% end %>
+    <% @facility.errors.full_messages_for(:"chairs.bench").each do |msg| %>
+    <li class=error_message><%= msg %></li>
+    <% end %>
+    <% @facility.errors.full_messages_for(:"chairs.bench_non_backrest").each do |msg| %>
+    <li class=error_message><%= msg %></li>
+    <% end %>
     <div class="chair">
       <%= form.fields_for :chairs do |chair| %>
       <% render "chair_fields",f: chair %>

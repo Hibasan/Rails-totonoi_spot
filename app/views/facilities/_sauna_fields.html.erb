@@ -1,8 +1,5 @@
 <div class="nested-fields">
   <div class="col-md-4">
-    <% @facility.errors.full_messages_for(:"saunas.sex_id").each do |msg| %>
-    <li class=error_message><%= msg %></li>
-    <% end %>
     <%= f.radio_button :sex_id, 1 %>
     <%= f.label :sex ,"男性" , class:"col-form-label"%>
     <%= f.radio_button :sex_id, 2 %>
@@ -12,16 +9,10 @@
     <div class="col-md-3">
       <%= f.label :temperature ,"温度", class:"col-form-label" %>
       <%= f.number_field :temperature,class:"form-control" , placeholder:'数字を入力'%>
-      <% @facility.errors.full_messages_for(:"saunas.temperature").each do |msg| %>
-      <li class=error_message><%= msg %></li>
-      <% end %>
     </div>
     <div class="col-md-3">
       <%= f.label :intern ,"収容人数", class:"col-form-label" %>
       <%= f.number_field :intern ,class:"form-control", placeholder:'数字を入力'%>
-      <% @facility.errors.full_messages_for(:"saunas.intern").each do |msg| %>
-      <li class=error_message><%= msg %></li>
-      <% end %>
     </div>
     <div class="col-md-6">
       <%= f.label :comment ,"コメント", class:"col-form-label" %>

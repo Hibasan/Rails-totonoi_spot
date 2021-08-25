@@ -20,7 +20,7 @@ class FacilitiesController < ApplicationController
     if @facility.save
       redirect_to facility_path(@facility.id), notice: '施設情報を登録しました'
     else
-      render :new
+      render action: :new
     end
   end
 
