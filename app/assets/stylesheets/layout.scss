@@ -57,9 +57,10 @@ li { list-style: none; }
   width: auto;
 }
 .top_menu_left li a{
+  border-bottom: 2px solid #f0f0f0;
   font-size: 20px;
   text-decoration: none;
-  padding: 0 15px;
+  padding: 5px 15px;
   margin: 10px;
   border-radius: 10px;
   transition: 0.3s;
@@ -82,7 +83,8 @@ li { list-style: none; }
   width: auto;
 }
 .top_menu_right li a{
-  background-color: #f3f3f3;
+  background-color: #fafafa;
+  border: solid #f0f0f0;
   border-radius: 5px;
   padding: 15px;
   margin: 5px;
