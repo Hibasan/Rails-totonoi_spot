@@ -4,7 +4,10 @@ class Facility < ApplicationRecord
 
   validates :prefecture, presence: true
   validates :address, presence: true
-  validates :homepage, format: /\A#{URI::regexp(%w(http https))}\z/,allow_blank: true
+  validates :homepage, format: {with: /\A#{URI::regexp(%w(http https))}\z/,message: "httpもしくはhttpsから始まる文字を入力してください"},allow_blank: true
+
+
+
   has_many :reviews, dependent: :destroy
   has_many :favorite_facilities, dependent: :destroy
   has_many :saunas, dependent: :destroy
