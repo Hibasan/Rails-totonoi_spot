@@ -1,8 +1,10 @@
 class Facility < ApplicationRecord
-  validates :name, presence: true, uniqueness: true
+  validates :name, presence: true
+  validates :name, uniqueness: true
+
   validates :prefecture, presence: true
   validates :address, presence: true
-  validates :homepage, format: /\A#{URI::regexp(%w(http https))}\z/
+  validates :homepage, format: /\A#{URI::regexp(%w(http https))}\z/,allow_blank: true
   has_many :reviews, dependent: :destroy
   has_many :favorite_facilities, dependent: :destroy
   has_many :saunas, dependent: :destroy

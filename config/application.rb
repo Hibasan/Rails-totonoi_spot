@@ -14,7 +14,7 @@ module TotoSupo
     config.time_zone = 'Tokyo'
     config.active_record.default_timezone = :local
     config.assets.initialize_on_precompile = false
-    config.action_view.field_error_proc = proc { |html_tag, _instance| html_tag }
+
     config.generators do |g|
       g.test_framework :rspec,
                        fixtures: true,

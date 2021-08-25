@@ -11,6 +11,19 @@ body {
 ul { margin: 0; padding: 0; }
 li { list-style: none; }
 
+
+.field_with_errors {
+  display: inline;
+  input,textarea,select {
+    @extend .is-invalid;
+  }
+}
+
+.error_message {
+  color: red;
+}
+
+
 .header {
   background: #fafafa;
   height: 50px;

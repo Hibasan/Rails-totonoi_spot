@@ -3,12 +3,18 @@
 <%= form_with model: @facility ,local: true do |form| %>
 <div class=" col-md-12">
   <%= form.label :name ,"施設名　(※入力必須)", class:"form-label"%>
+  <% @facility.errors.full_messages_for(:name).each do |msg| %>
+  <li class=error_message><%= msg %></li>
+  <% end %>
   <%= form.text_field :name, class:"form-control form-control-lg"%>
   <div class="form-text"> 例）ファンタジーサウナ＆スパおふろの国</div>
 </div>
 <div class="row">
   <div class=" col-md-4">
-    <%= form.label :prefecture ,"県名　(※入力必須)" %>
+    <%= form.label :prefecture ,"県名　(※入力必須)", class:"form-label"  %>
+    <% @facility.errors.full_messages_for(:prefecture).each do |msg| %>
+    <li class=error_message><%= msg %></li>
+    <% end %>
     <%= form.select :prefecture,['北海道',
     '青森県','岩手県','宮城県','秋田県','山形県','福島県',
     '茨城県','栃木県','埼玉県','千葉県','東京都','神奈川県',
@@ -21,12 +27,18 @@
   </div>
   <div class=" col-md-8">
     <%= form.label :address ,"住所　(※入力必須)", class:"form-label" %>
+    <% @facility.errors.full_messages_for(:address).each do |msg| %>
+    <li class=error_message><%= msg %></li>
+    <% end %>
     <%= form.text_area :address ,class:"form-control"%>
     <div class="form-text"> 例）横浜市鶴見区下末吉２丁目２５−２３</div>
   </div>
 </div>
 <div class=" col-md-12">
   <%= form.label :homepage ,"ホームページ", class:"form-label" %>
+  <% @facility.errors.full_messages_for(:homepage).each do |msg| %>
+  <li class=error_message><%= msg %></li>
+  <% end %>
   <%= form.text_field :homepage ,class:"form-control" %>
     <div class="form-text"> 例）http://ofuronokuni.co.jp/</div>
 </div>
@@ -60,12 +72,16 @@
   <div class="form-text"> 例）入浴まで100円ロッカー２個あり（返却あり）</div>
 </div>
 <%= form.submit "施設情報登録" ,class:'commit'%>
-
-<% @facility.errors.full_messages.each do |msg| %>
-<li><%= msg %></li>
-<% end %>
-
 <h2>サウナ情報</h2>
+<% @facility.errors.full_messages_for(:"saunas.sex_id").each do |msg| %>
+<li class=error_message><%= msg %></li>
+<% end %>
+<% @facility.errors.full_messages_for(:"saunas.temperature").each do |msg| %>
+<li class=error_message><%= msg %></li>
+<% end %>
+<% @facility.errors.full_messages_for(:"saunas.intern").each do |msg| %>
+<li class=error_message><%= msg %></li>
+<% end %>
 <div class="sauna">
   <%= form.fields_for :saunas do |sauna| %>
   <% render "sauna_fields",f: sauna %>
@@ -76,8 +92,16 @@
 data: {
   association_insertion_node: '#detail-association-insertion-point_sauna',
   association_insertion_method: 'after' } %>
-
   <h2>水風呂情報</h2>
+  <% @facility.errors.full_messages_for(:"water_baths.sex_id").each do |msg| %>
+  <li class=error_message><%= msg %></li>
+  <% end %>
+  <% @facility.errors.full_messages_for(:"water_baths.temperature").each do |msg| %>
+  <li class=error_message><%= msg %></li>
+  <% end %>
+  <% @facility.errors.full_messages_for(:"water_baths.intern").each do |msg| %>
+  <li class=error_message><%= msg %></li>
+  <% end %>
   <div class="water_bath">
     <%= form.fields_for :water_baths do |water| %>
     <% render "water_bath_fields",f: water %>
@@ -88,8 +112,28 @@ data: {
   data: {
     association_insertion_node: '#detail-association-insertion-point_water',
     association_insertion_method: 'after' } %>
-
     <h2>休憩エリア情報</h2>
+    <% @facility.errors.full_messages_for(:"chairs.sex_id").each do |msg| %>
+    <li class=error_message><%= msg %></li>
+    <% end %>
+    <% @facility.errors.full_messages_for(:"chairs.rest_area_id").each do |msg| %>
+    <li class=error_message><%= msg %></li>
+    <% end %>
+    <% @facility.errors.full_messages_for(:"chairs.bath").each do |msg| %>
+    <li class=error_message><%= msg %></li>
+    <% end %>
+    <% @facility.errors.full_messages_for(:"chairs.deck").each do |msg| %>
+    <li class=error_message><%= msg %></li>
+    <% end %>
+    <% @facility.errors.full_messages_for(:"chairs.relax").each do |msg| %>
+    <li class=error_message><%= msg %></li>
+    <% end %>
+    <% @facility.errors.full_messages_for(:"chairs.bench").each do |msg| %>
+    <li class=error_message><%= msg %></li>
+    <% end %>
+    <% @facility.errors.full_messages_for(:"chairs.bench_non_backrest").each do |msg| %>
+    <li class=error_message><%= msg %></li>
+    <% end %>
     <div class="chair">
       <%= form.fields_for :chairs do |chair| %>
       <% render "chair_fields",f: chair %>
