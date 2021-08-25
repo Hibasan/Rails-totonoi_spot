@@ -36,7 +36,7 @@
       <% inside = facility.chairs.find_by(sex_id: 1,rest_area_id:1)%>
       <% outside = facility.chairs.find_by(sex_id: 1,rest_area_id:2)%>
       <td>
-        <ul class="chair">
+        <ul class="chairs">
           <% if inside&.bath.present? || outside&.bath.present? %>
           <li class="index_image">
             <%= image_tag "bath.png"%>
@@ -99,7 +99,7 @@
       <% inside = facility.chairs.find_by(sex_id: 2,rest_area_id:1)%>
       <% outside = facility.chairs.find_by(sex_id: 2,rest_area_id:2)%>
       <td>
-        <ul class="chair">
+        <ul class="chairs">
           <% if inside&.bath.present? || outside&.bath.present? %>
           <li class="index_image">
             <%= image_tag "bath.png"%>
