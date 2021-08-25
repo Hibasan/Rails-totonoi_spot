@@ -30,7 +30,7 @@ ja:
         name: 施設名
         prefecture: 県名
         address: 住所
-        homepage: ホームページ
+        homepage: ""
         business_hours: 営業時間
         holiday: 定休日
         fee: 料金
@@ -38,24 +38,25 @@ ja:
         comment: コメント
         image: 画像
       facility/saunas:
-        sex: サウナ情報
-        sex_id: サウナ情報
-        temperature: サウナの温度
-        intern: サウナの収容人数
+        sex: ""
+        sex_id: ""
+        temperature: ""
+        intern: ""
       facility/water_baths:
-        sex: 水風呂情報
-        sex_id: 水風呂情報
-        intern: 水風呂の収容人数
+        sex: ""
+        sex_id: ""
+        temperature: ""
+        intern: ""
       facility/chairs:
-        sex: 休憩エリア情報
-        sex_id: 休憩エリア情報
-        rest_area: 休憩エリア情報
-        rest_area_id: 休憩エリア情報
-        bath: 風呂イス
-        deck: デッキチェア
-        relax: リラックスチェア
-        bench: ベンチ
-        bench_non_backrest: ベンチ(背なし)
+        sex: ""
+        sex_id: ""
+        rest_area: ""
+        rest_area_id: ""
+        bath: ""
+        deck: ""
+        relax: ""
+        bench: ""
+        bench_non_backrest: ""
       rest_area:
         area: 休憩場所
       review:

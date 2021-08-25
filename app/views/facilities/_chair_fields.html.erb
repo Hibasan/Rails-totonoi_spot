@@ -5,12 +5,18 @@
     <%= f.label :sex ,"男性" %>
     <%= f.radio_button :sex_id, 2 %>
     <%= f.label :sex ,"女性　" %>
+    <% @facility.errors.full_messages_for(:"chairs.sex_id").each do |msg| %>
+    <li class=error_message><%= msg %></li>
+    <% end %>
   </div>
   <div class="col-md-4">
     <%= f.radio_button :rest_area_id, 1 %>
     <%= f.label :rest_area_id ,"室内" %>
     <%= f.radio_button :rest_area_id, 2 %>
     <%= f.label :rest_area_id ,"室外　" %>
+    <% @facility.errors.full_messages_for(:"chairs.rest_area_id").each do |msg| %>
+    <li class=error_message><%= msg %></li>
+    <% end %>
   </div>
   </div>
   <div class="row">
@@ -34,7 +40,22 @@
     <%= f.label :bench_non_backrest ,"ベンチ(背なし)" %><br>
     <%= f.number_field :bench_non_backrest,class:"form-control" , placeholder:'数字を入力'%>
   </div>
-    </div>
+  <% @facility.errors.full_messages_for(:"chairs.bath").each do |msg| %>
+  <li class=error_message><%= msg %></li>
+  <% end %>
+  <% @facility.errors.full_messages_for(:"chairs.deck").each do |msg| %>
+  <li class=error_message><%= msg %></li>
+  <% end %>
+  <% @facility.errors.full_messages_for(:"chairs.relax").each do |msg| %>
+  <li class=error_message><%= msg %></li>
+  <% end %>
+  <% @facility.errors.full_messages_for(:"chairs.bench").each do |msg| %>
+  <li class=error_message><%= msg %></li>
+  <% end %>
+  <% @facility.errors.full_messages_for(:"chairs.bench_non_backrest").each do |msg| %>
+  <li class=error_message><%= msg %></li>
+  <% end %>
+  </div>
   <div class="col-md-6">
     <%= f.label :comment ,"コメント" %><br>
     <%= f.text_area :comment,class:"form-control" %>
