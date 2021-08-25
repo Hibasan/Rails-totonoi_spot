@@ -1,4 +1,13 @@
 <h2><%= "#{@facilities.size}件表示" %></h2>
+
+<div class="example">
+  <%= label :example,"Howto?" ,class:"btn" , for:"example" %>
+  <%= check_box_tag :example%>
+<div id="popup">
+ああああああ
+</div>
+</div>
+
 <% @facilities.each do |facility| %>
 <div class="facility_index">
   <%= link_to facility_path(facility.id) do %>
