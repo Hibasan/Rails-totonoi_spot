@@ -1,7 +1,6 @@
 <div class="top_container">
   <%= image_tag "title_logo.png" , class:'title' %>
-  <h2><%= link_to 'ととのいにいく' , facilities_search_path %></h2>
-
+  <h2><%= link_to '探しにいく' , facilities_search_path %></h2>
   <div class="comment">
     <p>サウナ活動には休憩エリアが必要不可欠</p>
     <p>このサイトはクールダウン環境がある施設を集めたサイトです</p>
@@ -19,6 +18,7 @@
     <ul class="guest_login">
       <li><%= link_to '一般者ログイン(ゲスト)' , users_guest_sign_in_path, method: :post %></li>
       <li><%= link_to '管理者ログイン(ゲスト)' , users_admin_guest_sign_in_path , method: :post %></li>
+      <li><%= link_to 'letter_opener_web(アカウント認証用)', letter_opener_web_path , target: :_blank, rel: "noopener noreferrer"%></li>
     </ul>
     <% end %>
 </div>

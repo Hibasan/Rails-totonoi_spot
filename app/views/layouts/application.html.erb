@@ -13,17 +13,18 @@
   <body>
 
     <header class="header">
+      <%= link_to root_path ,class:"top_menu_left_image" do %>
+        <%= image_tag "logo.png" , class:"logo"%>
+      <% end %>
+    <div class="header_container">
     <ul class="top_menu_left">
-      <li><%= link_to 'トップ' , root_path %></li>
       <li><%= link_to 'このサイトについて' , about_path %></li>
+      <li><%= link_to '探しにいく' , facilities_search_path %></li>
     </ul>
     <ul class="top_menu_center">
       <% if user_signed_in? %>
         <li><%= "#{current_user.name} でログイン中" %></li>
-      <% else %>
-        <li><%= link_to 'letter_opener_web(アカウント認証用)', letter_opener_web_path , target: :_blank, rel: "noopener noreferrer"%></li>
       <% end %>
-      <li><%= link_to '検索ページ' , facilities_search_path %></li>
     </ul>
     <ul class="top_menu_right">
     <% if user_signed_in? %>
@@ -31,10 +32,10 @@
       <li><%= link_to 'マイページ' , user_path(1) %></li>
       <% else %>
       <li><%= link_to 'ログイン' , new_user_session_path %></li>
-      <li><%= link_to 'アカウント登録' , new_user_registration_path %></li>
+      <li><%= link_to '新規登録' , new_user_registration_path %></li>
     <% end %>
     </ul>
-
+</div>
     </header>
     <% flash.each do |key, value| %>
   <%= content_tag(:div, value, class: "#{key}") %>
