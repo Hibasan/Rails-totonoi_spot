@@ -10,16 +10,17 @@ input[type="checkbox"]:checked + #explain_popup{
 }
 @keyframes fadein{
   from{ opacity: 0; }
-  to{ opacity: 1; }
+  to{ opacity: 0.7; }
 }
 #explain_popup{
   display: none;
   width: 320px;
   height: 240px;
-  background-color: #FFF;
-  border: double;
+  background-color: #0000A0;
+  border: 5px double #ECE8F8;
   border-radius: 10px;
   position: absolute;
+  opacity: 0.7;
   z-index: 10;
 }
 
