@@ -1,6 +1,8 @@
 <div class="top_container">
-  <%= image_tag "title_logo.png" , class:'title' %>
-  <h2><%= link_to '探しにいく' , facilities_search_path %></h2>
+  <%= link_to facilities_search_path do %>
+    <%= image_tag "title_logo.png" , class:'title' %>
+    <h2>探しにいく</h2>
+  <% end %>
   <div class="comment">
     <p>サウナ活動には休憩エリアが必要不可欠</p>
     <p>このサイトはクールダウン環境がある施設を集めたサイトです</p>
