@@ -1,9 +1,9 @@
 <h2><%= "#{@facilities.size}件表示" %></h2>
 <div class="explain">
-  <%= label :example,"表示の説明" ,class:"btn" , for:"explain" %>
+  <%= label :example,"アイコンの説明" ,class:"btn" , for:"explain" %>
   <%= check_box_tag "explain" ,"",false,class:"chack_box"%>
   <label id="explain_popup" class="btn" for="explain">
-
+    <%= image_tag "explain.png"%>
   </label>
 </div>
 
