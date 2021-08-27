@@ -111,7 +111,7 @@ li { list-style: none; }
   display: none;
 }
 
-input[type="checkbox"]:checked + #memu_popup{
+input[type="checkbox"]:hover + #memu_popup{
   display:block;
   animation: fadein 0.3s;
 }
@@ -128,7 +128,6 @@ input[type="checkbox"]:checked + #memu_popup{
   right: 0px;
   opacity: 0.9;
   z-index: 10;
-
 }
 
 .menu{
