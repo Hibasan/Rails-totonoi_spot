@@ -1,13 +1,26 @@
+.review_container .row{
+  margin: 20px 10px;
+}
+
+.review_container .form-control{
+  width: 480px;
+  height: 240px;
+  font-size: 20px;
+}
+
+
+
+
+.review_container input[type='radio']{
+  display: none;
+}
+
+
 .stars span{
   display: flex;
   flex-direction: row-reverse;
   justify-content: flex-end;
 }
-
-.stars input[type='radio']{
-  display: none;
-}
-
 .stars label{
   color: #D2D2D2;
   font-size: 30px;

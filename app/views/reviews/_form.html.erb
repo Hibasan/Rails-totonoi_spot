@@ -2,18 +2,19 @@
   <h3><%= @review.facility.name %> への評価</h3>
   <%= @review.facility.image %>
   <%= form_with model: @review ,local: true do |form| %>
-
   <div class="row">
-    <div class="review_field col-auto">
-      <%= form.label :sex ,"男性" %>
-      <%= form.radio_button :sex, :"男性" %>
+    <div class="review_field col-2">
+      <%= form.label :sex ,"性別" %>
     </div>
     <div class="review_field col-auto">
-      <%= form.label :sex ,"女性" %>
-      <%= form.radio_button :sex, :"女性" %>
+      <%= form.radio_button :sex, :"男性" ,class:"btn-check"%>
+      <%= form.label :sex ,"男性" ,class:"btn btn-outline-primary", for:"review_sex_男性"%>
+    </div>
+    <div class="review_field col-auto">
+      <%= form.radio_button :sex, :"女性" ,class:"btn-check"%>
+      <%= form.label :sex ,"女性" ,class:"btn btn-outline-danger", for:"review_sex_女性"%>
     </div>
   </div>
-
   <div class="row">
     <div class="review_field col-2">
       <%= form.label :dry ,"湿度" %>
@@ -63,8 +64,8 @@
     <div class="review_field col-2">
       <%= form.label :comment ,"コメント" %>
     </div>
-    <div class="review_field col-6">
-      <%= form.text_area :comment %>
+    <div class="review_field col-10">
+      <%= form.text_area :comment ,class:"form-control"%>
     </div>
   </div>
 
