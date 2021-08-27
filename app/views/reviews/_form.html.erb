@@ -1,5 +1,10 @@
+<% if request.path.include?("facilities") %>
+<%= label :review,"ウィンドウを閉じる" , for:"review" ,class:"review_window"%>
+<% end %>
+
+
 <div class="review_container">
-  <h3><%= @review.facility.name %> への評価</h3>
+  <h3><%= @review.facility.name %> の評価</h3>
   <%= @review.facility.image %>
   <%= form_with model: @review ,local: true do |form| %>
   <div class="row">
@@ -15,11 +20,11 @@
       <%= form.label :sex ,"女性" ,class:"btn btn-outline-danger", for:"review_sex_女性"%>
     </div>
   </div>
-  <div class="row">
+
     <div class="review_field col-2">
       <%= form.label :dry ,"湿度" %>
     </div>
-    <div class="review_field col-6 stars">
+    <div class="review_center col-6 stars">
         <span>
           <%= form.radio_button :dry, 5 %><label for="review_dry_5">★</label>
           <%= form.radio_button :dry, 4 %><label for="review_dry_4">★</label>
@@ -28,13 +33,13 @@
           <%= form.radio_button :dry, 1 %><label for="review_dry_1">★</label>
         </span>
       </div>
-  </div>
 
-  <div class="row">
+
+
     <div class="review_field col-2">
       <%= form.label :light ,"明るさ" %>
     </div>
-    <div class="review_field col-6 stars">
+    <div class="review_center col-6 stars">
       <span>
         <%= form.radio_button :light, 5 %><label for="review_light_5">★</label>
         <%= form.radio_button :light, 4 %><label for="review_light_4">★</label>
@@ -43,13 +48,12 @@
         <%= form.radio_button :light, 1 %><label for="review_light_1">★</label>
       </span>
     </div>
-  </div>
 
-  <div class="row">
+
     <div class="review_field col-2">
       <%= form.label :wide ,"広さ" %>
     </div>
-    <div class="review_field col-6 stars">
+    <div class="review_center col-6 stars">
       <span>
         <%= form.radio_button :wide, 5 %><label for="review_wide_5">★</label>
         <%= form.radio_button :wide, 4 %><label for="review_wide_4">★</label>
@@ -58,16 +62,14 @@
         <%= form.radio_button :wide, 1 %><label for="review_wide_1">★</label>
       </span>
     </div>
-  </div>
 
-  <div class="row">
+
     <div class="review_field col-2">
       <%= form.label :comment ,"コメント" %>
     </div>
-    <div class="review_field col-10">
+    <div class="review_center col-10">
       <%= form.text_area :comment ,class:"form-control"%>
     </div>
-  </div>
 
   <%= form.hidden_field :user_id,value: current_user.id %>
   <%= form.hidden_field :facility_id,value: @review.facility_id %>

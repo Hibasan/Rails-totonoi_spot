@@ -127,7 +127,7 @@ input:checked + label img.chair_image {
   margin: 12px 25%;
   width: 40%;
   border: none;
-  padding: 2px 16px;
+  padding: 4px 16px;
   text-decoration: none;
   border-radius: 2px;
   color: #668ad8;
@@ -174,6 +174,7 @@ input[type="checkbox"]:hover + #explain_popup{
   right: 0px;
   opacity: 0.9;
   z-index: 10;
+  box-shadow: 10px 5px 10px;
 }
 #explain_popup img{
   width: 320px;
@@ -299,34 +300,82 @@ input[type="checkbox"]:hover + #explain_popup{
 }
 
 /* facility#show.html */
+.review_potision{
+  position: relative;
+}
+
+input[type="checkbox"]:checked + #review_popup{
+  display:block;
+  animation: fadein 0.3s;
+}
+.review_potision .chack_box{
+  display: none;
+}
+
+
+#review_popup{
+  display: none;
+  padding: 10px;
+  width:580px;
+  background-color: #f0f0f0;
+  border: 5px double #000;
+  border-radius: 10px;
+  position: absolute;
+  top : 0px;
+  right: 0px;
+  opacity: 1.0;
+  z-index: 10;
+  box-shadow: 10px 5px 10px;
+}
+
 .facility_show_1st{
   margin: 10px;
-
   display: grid;
   grid-template-rows: 1fr 1fr;
   grid-template-columns: 1fr 1fr 200px;
   grid-template-areas:
-  "name  address  button"
-  "image  comment  button";
+  "name  address  show_button"
+  "image  comment  show_button";
 }
 .facility_show_1st .name{
-
   grid-area: name;
 }
 .facility_show_1st .address{
-
   grid-area: address;
 }
-.facility_show_1st .button{
-
-  grid-area: button;
+.facility_show_1st .show_button{
+  grid-area: show_button;
 }
-.facility_show_1st .image{
 
+.facility_show_1st .show_button li{
+  border: 1px solid;
+  border-radius: 10px;
+  text-align: center;
+  margin: 10px;
+}
+
+.facility_show_1st .show_button li label,
+.facility_show_1st .show_button a{
+  text-decoration: none;
+  color: #0d6efd;
+  display: block;
+  cursor: pointer;
+  padding:5px 10px;
+  box-shadow: 5px 5px 3px;
+  transition: 0.3s;
+  border-radius: 10px;
+}
+
+.facility_show_1st .show_button li label:hover,
+.facility_show_1st .show_button a:hover{
+  background-color: #ddd;
+}
+
+
+.facility_show_1st .image{
   grid-area: image;
 }
 .facility_show_1st .comment{
-
   grid-area: comment;
 }
 
@@ -451,10 +500,7 @@ input[type="checkbox"]:hover + #explain_popup{
 width: 768px;
 margin: 0 auto;
 }
-.review_container{
-  width: 768px;
-  margin: 0 auto;
-}
+
 
 
 

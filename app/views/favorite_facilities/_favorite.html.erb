@@ -1,5 +1,5 @@
 <% if favorite_facility? %>
-  <%= link_to 'お気に入り解除' , favorite_facility_path(id: @favorite.id,facility_id: @facility.id), method: :delete , remote: true %>
+  <%= link_to 'お気に入り中' , favorite_facility_path(id: @favorite.id,facility_id: @facility.id), method: :delete , remote: true ,class:"favorite_true"%>
   <% else %>
-  <%= link_to 'お気に入り追加' , favorite_facilities_path(facility_id: @facility.id), method: :post , remote: true %>
+  <%= link_to 'お気に入り' , favorite_facilities_path(facility_id: @facility.id), method: :post , remote: true ,class:"favorite_false"%>
 <% end %>
