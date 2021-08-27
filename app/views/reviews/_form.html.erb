@@ -18,17 +18,29 @@
     <div class="review_field col-2">
       <%= form.label :dry ,"湿度" %>
     </div>
-    <div class="review_field col-6">
-      <%= form.select :dry,[["★1",1],["★2",2],["★3",3],["★4",4],["★5",5]] %>
-    </div>
+    <div class="review_field col-6 stars">
+        <span>
+          <input id="review_dry05" type="radio" name="review[dry]" value="5"><label for="review_dry05">★</label>
+          <input id="review_dry04" type="radio" name="review[dry]" value="4"><label for="review_dry04">★</label>
+          <input id="review_dry03" type="radio" name="review[dry]" value="3"><label for="review_dry03">★</label>
+          <input id="review_dry02" type="radio" name="review[dry]" value="2"><label for="review_dry02">★</label>
+          <input id="review_dry01" type="radio" name="review[dry]" value="1"><label for="review_dry01">★</label>
+        </span>
+      </div>
   </div>
 
   <div class="row">
     <div class="review_field col-2">
       <%= form.label :light ,"明るさ" %>
     </div>
-    <div class="review_field col-6">
-      <%= form.select :light,[["★1",1],["★2",2],["★3",3],["★4",4],["★5",5]] %>
+    <div class="review_field col-6 stars">
+      <span>
+        <input id="review_light05" type="radio" name="review[light]" value="5"><label for="review_light05">★</label>
+        <input id="review_light04" type="radio" name="review[light]" value="4"><label for="review_light04">★</label>
+        <input id="review_light03" type="radio" name="review[light]" value="3"><label for="review_light03">★</label>
+        <input id="review_light02" type="radio" name="review[light]" value="2"><label for="review_light02">★</label>
+        <input id="review_light01" type="radio" name="review[light]" value="1"><label for="review_light01">★</label>
+      </span>
     </div>
   </div>
 
@@ -36,8 +48,14 @@
     <div class="review_field col-2">
       <%= form.label :wide ,"広さ" %>
     </div>
-    <div class="review_field col-6">
-      <%= form.select :wide,[["★1",1],["★2",2],["★3",3],["★4",4],["★5",5]] %>
+    <div class="review_field col-6 stars">
+      <span>
+        <input id="review_wide05" type="radio" name="review[wide]" value="5"><label for="review_wide05">★</label>
+        <input id="review_wide04" type="radio" name="review[wide]" value="4"><label for="review_wide04">★</label>
+        <input id="review_wide03" type="radio" name="review[wide]" value="3"><label for="review_wide03">★</label>
+        <input id="review_wide02" type="radio" name="review[wide]" value="2"><label for="review_wide02">★</label>
+        <input id="review_wide01" type="radio" name="review[wide]" value="1"><label for="review_wide01">★</label>
+      </span>
     </div>
   </div>
 
