@@ -17,6 +17,7 @@
         <%= image_tag "logo.png" , class:"logo"%>
       <% end %>
     <div class="header_container">
+
     <ul class="top_menu_left">
       <li><%= link_to 'このサイトについて' , about_path %></li>
       <li><%= link_to '検索する' , facilities_search_path %></li>
@@ -24,15 +25,33 @@
         <li><%= "こんにちは、#{current_user.name} さん" %></li>
       <% end %>
     </ul>
+
     <ul class="top_menu_right">
     <% if user_signed_in? %>
-      <li><%= link_to 'ログアウト' , destroy_user_session_path ,method: :delete%></li>
-      <li><%= link_to 'マイページ' , user_path(1) %></li>
-      <% else %>
+    <div class="menu_potision">
+      <li><%= label :memu,"マイメニュー" , for:"memu" %></li>
+      <%= check_box_tag "memu" ,"",false,class:"chack_box"%>
+      <label id="memu_popup" for="memu">
+        <%= link_to '評価履歴' , users_review_path ,class:"menu"%><br>
+        <%= link_to 'お気に入り施設' , users_favorite_facilities_path ,class:"menu"%><br>
+        <%= link_to '閲覧履歴(未実装)' ,facilities_search_path,class:"menu"%><br>
+        <%= link_to 'アカウント情報変更' , edit_user_registration_path ,class:"menu"%><br><hr>
+        <% if user_signed_in? %>
+          <%= link_to '施設登録' , new_facility_path ,class:"menu"%><br>
+        <% end %>
+        <% if current_user.admin?%>
+          <%= link_to 'サイト管理画面' , rails_admin_path ,class:"menu"%><br><hr>
+        <% end %>
+        <%= link_to 'ログアウト' , destroy_user_session_path ,method: :delete,class:"menu"%>
+      </label>
+    </div>
+    <% else %>
       <li><%= link_to 'ログイン' , new_user_session_path %></li>
       <li><%= link_to '新規登録' , new_user_registration_path %></li>
     <% end %>
     </ul>
+
+
 </div>
     </header>
     <% flash.each do |key, value| %>
