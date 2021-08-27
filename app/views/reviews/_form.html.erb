@@ -2,33 +2,46 @@
   <h3><%= @review.facility.name %> への評価</h3>
   <%= @review.facility.image %>
   <%= form_with model: @review ,local: true do |form| %>
-
   <div class="row">
-    <div class="review_field col-auto">
-      <%= form.label :sex ,"男性" %>
-      <%= form.radio_button :sex, :"男性" %>
+    <div class="review_field col-2">
+      <%= form.label :sex ,"性別" %>
     </div>
     <div class="review_field col-auto">
-      <%= form.label :sex ,"女性" %>
-      <%= form.radio_button :sex, :"女性" %>
+      <%= form.radio_button :sex, :"男性" ,class:"btn-check"%>
+      <%= form.label :sex ,"男性" ,class:"btn btn-outline-primary", for:"review_sex_男性"%>
+    </div>
+    <div class="review_field col-auto">
+      <%= form.radio_button :sex, :"女性" ,class:"btn-check"%>
+      <%= form.label :sex ,"女性" ,class:"btn btn-outline-danger", for:"review_sex_女性"%>
     </div>
   </div>
-
   <div class="row">
     <div class="review_field col-2">
       <%= form.label :dry ,"湿度" %>
     </div>
-    <div class="review_field col-6">
-      <%= form.select :dry,[["★1",1],["★2",2],["★3",3],["★4",4],["★5",5]] %>
-    </div>
+    <div class="review_field col-6 stars">
+        <span>
+          <%= form.radio_button :dry, 5 %><label for="review_dry_5">★</label>
+          <%= form.radio_button :dry, 4 %><label for="review_dry_4">★</label>
+          <%= form.radio_button :dry, 3 %><label for="review_dry_3">★</label>
+          <%= form.radio_button :dry, 2 %><label for="review_dry_2">★</label>
+          <%= form.radio_button :dry, 1 %><label for="review_dry_1">★</label>
+        </span>
+      </div>
   </div>
 
   <div class="row">
     <div class="review_field col-2">
       <%= form.label :light ,"明るさ" %>
     </div>
-    <div class="review_field col-6">
-      <%= form.select :light,[["★1",1],["★2",2],["★3",3],["★4",4],["★5",5]] %>
+    <div class="review_field col-6 stars">
+      <span>
+        <%= form.radio_button :light, 5 %><label for="review_light_5">★</label>
+        <%= form.radio_button :light, 4 %><label for="review_light_4">★</label>
+        <%= form.radio_button :light, 3 %><label for="review_light_3">★</label>
+        <%= form.radio_button :light, 2 %><label for="review_light_2">★</label>
+        <%= form.radio_button :light, 1 %><label for="review_light_1">★</label>
+      </span>
     </div>
   </div>
 
@@ -36,8 +49,14 @@
     <div class="review_field col-2">
       <%= form.label :wide ,"広さ" %>
     </div>
-    <div class="review_field col-6">
-      <%= form.select :wide,[["★1",1],["★2",2],["★3",3],["★4",4],["★5",5]] %>
+    <div class="review_field col-6 stars">
+      <span>
+        <%= form.radio_button :wide, 5 %><label for="review_wide_5">★</label>
+        <%= form.radio_button :wide, 4 %><label for="review_wide_4">★</label>
+        <%= form.radio_button :wide, 3 %><label for="review_wide_3">★</label>
+        <%= form.radio_button :wide, 2 %><label for="review_wide_2">★</label>
+        <%= form.radio_button :wide, 1 %><label for="review_wide_1">★</label>
+      </span>
     </div>
   </div>
 
@@ -45,8 +64,8 @@
     <div class="review_field col-2">
       <%= form.label :comment ,"コメント" %>
     </div>
-    <div class="review_field col-6">
-      <%= form.text_area :comment %>
+    <div class="review_field col-10">
+      <%= form.text_area :comment ,class:"form-control"%>
     </div>
   </div>
 

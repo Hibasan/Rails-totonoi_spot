@@ -1,3 +1,35 @@
-// Place all the styles related to the reviews controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.review_container .row{
+  margin: 20px 10px;
+}
+
+.review_container .form-control{
+  width: 480px;
+  height: 240px;
+  font-size: 20px;
+}
+
+
+
+
+.review_container input[type='radio']{
+  display: none;
+}
+
+
+.stars span{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+.stars label{
+  color: #D2D2D2;
+  font-size: 30px;
+  padding: 0 5px;
+  cursor: pointer;
+}
+
+.stars label:hover,
+.stars label:hover ~ label,
+.stars input[type='radio']:checked ~ label{
+  color: #F8C601;
+}
