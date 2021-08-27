@@ -26,6 +26,7 @@
     <%= @facility.prefecture + @facility.address %>
   </div>
   <div class="image">
+    <%= image_tag (@facility&.image.thumb.url) %>
   </div>
   <div class="comment">
   </div>

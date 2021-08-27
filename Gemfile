@@ -7,6 +7,7 @@ gem 'cancancan'
 gem 'devise'
 gem 'devise-i18n'
 gem 'rails_admin'
+gem 'letter_opener_web'
 
 gem 'cocoon'
 gem 'jquery-rails'
@@ -17,9 +18,10 @@ gem 'dotenv-rails'
 gem 'geocoder'
 gem 'gmaps4rails'
 
-gem 'letter_opener_web'
-
 gem 'bootstrap', '~> 5.1.0'
+
+gem 'carrierwave', '~> 2.0'
+gem "mini_magick"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.5'
