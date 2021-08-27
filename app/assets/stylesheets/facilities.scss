@@ -174,6 +174,7 @@ input[type="checkbox"]:hover + #explain_popup{
   right: 0px;
   opacity: 0.9;
   z-index: 10;
+  box-shadow: 10px 5px 10px;
 }
 #explain_popup img{
   width: 320px;
@@ -324,6 +325,7 @@ input[type="checkbox"]:checked + #review_popup{
   right: 0px;
   opacity: 1.0;
   z-index: 10;
+  box-shadow: 10px 5px 10px;
 }
 
 .facility_show_1st{
@@ -336,23 +338,44 @@ input[type="checkbox"]:checked + #review_popup{
   "image  comment  show_button";
 }
 .facility_show_1st .name{
-
   grid-area: name;
 }
 .facility_show_1st .address{
-
   grid-area: address;
 }
 .facility_show_1st .show_button{
-
   grid-area: show_button;
 }
-.facility_show_1st .image{
 
+.facility_show_1st .show_button li{
+  border: 1px solid;
+  border-radius: 10px;
+  text-align: center;
+  margin: 10px;
+}
+
+.facility_show_1st .show_button li label,
+.facility_show_1st .show_button a{
+  text-decoration: none;
+  color: #0d6efd;
+  display: block;
+  cursor: pointer;
+  padding:5px 10px;
+  box-shadow: 5px 5px 3px;
+  transition: 0.3s;
+  border-radius: 10px;
+}
+
+.facility_show_1st .show_button li label:hover,
+.facility_show_1st .show_button a:hover{
+  background-color: #ddd;
+}
+
+
+.facility_show_1st .image{
   grid-area: image;
 }
 .facility_show_1st .comment{
-
   grid-area: comment;
 }
 
