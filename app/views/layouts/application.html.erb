@@ -35,13 +35,13 @@
         <%= link_to '評価履歴' , users_review_path ,class:"menu"%><br>
         <%= link_to 'お気に入り施設' , users_favorite_facilities_path ,class:"menu"%><br>
         <%= link_to '閲覧履歴(未実装)' ,facilities_search_path,class:"menu"%><br>
-        <%= link_to 'アカウント情報変更' , edit_user_registration_path ,class:"menu"%><br><hr>
-        <% if user_signed_in? %>
-          <%= link_to '施設登録' , new_facility_path ,class:"menu"%><br>
-        <% end %>
+        <%= link_to 'アカウント情報変更' , edit_user_registration_path ,class:"menu"%><hr>
+        <%= link_to '施設登録' , new_facility_path ,class:"menu"%>
         <% if current_user.admin?%>
-          <%= link_to 'サイト管理画面' , rails_admin_path ,class:"menu"%><br><hr>
+        <br>
+          <%= link_to 'サイト管理画面' , rails_admin_path ,class:"menu"%>
         <% end %>
+        <hr>
         <%= link_to 'ログアウト' , destroy_user_session_path ,method: :delete,class:"menu"%>
       </label>
     </div>
