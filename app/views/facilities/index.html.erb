@@ -17,7 +17,10 @@
     <%= facility.prefecture + facility.address %>
   </div>
   <div class="facility_index_left">
-    <span>未実装の写真枠<span>
+    <span>
+      <%= image_tag (facility&.image.thumb.url) if facility&.image? %>
+      <%= "No Image" unless facility&.image?%>
+    <span>
   </div>
   <% end %>
   <table class="index_table">

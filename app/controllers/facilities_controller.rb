@@ -81,7 +81,7 @@ class FacilitiesController < ApplicationController
   def facility_params
     params.require(:facility).permit(:id, :name, :prefecture, :address,
                                      :homepage, :business_hours, :holiday,
-                                     :fee, :payment, :comment,
+                                     :fee, :payment, :comment, :image, :image_cache,
                                      saunas_attributes: %i[
                                        id sex sex_id temperature intern comment
                                      ],
