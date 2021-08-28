@@ -18,7 +18,7 @@
   </div>
   <div class="facility_index_left">
     No Image
-    <span> <%= image_tag (facility&.image.thumb.url) if facility&.image.present? %><span>
+    <span> <%= image_tag (facility&.image.thumb.url) if facility&.image? %><span>
   </div>
   <% end %>
   <table class="index_table">
