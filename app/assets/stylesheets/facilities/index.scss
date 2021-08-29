@@ -1,29 +1,41 @@
 /* facilities#index.html */
+
+// #########
+.chack_box{
+  display: none;
+}
+
+.index_label{
+  background: #333;
+  color: #fff;
+  display: block;
+  margin-bottom: 1px;
+  padding: 10px;
+}
+
+.index_search{
+    border: 1px solid #333;
+    height: 0;
+    opacity: 0;
+    padding: 0 10px;
+    transition: .5s;
+    visibility: hidden;
+}
+
+.chack_box:checked + .index_label + .index_search{
+    height: 250px;
+    opacity: 1;
+    padding: 10px;
+    visibility: visible;
+}
+
+
+
+
+// #########
 .index_top{
   display: flex;
 }
-// #########
-.index_search{
-  position: relative;
-}
-.index_search .chack_box{
-  display: none;
-}
-input[type="checkbox"]:checked + #search_popup{
-  display:block;
-  animation: searchin 1.0s;
-}
-
-#search_popup{
-  display: none;
-  padding: 0;
-  margin: 0;
-  border: 5px double #ECE8F8;
-  border-radius: 10px;
-}
-
-// #########
-
 .explain{
   position: relative;
   margin-left: auto;
