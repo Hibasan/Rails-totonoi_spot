@@ -8,10 +8,7 @@
     </label>
   </div>
 </div>
-
-  <%= paginate @facilities %><br>
-
-
+<h5><%= paginate @facilities %></h5>
 <% @facilities.each do |facility| %>
 <div class="facility_index">
   <%= link_to facility_path(facility.id) do %>
@@ -163,3 +160,4 @@
   </div>
   <hr>
   <% end %>
+    <h5><%= paginate @facilities %></h5>
