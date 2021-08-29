@@ -1,6 +1,5 @@
 <div class="index_top">
-  <h2><%= "表示件数：#{@facilities.size}件" %></h2>
-  <%= paginate @facilities %>
+  <h4>  <%= page_entries_info @facilities %></h4>
   <div class="explain">
     <%= label :example,"アイコン説明？" ,class:"btn" , for:"explain" %>
     <%= check_box_tag "explain" ,"",false,class:"chack_box"%>
@@ -9,6 +8,9 @@
     </label>
   </div>
 </div>
+
+  <%= paginate @facilities %><br>
+
 
 <% @facilities.each do |facility| %>
 <div class="facility_index">
