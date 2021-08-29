@@ -1,0 +1,17 @@
+ja:
+  helpers:
+    page_entries_info:
+      more_pages:
+        display_entries: "<b>%{total}</b>件中 <b>%{first}件 - %{last}件</b>を表示"
+      one_page:
+        display_entries:
+          one: "<b>%{count}</b>件を表示中"
+          other: "<b>%{count}</b>件を表示中"
+          zero: "施設がありませんでした"
+  views:
+    pagination:
+      first: "最初へ"
+      last: "最後へ"
+      next: "次へ"
+      previous: "前へ"
+      truncate: "&hellip;"

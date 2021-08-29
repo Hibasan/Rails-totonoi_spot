@@ -21,7 +21,9 @@ gem 'gmaps4rails'
 gem 'bootstrap', '~> 5.1.0'
 
 gem 'carrierwave', '~> 2.0'
-gem "mini_magick"
+gem 'mini_magick'
+
+gem 'kaminari'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.5'
