@@ -5,7 +5,7 @@
       <div class="row">
         <div class="col-6">
           <%= f.label :facility_name, '検索ワード' %>
-          <%= f.search_field :facility_name ,placeholder:"例）東京 かるまる", class:"form-control form-control-xl"%>
+          <%= f.search_field :facility_name ,value: (params[:q][:facility_name]) ,placeholder:"例）東京 かるまる", class:"form-control form-control-xl"%>
         </div>
         <div class="col-6">
           <div>
