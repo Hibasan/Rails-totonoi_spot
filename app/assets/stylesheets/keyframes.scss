@@ -1,0 +1,17 @@
+@keyframes fadein{
+  from{ opacity: 0; }
+  to{ opacity: 0.9; }
+}
+
+
+
+@keyframes searchin{
+  from{ height:  0px; }
+  to{ height:  100px; }
+}
+
+
+@keyframes searchout{
+  from{ height:   100px; }
+  to{ height:  0px; }
+}
