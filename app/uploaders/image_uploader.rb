@@ -32,9 +32,26 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
   # the current gravity suggestion (default: 'Center'; options: 'NorthWest', 'North', 'NorthEast', 'West', 'Center', 'East', 'SouthWest', 'South', 'SouthEast')
-  version :thumb do
+  version :thumb_center do
     process resize_to_fill: [260, 260, "Center"]
   end
+
+  version :thumb_north do
+    process resize_to_fill: [260, 260, "North"]
+  end
+
+  version :thumb_west do
+    process resize_to_fill: [260, 260, "West"]
+  end
+
+  version :thumb_east do
+    process resize_to_fill: [260, 260, "East"]
+  end
+
+  version :thumb_south do
+    process resize_to_fill: [260, 260, "South"]
+  end
+
 
   # Add an allowlist of extensions which are allowed to be uploaded.
   # For images you might use something like this:

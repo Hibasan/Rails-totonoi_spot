@@ -3,7 +3,7 @@
 <%= form_with model: @facility ,local: true do |form| %>
 <div class="field">
   <%= form.label :image ,"サムネイル写真(*jpg jpeg gif png)", class:"form-label"%>
-  <%= image_tag @facility.image.thumb.url if @facility.image? %>
+  <%= image_tag @facility.image.thumb_center.url if @facility.image? %>
   <%= form.file_field :image %>
   <%= form.hidden_field :image_cache %>
   <% @facility.errors.full_messages_for(:image).each do |msg| %>
