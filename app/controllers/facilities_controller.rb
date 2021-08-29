@@ -25,6 +25,8 @@ class FacilitiesController < ApplicationController
   end
 
   def index
+    @chair = Chair.ransack(params[:q])
+    @chairs = @chair.result(distinct: true)
     if params[:q][:search] == 'search'
       name = params[:q][:facility_name]
       @facilities = Facility.where('(name LIKE ?) OR (prefecture LIKE ?) OR (address LIKE ?)', "%#{name}%", "%#{name}%",
@@ -33,13 +35,13 @@ class FacilitiesController < ApplicationController
       @chairs = @chair.result(distinct: true)
       chairs_facility_ids = @chairs.pluck(:facility_id)
       @facilities = @facilities.where(id: chairs_facility_ids)
-      @facilities = @facilities.page(params[:page]).per(10)
+      @facilities = @facilities.page(params[:page]).per(3)
     elsif params[:q][:search] == 'prefecture'
       name = params[:q][:facility_name]
       @facilities = Facility.where('prefecture LIKE ?', "%#{name}%")
-      @facilities = @facilities.page(params[:page]).per(10)
+      @facilities = @facilities.page(params[:page]).per(3)
     elsif params[:q][:search] == 'all'
-      @facilities = Facility.page(params[:page]).per(10)
+      @facilities = Facility.page(params[:page]).per(3)
     end
   end
 

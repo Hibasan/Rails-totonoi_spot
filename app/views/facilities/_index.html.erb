@@ -1,10 +1,75 @@
+  <%= check_box_tag "index_search" ,"",false,class:"chack_box"%>
+  <%= label :example,"検索条件" ,class:"btn index_label" , for:"index_search" %>
+    <div class="index_search">
+      <%= search_form_for @chair, url: facilities_path do |f| %>
+      <div class="row">
+        <div class="col-6">
+          <%= f.label :facility_name, '検索ワード' %>
+          <%= f.search_field :facility_name ,value: (params[:q][:facility_name]) ,placeholder:"例）東京 かるまる", class:"form-control form-control-xl"%>
+        </div>
+        <div class="col-6">
+          <div>
+            <%= f.label :chair, '場所' %>
+            <%= f.radio_button :rest_area_id_eq, '', checked: true ,class:"btn-check",id:"none"%>
+            <%= f.label :chairs_rest_area_id, '未選択' ,class:"btn btn-outline-success" ,for:"none"%>
+            <%= f.radio_button :rest_area_id_eq, 1 ,class:"btn-check",id:"inside"%>
+            <%= f.label :chairs_rest_area_id, '室内' ,class:"btn btn-outline-success" , for:"inside"%>
+            <%= f.radio_button :rest_area_id_eq, 2 ,class:"btn-check",id:"outside"%>
+            <%= f.label :chairs_rest_area_id, '室外' ,class:"btn btn-outline-success" , for:"outside"%>
+          </div>
+          <div>
+            <%= f.label :chair, '性別' %>
+            <%= f.radio_button :sex_id_eq, '' ,class:"btn-check",id:"not" %>
+            <%= f.label :chairs_sex_id, '未選択' ,class:"btn btn-outline-dark", for:"not"%>
+            <%= f.radio_button :sex_id_eq, 1 ,class:"btn-check",id:"male"%>
+            <%= f.label :chairs_sex_id, '男性' ,class:"btn btn-outline-primary", for:"male"%>
+            <%= f.radio_button :sex_id_eq, 2 ,class:"btn-check",id:"female"%>
+            <%= f.label :chairs_sex_id, '女性' ,class:"btn btn-outline-danger", for:"female"%>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="search_chair">
+        <ul>
+          <li>設備</li>
+          <li>
+            <%= f.check_box :bath_not_in, checked: (params[:q][:bath_not_in]).present? , include_hidden: false  ,id:"bath"%>
+            <%= f.label :bath, '風呂イス' ,class:"chair_label btn", for:"bath"%>
+          </li>
+          <li>
+            <%= f.check_box :deck_not_in, checked: (params[:q][:deck_not_in]).present? , include_hidden: false  ,id:"deck"%>
+            <%= f.label :deck, 'デッキチェア' ,class:"chair_label btn", for:"deck"%>
+          </li>
+          <li>
+            <%= f.check_box :relax_not_in, checked: (params[:q][:relax_not_in]).present? , include_hidden: false  ,id:"relax"%>
+            <%= f.label :relax, 'リクライニング' ,class:"chair_label btn", for:"relax"%>
+          </li>
+          <li>
+            <%= f.check_box :bench_not_in, checked: (params[:q][:bench_not_in]).present? , include_hidden: false  ,id:"bench"%>
+            <%= f.label :bench, 'ベンチ' ,class:"chair_label btn", for:"bench"%>
+          </li>
+          <li>
+            <%= f.check_box :bench_non_backrest_not_in, checked: (params[:q][:bench_non_backrest_not_in]).present? , include_hidden: false  ,id:"bench_non"%>
+            <%= f.label :bench_non_backrest, 'ベンチ(背なし)' ,class:"chair_label btn", for:"bench_non"%>
+          </li>
+        </ul>
+      </div>
+      <hr>
+      <%= f.hidden_field :search,value: "search" %>
+      <%= f.submit "検索", class:"facility_search"%>
+      <% end %>
+    </div>
+    <hr>
+
+
+
 <div class="index_top">
   <h4>  <%= page_entries_info @facilities %></h4>
   <div class="explain">
     <%= label :example,"アイコン説明？" ,class:"btn" , for:"explain" %>
     <%= check_box_tag "explain" ,"",false,class:"chack_box"%>
     <label id="explain_popup" class="btn" for="explain">
-    <%= image_tag "explain.png"%>
+      <%= image_tag "explain.png"%>
     </label>
   </div>
 </div>
@@ -20,144 +85,144 @@
     <span>
       <%= image_tag (facility&.image.thumb.url) if facility&.image? %>
       <%= "No Image" unless facility&.image?%>
-    <span>
-  </div>
-  <% end %>
-  <table class="index_table">
-    <tr>
-      <th></th>
-      <th>サウナ</th>
-      <th>水風呂</th>
-      <th class="rest_area">休憩環境</th>
-    </tr>
-    <tr class="male_content">
-      <td>男性</td>
-      <td>
-        <ul>
-          <% facility.saunas.where(sex_id: 1).each do |sauna| %>
-          <li><%= "#{sauna&.temperature}℃" %></li>
-          <% end %>
-        </ul>
-      </td>
-      <td>
-        <ul>
-          <% facility.water_baths.where(sex_id: 1).each do |water| %>
-          <li><%= "#{water&.temperature}℃" %></li>
-          <% end %>
-        </ul>
-      </td>
-      <% inside = facility.chairs.find_by(sex_id: 1,rest_area_id:1)%>
-      <% outside = facility.chairs.find_by(sex_id: 1,rest_area_id:2)%>
-      <td>
-        <ul class="chairs">
-          <% if inside&.bath.present? || outside&.bath.present? %>
-          <li class="index_image">
-            <%= image_tag "bath.png"%>
-            <p class="inside"><%= inside&.bath %></p>
-            <p class="outside"><%= outside&.bath %></p>
-            <p class="chair_label">風呂イス</p>
-          </li>
-          <% end %>
-          <% if inside&.deck.present? || outside&.deck.present? %>
-          <li class="index_image">
-            <%= image_tag "deck.png"%>
-            <p class="inside"><%= inside&.deck %></p>
-            <p class="outside"><%= outside&.deck %></p>
-            <p class="chair_label">デッキチェア</p>
-          </li>
-          <% end %>
-          <% if inside&.relax.present? || outside&.relax.present? %>
-          <li class="index_image">
-            <%= image_tag "relax.png"%>
-            <p class="inside"><%= inside&.relax %></p>
-            <p class="outside"><%= outside&.relax %></p>
-            <p class="chair_label">リクライニング</p>
-          </li>
-          <% end %>
-          <% if inside&.bench.present? || outside&.bench.present? %>
-          <li class="index_image">
-            <%= image_tag "bench.png"%>
-            <p class="inside"><%= inside&.bench %></p>
-            <p class="outside"><%= outside&.bench %></p>
-            <p class="chair_label">ベンチ</p>
-          </li>
-          <% end %>
-          <% if inside&.bench_non_backrest.present? && outside&.bench_non_backrest.present? %>
-          <li class="index_image">
-            <%= image_tag "bench_non.png"%>
-            <p class="inside"><%= inside&.bench_non_backrest %></p>
-            <p class="outside"><%= outside&.bench_non_backrest %></p>
-            <p class="chair_label">ベンチ(背なし)</p>
-          </li>
-          <% end %>
-        </ul>
-      </td>
-    </tr>
-    <tr class="female_content">
-      <td>女性</td>
-      <td>
-        <ul>
-          <% facility.saunas.where(sex_id: 2).each do |sauna| %>
-          <li><%= "#{sauna&.temperature}℃" %></li>
-          <% end %>
-        </ul>
-      </td>
-      <td>
-        <ul>
-          <% facility.water_baths.where(sex_id: 2).each do |water| %>
-          <li><%= "#{water&.temperature}℃" %></li>
-          <% end %>
-        </ul>
-      </td>
-      <% inside = facility.chairs.find_by(sex_id: 2,rest_area_id:1)%>
-      <% outside = facility.chairs.find_by(sex_id: 2,rest_area_id:2)%>
-      <td>
-        <ul class="chairs">
-          <% if inside&.bath.present? || outside&.bath.present? %>
-          <li class="index_image">
-            <%= image_tag "bath.png"%>
-            <p class="inside"><%= inside&.bath %></p>
-            <p class="outside"><%= outside&.bath %></p>
-            <p class="chair_label">風呂イス</p>
-          </li>
-          <% end %>
-          <% if inside&.deck.present? || outside&.deck.present? %>
-          <li class="index_image">
-            <%= image_tag "deck.png"%>
-            <p class="inside"><%= inside&.deck %></p>
-            <p class="outside"><%= outside&.deck %></p>
-            <p class="chair_label">デッキチェア</p>
-          </li>
-          <% end %>
-          <% if inside&.relax.present? || outside&.relax.present? %>
-          <li class="index_image">
-            <%= image_tag "relax.png"%>
-            <p class="inside"><%= inside&.relax %></p>
-            <p class="outside"><%= outside&.relax %></p>
-            <p class="chair_label">リクライニング</p>
-          </li>
-          <% end %>
-          <% if inside&.bench.present? || outside&.bench.present? %>
-          <li class="index_image">
-            <%= image_tag "bench.png"%>
-            <p class="inside"><%= inside&.bench %></p>
-            <p class="outside"><%= outside&.bench %></p>
-            <p class="chair_label">ベンチ</p>
-          </li>
-          <% end %>
-          <% if inside&.bench_non_backrest.present? && outside&.bench_non_backrest.present? %>
-          <li class="index_image">
-            <%= image_tag "bench_non.png"%>
-            <p class="inside"><%= inside&.bench_non_backrest %></p>
-            <p class="outside"><%= outside&.bench_non_backrest %></p>
-            <p class="chair_label">ベンチ(背なし)</p>
-          </li>
-          <% end %>
-        </ul>
-      </td>
-    </tr>
-  </table>
-  </div>
-  <hr>
-  <% end %>
+      <span>
+      </div>
+      <% end %>
+      <table class="index_table">
+        <tr>
+          <th></th>
+          <th>サウナ</th>
+          <th>水風呂</th>
+          <th class="rest_area">休憩環境</th>
+        </tr>
+        <tr class="male_content">
+          <td>男性</td>
+          <td>
+            <ul>
+              <% facility.saunas.where(sex_id: 1).each do |sauna| %>
+              <li><%= "#{sauna&.temperature}℃" %></li>
+              <% end %>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <% facility.water_baths.where(sex_id: 1).each do |water| %>
+              <li><%= "#{water&.temperature}℃" %></li>
+              <% end %>
+            </ul>
+          </td>
+          <% inside = facility.chairs.find_by(sex_id: 1,rest_area_id:1)%>
+          <% outside = facility.chairs.find_by(sex_id: 1,rest_area_id:2)%>
+          <td>
+            <ul class="chairs">
+              <% if inside&.bath.present? || outside&.bath.present? %>
+              <li class="index_image">
+                <%= image_tag "bath.png"%>
+                <p class="inside"><%= inside&.bath %></p>
+                <p class="outside"><%= outside&.bath %></p>
+                <p class="chair_label">風呂イス</p>
+              </li>
+              <% end %>
+              <% if inside&.deck.present? || outside&.deck.present? %>
+              <li class="index_image">
+                <%= image_tag "deck.png"%>
+                <p class="inside"><%= inside&.deck %></p>
+                <p class="outside"><%= outside&.deck %></p>
+                <p class="chair_label">デッキチェア</p>
+              </li>
+              <% end %>
+              <% if inside&.relax.present? || outside&.relax.present? %>
+              <li class="index_image">
+                <%= image_tag "relax.png"%>
+                <p class="inside"><%= inside&.relax %></p>
+                <p class="outside"><%= outside&.relax %></p>
+                <p class="chair_label">リクライニング</p>
+              </li>
+              <% end %>
+              <% if inside&.bench.present? || outside&.bench.present? %>
+              <li class="index_image">
+                <%= image_tag "bench.png"%>
+                <p class="inside"><%= inside&.bench %></p>
+                <p class="outside"><%= outside&.bench %></p>
+                <p class="chair_label">ベンチ</p>
+              </li>
+              <% end %>
+              <% if inside&.bench_non_backrest.present? && outside&.bench_non_backrest.present? %>
+              <li class="index_image">
+                <%= image_tag "bench_non.png"%>
+                <p class="inside"><%= inside&.bench_non_backrest %></p>
+                <p class="outside"><%= outside&.bench_non_backrest %></p>
+                <p class="chair_label">ベンチ(背なし)</p>
+              </li>
+              <% end %>
+            </ul>
+          </td>
+        </tr>
+        <tr class="female_content">
+          <td>女性</td>
+          <td>
+            <ul>
+              <% facility.saunas.where(sex_id: 2).each do |sauna| %>
+              <li><%= "#{sauna&.temperature}℃" %></li>
+              <% end %>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <% facility.water_baths.where(sex_id: 2).each do |water| %>
+              <li><%= "#{water&.temperature}℃" %></li>
+              <% end %>
+            </ul>
+          </td>
+          <% inside = facility.chairs.find_by(sex_id: 2,rest_area_id:1)%>
+          <% outside = facility.chairs.find_by(sex_id: 2,rest_area_id:2)%>
+          <td>
+            <ul class="chairs">
+              <% if inside&.bath.present? || outside&.bath.present? %>
+              <li class="index_image">
+                <%= image_tag "bath.png"%>
+                <p class="inside"><%= inside&.bath %></p>
+                <p class="outside"><%= outside&.bath %></p>
+                <p class="chair_label">風呂イス</p>
+              </li>
+              <% end %>
+              <% if inside&.deck.present? || outside&.deck.present? %>
+              <li class="index_image">
+                <%= image_tag "deck.png"%>
+                <p class="inside"><%= inside&.deck %></p>
+                <p class="outside"><%= outside&.deck %></p>
+                <p class="chair_label">デッキチェア</p>
+              </li>
+              <% end %>
+              <% if inside&.relax.present? || outside&.relax.present? %>
+              <li class="index_image">
+                <%= image_tag "relax.png"%>
+                <p class="inside"><%= inside&.relax %></p>
+                <p class="outside"><%= outside&.relax %></p>
+                <p class="chair_label">リクライニング</p>
+              </li>
+              <% end %>
+              <% if inside&.bench.present? || outside&.bench.present? %>
+              <li class="index_image">
+                <%= image_tag "bench.png"%>
+                <p class="inside"><%= inside&.bench %></p>
+                <p class="outside"><%= outside&.bench %></p>
+                <p class="chair_label">ベンチ</p>
+              </li>
+              <% end %>
+              <% if inside&.bench_non_backrest.present? && outside&.bench_non_backrest.present? %>
+              <li class="index_image">
+                <%= image_tag "bench_non.png"%>
+                <p class="inside"><%= inside&.bench_non_backrest %></p>
+                <p class="outside"><%= outside&.bench_non_backrest %></p>
+                <p class="chair_label">ベンチ(背なし)</p>
+              </li>
+              <% end %>
+            </ul>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <hr>
+    <% end %>
     <h5><%= paginate @facilities %></h5>

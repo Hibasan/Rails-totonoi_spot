@@ -131,7 +131,7 @@
       <li>住所</li>
       <li>　<%= @facility.prefecture + @facility.address %></li>
       <li>ホームページ</li>
-      <li>　<%= @facility.homepage %></li>
+      <li>　<%= link_to @facility.homepage , @facility.homepage %></li>
       <li>営業時間</li>
       <li>　<%= @facility.business_hours %></li>
       <li>定休日</li>
