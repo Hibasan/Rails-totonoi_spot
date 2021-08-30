@@ -1,29 +1,6 @@
 class FacilitiesController < ApplicationController
   before_action :authenticate_user!, except: %i[top about search show index]
 
-  def search
-    @new_facilities = Facility.limit(3).order('updated_at DESC')
-    @new_reviews = Review.includes(:user, :facility).limit(3).order('updated_at DESC')
-    @chair = Chair.ransack(params[:q])
-    @chairs = @chair.result(distinct: true)
-  end
-
-  def new
-    @facility = Facility.new
-    @facility.saunas.build
-    @facility.water_baths.build
-    @facility.chairs.build
-  end
-
-  def create
-    @facility = Facility.new(facility_params)
-    if @facility.save
-      redirect_to facility_path(@facility.id), notice: '施設情報を登録しました'
-    else
-      render action: :new
-    end
-  end
-
   def index
     @chair = Chair.ransack(params[:q])
     @chairs = @chair.result(distinct: true)
@@ -61,6 +38,22 @@ class FacilitiesController < ApplicationController
     @favorite = current_user.favorite_facilities.find_by(facility_id: @facility.id) if user_signed_in?
   end
 
+  def new
+    @facility = Facility.new
+    @facility.saunas.build
+    @facility.water_baths.build
+    @facility.chairs.build
+  end
+
+  def create
+    @facility = Facility.new(facility_params)
+    if @facility.save
+      redirect_to facility_path(@facility.id), notice: '施設情報を登録しました'
+    else
+      render action: :new
+    end
+  end
+
   def edit
     @facility = Facility.find(params[:id])
   end
@@ -80,8 +73,14 @@ class FacilitiesController < ApplicationController
     redirect_to facilities_search_path, notice: '施設情報を削除しました'
   end
 
-  private
+  def search
+    @new_facilities = Facility.limit(3).order('updated_at DESC')
+    @new_reviews = Review.includes(:user, :facility).limit(3).order('updated_at DESC')
+    @chair = Chair.ransack(params[:q])
+    @chairs = @chair.result(distinct: true)
+  end
 
+  private
   def facility_params
     params.require(:facility).permit(:id, :name, :prefecture, :address, :thumb_direction,
                                      :homepage, :business_hours, :holiday,

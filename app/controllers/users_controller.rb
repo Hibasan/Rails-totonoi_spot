@@ -15,6 +15,9 @@ class UsersController < ApplicationController
     @favorites = FavoriteFacility.includes(:facility).where(user_id: current_user.id)
     facility_ids = @favorites.pluck(:facility_id)
     @facilities = Facility.where(id: facility_ids)
+    @facilities = @facilities.page(params[:page]).per(8)
+    @chair = Chair.ransack(params[:q])
+    @chairs = @chair.result(distinct: true)
   end
 
   def guest_sign_in
