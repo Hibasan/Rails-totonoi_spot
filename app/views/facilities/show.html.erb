@@ -26,7 +26,7 @@
     <%= @facility.prefecture + @facility.address %>
   </div>
   <div class="image">
-    <%= image_tag (@facility&.image.thumb_center.url) if @facility&.image? %>
+    <%= image_tag @facility&.image.send("thumb_#{@facility.thumb_direction}").url if @facility&.image? %>
   </div>
   <div class="comment">
   </div>
