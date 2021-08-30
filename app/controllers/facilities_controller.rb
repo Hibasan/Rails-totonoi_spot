@@ -35,13 +35,13 @@ class FacilitiesController < ApplicationController
       @chairs = @chair.result(distinct: true)
       chairs_facility_ids = @chairs.pluck(:facility_id)
       @facilities = @facilities.where(id: chairs_facility_ids)
-      @facilities = @facilities.page(params[:page]).per(3)
+      @facilities = @facilities.page(params[:page]).per(8)
     elsif params[:q][:search] == 'prefecture'
       name = params[:q][:facility_name]
       @facilities = Facility.where('prefecture LIKE ?', "%#{name}%")
-      @facilities = @facilities.page(params[:page]).per(3)
+      @facilities = @facilities.page(params[:page]).per(8)
     elsif params[:q][:search] == 'all'
-      @facilities = Facility.page(params[:page]).per(3)
+      @facilities = Facility.page(params[:page]).per(8)
     end
   end
 
