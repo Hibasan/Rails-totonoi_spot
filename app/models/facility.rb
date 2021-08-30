@@ -19,4 +19,6 @@ class Facility < ApplicationRecord
 
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
+
+  enum thumb_direction: { "center": 0, "north": 1 , "west": 2, "east": 3, "south": 4}
 end

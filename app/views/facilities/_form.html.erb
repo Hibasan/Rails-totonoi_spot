@@ -3,12 +3,14 @@
 <%= form_with model: @facility ,local: true do |form| %>
 <div class="field">
   <%= form.label :image ,"サムネイル写真(*jpg jpeg gif png)", class:"form-label"%>
-  <%= image_tag @facility.image.thumb.url if @facility.image? %>
+  <%= image_tag @facility&.image.send("thumb_#{@facility.thumb_direction}").url if @facility.image? %>
   <%= form.file_field :image %>
   <%= form.hidden_field :image_cache %>
   <% @facility.errors.full_messages_for(:image).each do |msg| %>
   <%= msg %>
   <% end %>
+  <%= form.label :thumb_direction ,"サムネ位置", class:"form-label"  %>
+  <%= form.select :thumb_direction,[["中央","center"],["上","north"],["下","south"],["左","west"],["右","east"],], class:"form-select" %>
 </div>
 <div class=" col-md-12">
   <%= form.label :name ,"施設名　(※入力必須)", class:"form-label"%>
