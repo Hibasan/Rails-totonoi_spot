@@ -23,13 +23,27 @@
   <% end %>
   </div>
   <div class="address">
-    <%= @facility.prefecture + @facility.address %>
+    <h5><%= @facility.prefecture + @facility.address %></h5>
   </div>
   <div class="image">
+    <%= "No Image" unless @facility&.image?%>
     <%= image_tag @facility&.image.send("thumb_#{@facility.thumb_direction}").url if @facility&.image? %>
   </div>
-  <div class="comment">
-  </div>
+  <div id="map" class="map" style='width: 560px; height: 320px;'></div>
+  <script>
+    handler = Gmaps.build('Google');
+    handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+      markers = handler.addMarkers([
+      {
+        "lat": <%= @facility.latitude %>,
+        "lng": <%= @facility.longitude %>,
+      }
+      ]);
+      handler.bounds.extendWith(markers);
+      handler.fitMapToBounds();
+      handler.getMap().setZoom(15);
+    });
+  </script>
 </div>
 <hr>
 <h2>設備</h2>
@@ -144,22 +158,7 @@
       <li>　<%= @facility.updated_at.strftime('%Y/%m/%d') %></li>
     </ul>
   </div>
-  <div id="map" style='width: 560px; height: 400px;'></div>
-  <script>
-    handler = Gmaps.build('Google');
-    handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-      markers = handler.addMarkers([
-      {
-        "lat": <%= @facility.latitude %>,
-        "lng": <%= @facility.longitude %>,
-      }
-      ]);
-      handler.bounds.extendWith(markers);
-      handler.fitMapToBounds();
-      handler.getMap().setZoom(15);
-    });
-  </script>
-</div>
+
 <hr>
 <h2>ユーザーのコメント</h2>
 <% @reviews.each do |review| %>
