@@ -1,2 +1,0 @@
-class SaunasController < ApplicationController
-end
