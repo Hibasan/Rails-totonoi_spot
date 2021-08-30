@@ -5,7 +5,6 @@
 
 <div class="review_container">
   <h3><%= @review.facility.name %> の評価</h3>
-  <%= @review.facility.image %>
   <%= form_with model: @review ,local: true do |form| %>
   <div class="row">
     <div class="review_field col-2">
