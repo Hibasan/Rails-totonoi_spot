@@ -34,20 +34,20 @@
           <td>男性</td>
           <td>
             <ul>
-              <% facility.saunas.where(sex_id: 1).each do |sauna| %>
+              <% facility.saunas.where(sex: 1).each do |sauna| %>
               <li><%= "#{sauna&.temperature}℃" %></li>
               <% end %>
             </ul>
           </td>
           <td>
             <ul>
-              <% facility.water_baths.where(sex_id: 1).each do |water| %>
+              <% facility.water_baths.where(sex: 1).each do |water| %>
               <li><%= "#{water&.temperature}℃" %></li>
               <% end %>
             </ul>
           </td>
-          <% inside = facility.chairs.find_by(sex_id: 1,rest_area_id:1)%>
-          <% outside = facility.chairs.find_by(sex_id: 1,rest_area_id:2)%>
+          <% inside = facility.chairs.find_by(sex: 1,rest_area:1)%>
+          <% outside = facility.chairs.find_by(sex: 1,rest_area:2)%>
           <td>
             <ul class="chairs">
               <% if inside&.bath.present? || outside&.bath.present? %>
@@ -82,7 +82,7 @@
                 <p class="chair_label">ベンチ</p>
               </li>
               <% end %>
-              <% if inside&.bench_non_backrest.present? && outside&.bench_non_backrest.present? %>
+              <% if inside&.bench_non_backrest.present? || outside&.bench_non_backrest.present? %>
               <li class="index_image">
                 <%= image_tag "bench_non.png"%>
                 <p class="inside"><%= inside&.bench_non_backrest %></p>
@@ -97,20 +97,20 @@
           <td>女性</td>
           <td>
             <ul>
-              <% facility.saunas.where(sex_id: 2).each do |sauna| %>
+              <% facility.saunas.where(sex: 2).each do |sauna| %>
               <li><%= "#{sauna&.temperature}℃" %></li>
               <% end %>
             </ul>
           </td>
           <td>
             <ul>
-              <% facility.water_baths.where(sex_id: 2).each do |water| %>
+              <% facility.water_baths.where(sex: 2).each do |water| %>
               <li><%= "#{water&.temperature}℃" %></li>
               <% end %>
             </ul>
           </td>
-          <% inside = facility.chairs.find_by(sex_id: 2,rest_area_id:1)%>
-          <% outside = facility.chairs.find_by(sex_id: 2,rest_area_id:2)%>
+          <% inside = facility.chairs.find_by(sex: 2,rest_area:1)%>
+          <% outside = facility.chairs.find_by(sex: 2,rest_area:2)%>
           <td>
             <ul class="chairs">
               <% if inside&.bath.present? || outside&.bath.present? %>
@@ -145,7 +145,7 @@
                 <p class="chair_label">ベンチ</p>
               </li>
               <% end %>
-              <% if inside&.bench_non_backrest.present? && outside&.bench_non_backrest.present? %>
+              <% if inside&.bench_non_backrest.present? || outside&.bench_non_backrest.present? %>
               <li class="index_image">
                 <%= image_tag "bench_non.png"%>
                 <p class="inside"><%= inside&.bench_non_backrest %></p>

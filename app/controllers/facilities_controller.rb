@@ -27,14 +27,14 @@ class FacilitiesController < ApplicationController
     @review = Review.new
     @review.facility_id = params[:id].to_i
     @reviews = @facility.reviews.where(facility_id: params[:id]).includes([:user])
-    @male_saunas = @facility.saunas.where(sex_id: 1)
-    @female_saunas = @facility.saunas.where(sex_id: 2)
-    @male_water_baths = @facility.water_baths.where(sex_id: 1)
-    @female_water_baths = @facility.water_baths.where(sex_id: 2)
-    @male_in_chairs = @facility.chairs.where(sex_id: 1, rest_area_id: 1)
-    @male_out_chairs = @facility.chairs.where(sex_id: 1, rest_area_id: 2)
-    @female_in_chairs = @facility.chairs.where(sex_id: 2, rest_area_id: 1)
-    @female_out_chairs = @facility.chairs.where(sex_id: 2, rest_area_id: 2)
+    @male_saunas = @facility.saunas.where(sex: 1)
+    @female_saunas = @facility.saunas.where(sex: 2)
+    @male_water_baths = @facility.water_baths.where(sex: 1)
+    @female_water_baths = @facility.water_baths.where(sex: 2)
+    @male_in_chairs = @facility.chairs.where(sex: 1, rest_area: 1)
+    @male_out_chairs = @facility.chairs.where(sex: 1, rest_area: 2)
+    @female_in_chairs = @facility.chairs.where(sex: 2, rest_area: 1)
+    @female_out_chairs = @facility.chairs.where(sex: 2, rest_area: 2)
     @favorite = current_user.favorite_facilities.find_by(facility_id: @facility.id) if user_signed_in?
   end
 
@@ -86,13 +86,13 @@ class FacilitiesController < ApplicationController
                                      :homepage, :business_hours, :holiday,
                                      :fee, :payment, :comment, :image, :image_cache,
                                      saunas_attributes: %i[
-                                       id sex sex_id temperature intern comment
+                                       id sex temperature intern comment
                                      ],
                                      water_baths_attributes: %i[
-                                       id sex sex_id temperature intern comment
+                                       id sex temperature intern comment
                                      ],
                                      chairs_attributes: %i[
-                                       id sex sex_id rest_area_id comment
+                                       id sex rest_area comment
                                        bath deck relax bench bench_non_backrest
                                      ])
   end

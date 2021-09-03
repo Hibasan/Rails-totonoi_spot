@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_29_134413) do
+ActiveRecord::Schema.define(version: 2021_09_03_082817) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,13 +23,11 @@ ActiveRecord::Schema.define(version: 2021_08_29_134413) do
     t.integer "bench_non_backrest"
     t.string "comment"
     t.bigint "facility_id"
-    t.bigint "sex_id"
-    t.bigint "rest_area_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "rest_area"
+    t.integer "sex"
     t.index ["facility_id"], name: "index_chairs_on_facility_id"
-    t.index ["rest_area_id"], name: "index_chairs_on_rest_area_id"
-    t.index ["sex_id"], name: "index_chairs_on_sex_id"
   end
 
   create_table "facilities", force: :cascade do |t|
@@ -62,12 +60,6 @@ ActiveRecord::Schema.define(version: 2021_08_29_134413) do
     t.index ["user_id"], name: "index_favorite_facilities_on_user_id"
   end
 
-  create_table "rest_areas", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "area"
-  end
-
   create_table "reviews", force: :cascade do |t|
     t.integer "sex"
     t.integer "dry", default: 3, null: false
@@ -89,15 +81,8 @@ ActiveRecord::Schema.define(version: 2021_08_29_134413) do
     t.bigint "facility_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "sex_id"
-    t.index ["facility_id"], name: "index_saunas_on_facility_id"
-    t.index ["sex_id"], name: "index_saunas_on_sex_id"
-  end
-
-  create_table "sexes", force: :cascade do |t|
     t.integer "sex"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.index ["facility_id"], name: "index_saunas_on_facility_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -130,20 +115,15 @@ ActiveRecord::Schema.define(version: 2021_08_29_134413) do
     t.bigint "facility_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "sex_id"
+    t.integer "sex"
     t.index ["facility_id"], name: "index_water_baths_on_facility_id"
-    t.index ["sex_id"], name: "index_water_baths_on_sex_id"
   end
 
   add_foreign_key "chairs", "facilities"
-  add_foreign_key "chairs", "rest_areas"
-  add_foreign_key "chairs", "sexes"
   add_foreign_key "favorite_facilities", "facilities"
   add_foreign_key "favorite_facilities", "users"
   add_foreign_key "reviews", "facilities"
   add_foreign_key "reviews", "users"
   add_foreign_key "saunas", "facilities"
-  add_foreign_key "saunas", "sexes"
   add_foreign_key "water_baths", "facilities"
-  add_foreign_key "water_baths", "sexes"
 end

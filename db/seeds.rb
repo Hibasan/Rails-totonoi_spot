@@ -11,16 +11,6 @@ User.create!([
                  confirmed_at: Time.now,    admin: false  }
              ])
 
-Sex.create!([
-              { id: 1, sex: '男性' },
-              { id: 2, sex: '女性' }
-            ])
-
-RestArea.create!([
-                   { id: 1, area: '室内' },
-                   { id: 2, area: '室外' }
-                 ])
-
 Facility.create!([
                    { name: 'お風呂の国', prefecture: '神奈川県', address: '横浜市鶴見区下末吉２丁目２５−２３',
                      homepage: 'http://www.ofuronokuni.co.jp/', business_hours: '11時00分〜24時00分', holiday: '',
@@ -85,16 +75,16 @@ Facility.count.times do |n|
   temp_2 = rand(80..110)
   intern_2 = rand(5..20)
   Sauna.create!([
-                  { facility_id: facility_id, sex_id: 1, temperature: temp_1, intern: intern_1, comment: '' },
-                  { facility_id: facility_id, sex_id: 2, temperature: temp_2, intern: intern_2, comment: '' }
+                  { facility_id: facility_id, sex: 1, temperature: temp_1, intern: intern_1, comment: '' },
+                  { facility_id: facility_id, sex: 2, temperature: temp_2, intern: intern_2, comment: '' }
                 ])
   temp_1 = rand(10..25)
   intern_1 = rand(2..8)
   temp_2 = rand(10..25)
   intern_2 = rand(2..8)
   WaterBath.create!([
-                      { facility_id: facility_id, sex_id: 1, temperature: temp_1, intern: intern_1, comment: '' },
-                      { facility_id: facility_id, sex_id: 2, temperature: temp_2, intern: intern_2, comment: '' }
+                      { facility_id: facility_id, sex: 1, temperature: temp_1, intern: intern_1, comment: '' },
+                      { facility_id: facility_id, sex: 2, temperature: temp_2, intern: intern_2, comment: '' }
                     ])
 end
 
@@ -107,7 +97,7 @@ Facility.count.times do |n|
     number = [nil, nil, nil, 1, 2, 3]
     @number << number.sample
   end
-  Chair.create!(facility_id: facility_id, sex_id: 1, rest_area_id: 1, bath: @number[0], deck: @number[1],
+  Chair.create!(facility_id: facility_id, sex: 1, rest_area: 1, bath: @number[0], deck: @number[1],
                 relax: @number[2], bench: @number[3], bench_non_backrest: @number[4])
 end
 
@@ -120,7 +110,7 @@ Facility.count.times do |n|
     number = [nil, nil, nil, 1, 2, 3]
     @number << number.sample
   end
-  Chair.create!(facility_id: facility_id, sex_id: 1, rest_area_id: 2, bath: @number[0], deck: @number[1],
+  Chair.create!(facility_id: facility_id, sex: 1, rest_area: 2, bath: @number[0], deck: @number[1],
                 relax: @number[2], bench: @number[3], bench_non_backrest: @number[4])
 end
 
@@ -133,7 +123,7 @@ Facility.count.times do |n|
     number = [nil, nil, nil, 1, 2, 3]
     @number << number.sample
   end
-  Chair.create!(facility_id: facility_id, sex_id: 2, rest_area_id: 1, bath: @number[0], deck: @number[1],
+  Chair.create!(facility_id: facility_id, sex: 2, rest_area: 1, bath: @number[0], deck: @number[1],
                 relax: @number[2], bench: @number[3], bench_non_backrest: @number[4])
 end
 
@@ -146,7 +136,7 @@ Facility.count.times do |n|
     number = [nil, nil, nil, 1, 2, 3]
     @number << number.sample
   end
-  Chair.create!(facility_id: facility_id, sex_id: 2, rest_area_id: 2, bath: @number[0], deck: @number[1],
+  Chair.create!(facility_id: facility_id, sex: 2, rest_area: 2, bath: @number[0], deck: @number[1],
                 relax: @number[2], bench: @number[3], bench_non_backrest: @number[4])
 end
 
