@@ -1,18 +1,16 @@
 ## README
 #### コンセプト
- サウナ、クールダウン環境に特化した(したい)サイト 『ととのいスポット』 略称 ととスポ
- 
+  サウナ、クールダウン環境に特化した(したい)サイト 『ととのいスポット』 略称 ととスポ
   サウナの湿度！？水風呂？？それより俺はゆっくり休憩がしたいんだ！！！
- 
   クールダウン環境が設けられているサウナ施設のみ登録しています
- 
+
 #### 開発言語
 - Ruby 2.6.5
 - Rails 5.2.6
 
 #### 就業Termの技術
 - devise
-- お気に入り機能
+- お気に入り機能(ajax)
 
 #### カリキュラム外の技術
 - gem 'geocoder' 住所を緯度経度に変換
@@ -28,6 +26,9 @@
 - gem 'geocoder'
 - gem 'gmaps4rails'
 - gem 'bootstrap'
+- gem 'carrierwave'
+- gem 'mini_magick'
+- gem 'kaminari'
 
 #### 実行手順
 $ git clone git@github.com:Hibasan/Rails-totonoi_spot.git
