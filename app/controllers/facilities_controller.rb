@@ -81,7 +81,7 @@ class FacilitiesController < ApplicationController
   end
 
   def mapsearch
-
+    @facilities = Facility.all
   end
 
 

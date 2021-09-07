@@ -2,14 +2,14 @@
 
 
   <script>
-var map = L.map('mapid').setView([35.5230474, 139.6757775], 13);
+var map = L.map('mapid').setView([35.5230474, 139.6757775], 15);
+
 L.tileLayer('https://tile.openstreetmap.jp/{z}/{x}/{y}.png', {
   attribution: 'Map tiles by <a href="http://stamen.com" rel="nofollow noopener" target="_blank">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0" rel="nofollow noopener" target="_blank">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org" rel="nofollow noopener" target="_blank">OpenStreetMap</a>, under <a href="http://creativecommons.org/licenses/by-sa/3.0" rel="nofollow noopener" target="_blank">CC BY SA</a>.',
 }).addTo(map);
 
-var marker1 = L.marker([35.5230474, 139.6757775]).addTo(map);
-var marker2 = L.marker([35.5230474, 139.675]).addTo(map);
-marker1.bindPopup("<b>おふろの国</b><br>I am a popup.");
-marker2.bindPopup("<b>Hello world!</b><br>I am a popup.");
-
-  </script>
+<% @facilities.each do |facility| %>
+var marker = L.marker([<%=facility.latitude%>, <%=facility.longitude%>]).addTo(map);
+marker.bindPopup("<b><%=facility.name%></b><br>コメント項目");
+<% end %>
+</script>
