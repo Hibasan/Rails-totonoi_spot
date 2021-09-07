@@ -1,5 +1,5 @@
 class FacilitiesController < ApplicationController
-  before_action :authenticate_user!, except: %i[top about search show index]
+  before_action :authenticate_user!, except: %i[top about search mapsearch show index]
 
   def index
     @chair = Chair.ransack(params[:q])
@@ -79,6 +79,11 @@ class FacilitiesController < ApplicationController
     @chair = Chair.ransack(params[:q])
     @chairs = @chair.result(distinct: true)
   end
+
+  def mapsearch
+
+  end
+
 
   private
   def facility_params

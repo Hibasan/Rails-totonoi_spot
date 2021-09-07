@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   devise_for :users
   get '/about', to: 'facilities#about'
   get '/facilities/search', to: 'facilities#search'
+  get '/facilities/mapsearch', to: 'facilities#mapsearch'
   get '/users/review', to: 'users#review'
   get '/users/favorite_facilities', to: 'users#favorite_facilities'
   post 'users/guest_sign_in', to: 'users#guest_sign_in'
