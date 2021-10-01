@@ -6,7 +6,7 @@
 
   クールダウン環境が設けられているサウナ施設のみ登録しています
   
-### heroku https://still-shore-37853.herokuapp.com/
+### heroku https://totonoispot.herokuapp.com/
 ![トップページ](./public/toppage.png)
 
 #### 開発言語
